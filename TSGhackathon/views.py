@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'nav.html')
 def base(request):
     return render(request,'base.html')
