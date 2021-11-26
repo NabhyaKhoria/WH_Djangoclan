@@ -14,7 +14,7 @@ from . import views
 app_name = 'event'
 
 urlpatterns = [
-    path('/', views.eventhome, name='eventhome'),
+    path('event', views.eventhome, name='eventhome'),
     
     # path('viewMembers', views.viewmembers, name='viewMembers'),
     # path('members/<name>', views.members, name='members'),
