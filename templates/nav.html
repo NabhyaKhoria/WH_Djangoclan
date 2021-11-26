@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+{%load static%}
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="{% static 'IIT_Kharagpur_Logo.png' %}"/>
     <title>TSG-Hackathon</title>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -30,6 +32,7 @@
 
     /*----------bootstrap-navbar-css------------*/
     .navbar-logo {
+
         padding: 15px;
         color: #fff;
     }
@@ -208,12 +211,19 @@
             left: -25px;
         }
     }
+    .navbar-logo img{
+        width: 60px;
+        height: 55px;
+        position: relative;
+        top: -9px;
+    }
 </style>
 
 <body>
     <!-- partial:index.partial.html -->
     <nav class="navbar navbar-expand-custom navbar-mainbg">
-        <a class="navbar-brand navbar-logo" href="#">Navbar</a>
+        <a class="navbar-brand navbar-logo" href="#">
+        <img src="{%static 'TSG Logo.png'%}"> Technology Student Gymkhana</a>
         <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
             <i class="fas fa-bars text-white"></i>
@@ -225,22 +235,22 @@
                     <div class="right"></div>
                 </div>
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                    <a class="nav-link" href="javascript:void(0);"><i class="fas fa-home"></i>Home Page</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>Address Book</a>
+                    <a class="nav-link" href="javascript:void(0);"><i class="fa fa-calendar-alt"></i>Events</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>Components</a>
+                    <a class="nav-link" href="javascript:void(0);"><i class="fas fa-users"></i>Societies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Calendar</a>
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-newspaper"></i>News Bulletin</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Charts</a>
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Info</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Documents</a>
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>Contacts</a>
                 </li>
             </ul>
         </div>
