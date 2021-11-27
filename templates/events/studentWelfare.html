@@ -1,3 +1,4 @@
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,14 +13,14 @@
     <title>Education - List of Meetings</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/lightbox.css">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-edu-meeting.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css'%}">
 <!--
 
 TemplateMo 569 Edu Meeting
@@ -34,30 +35,10 @@ https://templatemo.com/tm-569-edu-meeting
    
 
   <!-- Sub Header -->
-  <div class="sub-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-sm-8">
-          <div class="left-content">
-            <p>This is an educational <em>HTML CSS</em> template by TemplateMo website.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-4">
-          <div class="right-icons">
-            <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-behance"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
   <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
+  <header class="header-area header-sticky" style="top:0px;">
       <div class="container">
           <div class="row">
               <div class="col-12">
@@ -70,13 +51,15 @@ https://templatemo.com/tm-569-edu-meeting
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
                           <li><a href="index.html">Home</a></li>
-                          <li><a href="meetings.html" class="active">Meetings</a></li>
+                          
                           <li><a href="index.html">Apply Now</a></li>
                           <li class="has-sub">
                               <a href="javascript:void(0)">Pages</a>
                               <ul class="sub-menu">
-                                  <li><a href="meetings.html">Upcoming Meetings</a></li>
-                                  <li><a href="meeting-details.html">Meeting Details</a></li>
+                                  <li><a href = {% url 'event:technology' %}>Technology</a></li>
+                                  <li><a href={% url 'event:SocialCulture' %}>Social and Culture</a></li>
+                                  <li><a href={% url 'event:SportsAndGames' %}>Sports and Games</a></li>
+                                  <li><a href={% url 'event:welfare' %} >Students’ Welfare</a></li>
                               </ul>
                           </li>
                           <li><a href="index.html">Courses</a></li> 
@@ -97,8 +80,8 @@ https://templatemo.com/tm-569-edu-meeting
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h6>Here are our upcoming meetings</h6>
-          <h2>Upcoming Meetings</h2>
+          
+          <h1>Students' Welfare</h1>
         </div>
       </div>
     </div>
@@ -112,10 +95,10 @@ https://templatemo.com/tm-569-edu-meeting
             <div class="col-lg-12">
               <div class="filters">
                 <ul>
-                  <li data-filter="*"  class="active">All Meetings</li>
-                  <li data-filter=".soon">Soon</li>
-                  <li data-filter=".imp">Important</li>
-                  <li data-filter=".att">Attractive</li>
+                  
+                  <li data-filter=".soon">Upcoming Events</li>
+                  <li data-filter=".imp">Ongoing events</li>
+                  <li data-filter=".att">Past events</li>
                 </ul>
               </div>
             </div>
@@ -127,7 +110,7 @@ https://templatemo.com/tm-569-edu-meeting
                       <div class="price">
                         <span>$14.00</span>
                       </div>
-                      <a href="meeting-details.html"><img src="assets/images/meeting-01.jpg" alt=""></a>
+                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-01.jpg'%}" alt=""></a>
                     </div>
                     <div class="down-content">
                       <div class="date">
@@ -144,7 +127,7 @@ https://templatemo.com/tm-569-edu-meeting
                       <div class="price">
                         <span>$22.00</span>
                       </div>
-                      <a href="meeting-details.html"><img src="assets/images/meeting-02.jpg" alt=""></a>
+                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-02.jpg' %}" alt=""></a>
                     </div>
                     <div class="down-content">
                       <div class="date">
@@ -161,7 +144,7 @@ https://templatemo.com/tm-569-edu-meeting
                       <div class="price">
                         <span>$24.00</span>
                       </div>
-                      <a href="meeting-details.html"><img src="assets/images/meeting-03.jpg" alt=""></a>
+                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-03.jpg' %}" alt=""></a>
                     </div>
                     <div class="down-content">
                       <div class="date">
@@ -178,7 +161,7 @@ https://templatemo.com/tm-569-edu-meeting
                       <div class="price">
                         <span>$32.00</span>
                       </div>
-                      <a href="meeting-details.html"><img src="assets/images/meeting-04.jpg" alt=""></a>
+                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-04.jpg'%}" alt=""></a>
                     </div>
                     <div class="down-content">
                       <div class="date">
@@ -195,7 +178,7 @@ https://templatemo.com/tm-569-edu-meeting
                       <div class="price">
                         <span>$34.00</span>
                       </div>
-                      <a href="meeting-details.html"><img src="assets/images/meeting-02.jpg" alt=""></a>
+                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-04.jpg'%}" alt=""></a>
                     </div>
                     <div class="down-content">
                       <div class="date">
@@ -212,7 +195,7 @@ https://templatemo.com/tm-569-edu-meeting
                       <div class="price">
                         <span>$45.00</span>
                       </div>
-                      <a href="meeting-details.html"><img src="assets/images/meeting-03.jpg" alt=""></a>
+                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-04.jpg'%}" alt=""></a>
                     </div>
                     <div class="down-content">
                       <div class="date">
@@ -229,7 +212,7 @@ https://templatemo.com/tm-569-edu-meeting
                       <div class="price">
                         <span>$52.00</span>
                       </div>
-                      <a href="meeting-details.html"><img src="assets/images/meeting-01.jpg" alt=""></a>
+                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-04.jpg'%}" alt=""></a>
                     </div>
                     <div class="down-content">
                       <div class="date">
@@ -246,7 +229,7 @@ https://templatemo.com/tm-569-edu-meeting
                       <div class="price">
                         <span>$64.00</span>
                       </div>
-                      <a href="meeting-details.html"><img src="assets/images/meeting-02.jpg" alt=""></a>
+                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-04.jpg'%}" alt=""></a>
                     </div>
                     <div class="down-content">
                       <div class="date">
@@ -263,7 +246,7 @@ https://templatemo.com/tm-569-edu-meeting
                       <div class="price">
                         <span>$74.00</span>
                       </div>
-                      <a href="meeting-details.html"><img src="assets/images/meeting-03.jpg" alt=""></a>
+                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-04.jpg'%}" alt=""></a>
                     </div>
                     <div class="down-content">
                       <div class="date">
@@ -299,17 +282,17 @@ https://templatemo.com/tm-569-edu-meeting
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
-    <script src="assets/js/isotope.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/lightbox.js"></script>
-    <script src="assets/js/tabs.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/video.js"></script>
-    <script src="assets/js/slick-slider.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="{% static 'assets/js/isotope.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+    <script src="{%static 'assets/js/lightbox.js' %}"></script>
+    <script src="{% static 'assets/js/tabs.js'%}"></script>
+    <script src="{% static 'assets/js/isotope.js'%}"></script>
+    <script src="{%static 'assets/js/video.js'%}"></script>
+    <script src="{% static 'assets/js/slick-slider.js'%}"></script>
+    <script src="{% static 'assets/js/custom.js'%}"></script>
     <script>
         //according to loftblog tut
         $('.nav li:first').addClass('active');

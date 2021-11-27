@@ -14,16 +14,12 @@ from . import views
 app_name = 'event'
 
 urlpatterns = [
-    path('event', views.eventhome, name='eventhome'),
     
-    # path('viewMembers', views.viewmembers, name='viewMembers'),
-    # path('members/<name>', views.members, name='members'),
-    # path('publications', views.publications, name='publications'),
-    # path('form', views.form, name='form'),
-    # path('viewmembers', views.viewmembers, name='viewmembers'),
-    # path('subjects/<name>', views.subjects, name='subjects'),
-    # path('aiml/<name>', views.aiml, name='aiml'),
-    #path('get_quote/', views.get_quote, name='get_quote'),
-    # path('<int:year>/', views.diary),
-    # path('<int:year>/<str:name>/', views.diary),
+    path('technology', views.technology, name='technology'),
+    path('Social and Culture', views.sac, name='SocialCulture'),
+    path('Sports and Games', views.sports, name='SportsAndGames'),
+    path('Students welfare', views.welfare, name='welfare'),
+    path('eventdetail', views.eventdetail, name='eventdetail'),
+    
+    
 ]
