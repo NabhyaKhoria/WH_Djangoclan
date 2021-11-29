@@ -21,7 +21,7 @@ urlpatterns = [
     path('Social and Culture', views.sac, name='SocialCulture'),
     path('Sports and Games', views.sports, name='SportsAndGames'),
     path('Students welfare', views.welfare, name='welfare'),
-    path('eventdetail', views.eventdetail, name='eventdetail'),
+    path('technology/<name>', views.technology_details, name='technology'),
     
     
 ]

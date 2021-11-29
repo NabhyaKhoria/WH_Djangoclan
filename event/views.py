@@ -18,6 +18,13 @@ def technology(request):
     }
     return render(request, 'events/technology.html', context)
 
+def technology_details(request, name):
+    technology = Technology.objects.get(name=name)
+    context = {
+        'technology': technology,
+    }
+    return render(request, 'events/technology_details.html', context)
+
 def sac(request):
     context = {}
     return render(request, 'events/SocialCulture.html', context)
@@ -30,6 +37,3 @@ def welfare(request):
     context = {}
     return render(request, 'events/studentWelfare.html', context)
 
-def eventdetail(request):
-    context = {}
-    return render(request, 'events/event-details.html', context)

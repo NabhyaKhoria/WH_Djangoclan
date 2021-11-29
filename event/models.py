@@ -17,6 +17,22 @@ class Technology(models.Model):
         ])
     type_of_events = [('soon','soon'), ('att','att'), ('imp','imp')]
     type_of_event = models.CharField(max_length=30, default='soon', choices = type_of_events)
+    
+    day_of_events = [('Monday','Monday'), ('Tuesday','Tuesday'), ('Wednesday','Wednesday'),('Thursday','Thursday'), ('Friday','Friday'), ('Saturday','Saturday'),('Sunday','Sunday')]
+    day_of_event = models.CharField(max_length=30, default='Monday', choices = day_of_events)
+    
+    deadline = models.DateTimeField(auto_now_add=True,null=True)
+    SuperviserName =  models.CharField(max_length=50,null=True)
+    SuperviserEmail = models.CharField(max_length=60,null=True)
+    SuperviserContact = models.CharField(max_length=30,null=True)
+    
+    VenueName = models.CharField(max_length=60,null=True)
+    facebook = models.CharField(max_length=200, null=True)
+    linkedin = models.CharField(max_length=200, null=True)
+    instagram = models.CharField(max_length=200, null=True)
+    
+    
+    
 
     def __str__(self):
         return self.name
