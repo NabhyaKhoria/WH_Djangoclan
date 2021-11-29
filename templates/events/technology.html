@@ -102,26 +102,29 @@ https://templatemo.com/tm-569-edu-meeting
                 </ul>
               </div>
             </div>
+
+            {% for t in technology %}
             <div class="col-lg-12">
               <div class="row grid">
-                <div class="col-lg-4 templatemo-item-col all soon">
+                <div class="col-lg-4 templatemo-item-col all {{t.type_of_event}}">
                   <div class="meeting-item">
                     <div class="thumb">
                       <div class="price">
-                        <span>$14.00</span>
+                        
                       </div>
-                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-01.jpg'%}" alt=""></a>
+                      <a href="meeting-details.html"><img src="{{t.image.url}}" /></a>
                     </div>
                     <div class="down-content">
                       <div class="date">
-                        <h6>Nov <span>12</span></h6>
+                        <h6>{{t.month_of_event}}<span>{{t.date}}</span></h6>
                       </div>
-                      <a href="meeting-details.html"><h4>New Lecturers Meeting</h4></a>
-                      <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                      <a href="meeting-details.html"><h4>{{t.name}}</h4></a>
+                      <p>{{t.small_description}}</p>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 templatemo-item-col all imp">
+{% endfor %}
+                {% comment %} <div class="col-lg-4 templatemo-item-col all imp">
                   <div class="meeting-item">
                     <div class="thumb">
                       <div class="price">
@@ -256,9 +259,10 @@ https://templatemo.com/tm-569-edu-meeting
                       <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
                     </div>
                   </div>
+                  {% endcomment %}
                 </div>
               </div>
-            </div>
+            </div> 
             <div class="col-lg-12">
               <div class="pagination">
                 <ul>

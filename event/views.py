@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+
+from event.models import *
 
 # Create your views here.
 
@@ -9,7 +12,10 @@ def eventhome(request):
     return render(request, 'events/base.html', context)
 
 def technology(request):
-    context = {}
+    technology = Technology.objects.all()
+    context = {
+        'technology': technology,
+    }
     return render(request, 'events/technology.html', context)
 
 def sac(request):
