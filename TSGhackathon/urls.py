@@ -20,9 +20,8 @@ from . import settings
 from . import views
 
 urlpatterns = [
-    path('',views.home, name="home"),
     path('admin/', admin.site.urls),
-    path('base/',views.base),
+    path('',views.base),
     path('event/', include('event.urls', namespace='event'), name='event'),
 ]
 
