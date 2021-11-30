@@ -18,10 +18,11 @@ app_name = 'event'
 urlpatterns = [
     
     path('technology', views.technology, name='technology'),
-    path('Social and Culture', views.sac, name='SocialCulture'),
-    path('Sports and Games', views.sports, name='SportsAndGames'),
-    path('Students welfare', views.welfare, name='welfare'),
+    path('SocialandCulture', views.social, name='social'),
+    path('SportsandGames', views.sports, name='SportsAndGames'),
+    path('Studentswelfare', views.studentWelfare, name='studentWelfare'),
     path('technology/<name>', views.technology_details, name='technology'),
-    
-    
+    path('studentWelfare/<name>', views.studentWelfare_details, name='studentWelfare'),
+    path('SocialandCulture/<name>', views.social_details, name='social'),
+    path('SportsandGames/<name>', views.sports_details, name='sports'),
 ]

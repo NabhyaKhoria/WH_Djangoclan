@@ -25,15 +25,47 @@ def technology_details(request, name):
     }
     return render(request, 'events/technology_details.html', context)
 
-def sac(request):
-    context = {}
+def social(request):
+    social = Social.objects.all()
+    context = {
+        'social': social,
+    }
     return render(request, 'events/SocialCulture.html', context)
 
-def sports(request):
-    context = {}
-    return render(request, 'events/SportsAndGames.html', context)
 
-def welfare(request):
-    context = {}
+
+def studentWelfare(request):
+    studentWelfare = StudentWelfare.objects.all()
+    context = {
+        'studentWelfare': studentWelfare,
+    }
     return render(request, 'events/studentWelfare.html', context)
 
+
+def social_details(request, name):
+    social = Social.objects.get(name=name)
+    context = {
+        'social': social,
+    }
+    return render(request, 'events/social_details.html', context)
+
+def studentWelfare_details(request, name):
+    studentWelfare = StudentWelfare.objects.get(name=name)
+    context = {
+        'studentWelfare': studentWelfare,
+    }
+    return render(request, 'events/studentWelfare_details.html', context)
+
+def sports(request):
+    sports = Sports.objects.all()
+    context = {
+        'sports': sports,
+    }
+    return render(request, 'events/SportsAndGames.html', context)
+
+def sports_details(request, name):
+    sports = Sports.objects.get(name=name)
+    context = {
+        'sports': sports,
+    }
+    return render(request, 'events/sports_details.html', context)

@@ -10,7 +10,7 @@
     <meta name="author" content="Template Mo">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <title>Technology - Event Detail Page</title>
+    <title>sports - Event Detail Page</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -79,7 +79,7 @@ https://templatemo.com/tm-569-edu-meeting
       <div class="row">
         <div class="col-lg-12">
           
-          <h1>{{technology.name}}</h1>
+          <h1>{{sports.name}}</h1>
         </div>
       </div>
     </div>
@@ -97,43 +97,43 @@ https://templatemo.com/tm-569-edu-meeting
                     
                   </div>
                   <div class="date">
-                    <h6>{{technology.month_of_event}}<span>{{technology.date}}</span></h6>
+                    <h6>{{sports.month_of_event}}<span>{{sports.date}}</span></h6>
                   </div>
-                  <a href="meeting-details.html"><img src="{{technology.image.url}}" alt=""></a>
+                  <a href="meeting-details.html"><img src="{{sports.image.url}}" alt=""></a>
                 </div>
                 <div class="down-content">
-                  <a href="meeting-details.html"><h4>{{technology.name}}</h4></a>
-                  <p>{{technology.VenueName}}</p>
+                  <a href="meeting-details.html"><h4>{{sports.name}}</h4></a>
+                  <p>{{sports.VenueName}}</p>
                   <p class="description">
-                    {{technology.description}}
+                    {{sports.description}}
                   </p>
                   <div class="row">
                     <div class="col-lg-4">
                       <div class="hours">
                         <h5>Hours</h5>
-                        <p>{{technology.day_of_event}}</p>
+                        <p>{{sports.day_of_event}}</p>
                       </div>
                     </div>
                     <div class="col-lg-4">
                       <div class="location">
                         <h5>Location</h5>
-                        {{technology.VenueName}}</p>
+                        {{sports.VenueName}}</p>
                       </div>
                     </div>
                     <div class="col-lg-4">
                       <div class="book now">
                         <h5>Contact</h5>
-                        <p>{{technology.SupervisorName}}<br>{{technology.SupervisorEmail}}<br>{{technology.SupervisorContact}}</p>
+                        <p>{{sports.SupervisorName}}<br>{{sports.SupervisorEmail}}<br>{{sports.SupervisorContact}}</p>
                       </div>
                     </div>
                     <div class="col-lg-12">
                       <div class="share">
                         <h5>Share:</h5>
                         <ul>
-                          <li><a href="{{technology.facebook}}">Facebook</a>,</li>
-                          <li><a href="{{technology.twitter}}">Twitter</a>,</li>
-                          <li><a href="{{technology.linkedin}}">LinkedIn</a></li>
-                          <li><a href="{{technology.instagram}}">Instagram</a></li>
+                          <li><a href="{{sports.facebook}}">Facebook</a>,</li>
+                          <li><a href="{{sports.twitter}}">Twitter</a>,</li>
+                          <li><a href="{{sports.linkedin}}">LinkedIn</a></li>
+                          <li><a href="{{sports.instagram}}">Instagram</a></li>
                         </ul>
                       </div>
                     </div>
@@ -143,7 +143,7 @@ https://templatemo.com/tm-569-edu-meeting
             </div>
             <div class="col-lg-12">
               <div class="main-button-red">
-                <a href="{%url 'event:technology'%}">Back To Meetings List</a>
+                <a href="{%url 'event:SportsAndGames'%}">Back To Meetings List</a>
               </div>
             </div>
           </div>
