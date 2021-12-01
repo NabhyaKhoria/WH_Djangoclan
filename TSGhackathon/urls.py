@@ -21,7 +21,7 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.base),
+    path('',views.base, name="base"),
     path('event/', include('event.urls', namespace='event'), name='event'),
 ]
 

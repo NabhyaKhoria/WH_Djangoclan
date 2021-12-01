@@ -44,26 +44,26 @@ https://templatemo.com/tm-569-edu-meeting
               <div class="col-12">
                   <nav class="main-nav">
                       <!-- ***** Logo Start ***** -->
-                      <a href="index.html" class="logo">
+                      <a href="{% url 'base' %}" class="logo">
                           Edu Meeting
                       </a>
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
-                          <li><a href="index.html">Home</a></li>
-                          <li><a href="meetings.html" class="active">Meetings</a></li>
-                          <li><a href="index.html">Apply Now</a></li>
+                          <li><a href="{% url 'base' %}">Home</a></li>
+                          <li><a href="{% url 'base' %}" class="active">Meetings</a></li>
+                          <li><a href="{% url 'base' %}">Apply Now</a></li>
                           <li class="has-sub">
                               <a href="javascript:void(0)">Events</a>
                               <ul class="sub-menu">
-                                <li><a href = {% url 'event:technology' %}>Technology</a></li>
-                                <li><a href={% url 'event:social' %}>Social and Culture</a></li>
-                                <li><a href={% url 'event:SportsAndGames' %}>Sports and Games</a></li>
-                                <li><a href={% url 'event:studentWelfare' %} >Students’ Welfare</a></li>
+                                <li><a href =" {% url 'event:technology' %}">Technology</a></li>
+                                <li><a href="{% url 'event:social' %}">Social and Culture</a></li>
+                                <li><a href="{% url 'event:SportsAndGames' %}">Sports and Games</a></li>
+                                <li><a href="{% url 'event:studentWelfare' %} ">Students’ Welfare</a></li>
                               </ul>
                           </li>
-                          <li><a href="index.html">Courses</a></li> 
-                          <li><a href="index.html">Contact Us</a></li> 
+                          <li><a href="{% url 'base' %}">Courses</a></li> 
+                          <li><a href="{% url 'base' %}">Contact Us</a></li> 
                       </ul>        
                       <a class='menu-trigger'>
                           <span>Menu</span>
