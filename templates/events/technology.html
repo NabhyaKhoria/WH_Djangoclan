@@ -28,6 +28,31 @@ TemplateMo 569 Edu Meeting
 https://templatemo.com/tm-569-edu-meeting
 
 -->
+<style> 
+  @media only screen and (min-width: 279px) and (max-width: 380px){
+    section.meetings-page .filters li{
+
+      margin-bottom: 0.5rem;
+    width: 11.45rem;
+    }
+    section.meetings-page .filters ul li:hover{
+
+      margin-bottom: 0.5rem;
+    width: 11.45rem;
+    }
+  
+  }
+
+  @media only screen and (min-width: 410px) and (max-width: 541px){
+    
+    ul, li {
+      padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    }
+  }
+</style>
   </head>
 
 <body>
@@ -56,10 +81,10 @@ https://templatemo.com/tm-569-edu-meeting
                           <li class="has-sub">
                               <a href="javascript:void(0)">Events</a>
                               <ul class="sub-menu">
-                                <li><a href = {% url 'event:technology' %}>Technology</a></li>
-                                <li><a href={% url 'event:social' %}>Social and Culture</a></li>
-                                <li><a href={% url 'event:SportsAndGames' %}>Sports and Games</a></li>
-                                <li><a href={% url 'event:studentWelfare' %} >Students’ Welfare</a></li>
+                                <li><a href = "{% url 'event:technology' %}">Technology</a></li>
+                                <li><a href="{% url 'event:social' %}">Social and Culture</a></li>
+                                <li><a href="{% url 'event:SportsAndGames' %}">Sports and Games</a></li>
+                                <li><a href="{% url 'event:studentWelfare' %} ">Students’ Welfare</a></li>
                               </ul>
                           </li>
                           <li><a href="index.html">Courses</a></li> 
@@ -96,9 +121,9 @@ https://templatemo.com/tm-569-edu-meeting
               <div class="filters">
                 <ul>
                   
-                  <li data-filter=".soon">Upcoming Events</li>
-                  <li data-filter=".imp">Ongoing events</li>
-                  <li data-filter=".att">Past events</li>
+                  <li data-filter=".soon" class="ss">Upcoming Events</li>
+                  <li data-filter=".imp" class="ss">Ongoing events</li>
+                  <li data-filter=".att" class="ss">Past events</li>
                 </ul>
               </div>
             </div>
