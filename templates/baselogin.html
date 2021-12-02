@@ -10,7 +10,7 @@
     <meta name="author" content="TemplateMo">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <title>TSG Gymkhana</title>
+    <title>Education Meeting HTML5 Template</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -417,7 +417,7 @@ xsigin/signup popup
                           <li class="scroll-to-section"><a href="#courses">Courses</a></li> 
                           <li class="scroll-to-section"><a href="#contact">Contact Us</a></li> 
                           <nav class="main-nav2"><ul>
-                          <li class="scroll-to-section"><a class="cd-signin" href="#0">Login</a></li> </ul>
+                          <li class="scroll-to-section" ><a class="cd-signin" href="#0" id="auto">Login</a></li> </ul>
                         </nav>
                           
                       </ul>        
@@ -441,17 +441,17 @@ xsigin/signup popup
     </ul>
 
     <div id="cd-login"> <!-- log in form -->
-      <form class="cd-form" action="{% url 'login' %}" method="POST">
+      <form class="cd-form" action="{% url 'loginuser' %}" method="POST">
         {% csrf_token %}
         <p class="fieldset">
           <label class="image-replace cd-email" for="signin-email">E-mail</label>
-          <input class="full-width has-padding has-border" id="signin-email" name="signin-email" type="email" placeholder="E-mail">
+          <input class="full-width has-padding has-border" id="signin-email" name="signin-email" type="email" placeholder="E-mail" value="{{email}}">
           <span class="cd-error-message">Error message here!</span>
         </p>
 
-        <p class="fieldset" style="display: none" id="otp">
+        <p class="fieldset"  id="otp">
           <label class="image-replace cd-password" for="signin-password">OTP</label>
-          <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="OTP">
+          <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="OTP" required>
           <!-- <a href="#0" class="hide-password">Hide</a> -->
           <!-- <span class="cd-error-message">Error message here!</span> -->
         </p>
@@ -461,11 +461,11 @@ xsigin/signup popup
           <label for="remember-me">Remember me</label>
         </p>
 
-        <p class="fieldset" id="getotp">
-          <input class="full-width" type="submit" value="Get OTP" >
+        <p class="fieldset" id="getotp" style="display:none">
+          <input class="full-width" type="submit" onclick="otp()" value="Get OTP" >
         </p>
         
-        <p class="fieldset" style="display: none" id="log">
+        <p class="fieldset"  id="log">
           <input class="full-width" type="submit" value="Login">
         </p>
 
@@ -1217,6 +1217,8 @@ xsigin/signup popup
     <script src="{% static 'assets/js/slick-slider.js' %}"></script>
     <script src="{% static 'assets/js/custom.js' %}"></script>
     <script>
+       
+       // $('.cd-user-modal').modal('show');
         //according to loftblog tut
         $('.nav li:first').addClass('active');
 
@@ -1276,7 +1278,7 @@ xsigin/signup popup
           $main_nav = $('.main-nav2');
       
         //open modal
-        $main_nav.on('click', function(event){
+      //  $main_nav.on('click', function(event){
       
           if( $(event.target).is($main_nav) ) {
             // on mobile open the submenu
@@ -1290,7 +1292,6 @@ xsigin/signup popup
             ( $(event.target).is('.cd-signup') ) ? signup_selected() : login_selected();
           }
       
-        });
       
         //close modal
         $('.cd-user-modal').on('click', function(event){
@@ -1410,6 +1411,7 @@ xsigin/signup popup
             }
         });
       };
+      document.getElementById("auto").click();
       function otp(){
         var otp = document.getElementById("otp");
         var getotp = document.getElementById("getotp");
