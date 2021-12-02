@@ -5,6 +5,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.contrib import messages
 from django.conf import settings
+from event.models import StudentWelfare
 
 
 def home(request):
@@ -12,7 +13,11 @@ def home(request):
 
 
 def base(request):
-    return render(request,'base.html')
+    studentWelfare = StudentWelfare.objects.all()
+    context = {
+        'studentWelfare': studentWelfare,
+    }
+    return render(request, 'base.html', context)
 
 def login(request):
     if(request.method == 'POST'):
