@@ -69,3 +69,9 @@ def sports_details(request, name):
         'sports': sports,
     }
     return render(request, 'events/sports_details.html', context)
+
+def result(request):
+    context={
+
+    }
+    return render(request, 'events/results.html', context)
