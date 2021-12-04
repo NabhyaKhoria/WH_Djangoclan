@@ -128,16 +128,16 @@ https://templatemo.com/tm-569-edu-meeting
               </div>
             </div>
 
-            {% for t in technology %}
             <div class="col-lg-12">
               <div class="row grid">
+                {% for t in technology %}
                 <div class="col-lg-4 templatemo-item-col all {{t.type_of_event}}" style="position:relative; top:0;">
                   <div class="meeting-item">
                     <div class="thumb">
                       <div class="price">
                         
                       </div>
-                      <a href="{% url 'event:technology' t.name %}"><img src="{{t.image.url}}" /></a>
+                      <a href="{% url 'event:technology' t.name %}"><img style="width:385.2px; height: 346.68px;" src="{{t.image.url}}" /></a>
                     </div>
                     <div class="down-content">
                       <div class="date">
