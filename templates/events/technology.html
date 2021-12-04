@@ -29,6 +29,9 @@ https://templatemo.com/tm-569-edu-meeting
 
 -->
 <style> 
+  .img{
+    width:385.2px; height: 346.68px;
+  }
   @media only screen and (min-width: 279px) and (max-width: 380px){
     section.meetings-page .filters li{
 
@@ -43,6 +46,14 @@ https://templatemo.com/tm-569-edu-meeting
   
   }
 
+  @media only screen and (min-width: 279px) and (max-width: 281px){
+    .header-area .main-nav .logo{
+      font-size:1.2rem;
+    }
+    .img{
+      width:100%
+    }
+  }
   @media only screen and (min-width: 410px) and (max-width: 541px){
     
     ul, li {
@@ -52,6 +63,8 @@ https://templatemo.com/tm-569-edu-meeting
     display: flex;
     }
   }
+
+
 </style>
   </head>
 
@@ -137,7 +150,7 @@ https://templatemo.com/tm-569-edu-meeting
                       <div class="price">
                         
                       </div>
-                      <a href="{% url 'event:technology' t.name %}"><img style="width:385.2px; height: 346.68px;" src="{{t.image.url}}" /></a>
+                      <a href="{% url 'event:technology' t.name %}"><img src="{{t.image.url}}" /></a>
                     </div>
                     <div class="down-content">
                       <div class="date">
