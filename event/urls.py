@@ -25,4 +25,5 @@ urlpatterns = [
     path('studentWelfare/<name>', views.studentWelfare_details, name='studentWelfare'),
     path('SocialandCulture/<name>', views.social_details, name='social'),
     path('SportsandGames/<name>', views.sports_details, name='sports'),
+    path('Results', views.result, name='result'),
 ]
