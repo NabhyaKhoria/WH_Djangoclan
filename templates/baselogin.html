@@ -389,18 +389,18 @@ xsigin/signup popup
 <body>
 
 
-  <!-- ***** Header Area Start ***** -->
+  <!-- ** Header Area Start ** -->
   <header class="header-area header-sticky">
       <div class="container">
           <div class="row">
               <div class="col-12">
                   <nav class="main-nav">
-                      <!-- ***** Logo Start ***** -->
+                      <!-- ** Logo Start ** -->
                       <a href="index.html" class="logo">
                           TSG Gymkhana
                       </a>
-                      <!-- ***** Logo End ***** -->
-                      <!-- ***** Menu Start ***** -->
+                      <!-- ** Logo End ** -->
+                      <!-- ** Menu Start ** -->
                       <ul class="nav">
                           <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
                           
@@ -424,13 +424,13 @@ xsigin/signup popup
                       <a class='menu-trigger'>
                           <span>Menu</span>
                       </a>
-                      <!-- ***** Menu End ***** -->
+                      <!-- ** Menu End ** -->
                   </nav>
               </div>
           </div>
       </div>
   </header>
-  <!-- ***** Header Area End ***** -->
+  <!-- ** Header Area End ** -->
   
 <!-- modal -->
 <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
@@ -448,13 +448,16 @@ xsigin/signup popup
           <input class="full-width has-padding has-border" id="signin-email" name="signin-email" type="email" placeholder="E-mail" value="{{email}}">
           <span class="cd-error-message">Error message here!</span>
         </p>
-
+        {% if val %}
         <p class="fieldset"  id="otp">
           <label class="image-replace cd-password" for="signin-password">OTP</label>
           <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="OTP" required>
           <!-- <a href="#0" class="hide-password">Hide</a> -->
           <!-- <span class="cd-error-message">Error message here!</span> -->
         </p>
+        {% else %}
+        <span>Email id not valid</span>
+        {% endif %}
 
         <p class="fieldset">
           <input type="checkbox" id="remember-me" checked>
@@ -531,7 +534,7 @@ xsigin/signup popup
 </div> <!-- cd-user-modal -->
 
 
-  <!-- ***** Main Banner Area Start ***** -->
+  <!-- ** Main Banner Area Start ** -->
   <section class="section main-banner" id="top" data-section="section1">
       <video autoplay muted loop id="bg-video">
           <source src="{% static 'assets/images/course-video.mp4' %}" type="video/mp4" />
@@ -554,7 +557,7 @@ xsigin/signup popup
           </div>
       </div>
   </section>
-  <!-- ***** Main Banner Area End ***** -->
+  <!-- ** Main Banner Area End ** -->
 
   <section class="services">
     <div class="container">
@@ -1151,7 +1154,7 @@ xsigin/signup popup
                   </div>
                   <div class="col-lg-4">
                     <fieldset>
-                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="YOUR EMAIL..." required="">
+                    <input name="email" type="text" id="email" pattern="[^ @]@[^ @]" placeholder="YOUR EMAIL..." required="">
                   </fieldset>
                   </div>
                   <div class="col-lg-4">
@@ -1309,9 +1312,8 @@ xsigin/signup popup
 
  </footer>
  <!-- End Footer -->
-    
+    <a href="{% url 'base' %}" id="refresher" style="display:none;"></a>
  </section>
-    
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
     <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
@@ -1403,9 +1405,11 @@ xsigin/signup popup
       
         //close modal
         $('.cd-user-modal').on('click', function(event){
+          document.getElementById('refresher').click();
           if( $(event.target).is($form_modal) || $(event.target).is('.cd-close-form') ) {
             $form_modal.removeClass('is-visible');
           }	
+
         });
         //close modal when clicking the esc keyboard button
         $(document).keyup(function(event){
