@@ -28,6 +28,48 @@ TemplateMo 569 Edu Meeting
 https://templatemo.com/tm-569-edu-meeting
 
 -->
+<style> 
+  img{
+    width: 382.2px;
+    height: 346.24px;
+  }
+
+  @media only screen and (min-width: 279px) and (max-width: 380px){
+    section.meetings-page .filters li{
+
+      margin-bottom: 0.5rem;
+    width: 11.45rem;
+    }
+    section.meetings-page .filters ul li:hover{
+
+      margin-bottom: 0.5rem;
+    width: 11.45rem;
+    }
+  
+  }
+
+  @media only screen and (min-width: 279px) and (max-width: 281px){
+    .header-area .main-nav .logo{
+      font-size:1.2rem;
+    }
+    img{
+      width:100%
+    }
+  }
+
+  @media only screen and (min-width: 410px) and (max-width: 541px){
+    
+    ul, li 
+    {
+      padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    }
+  }
+
+
+</style>
   </head>
 
 <body>
@@ -105,7 +147,7 @@ https://templatemo.com/tm-569-edu-meeting
 
             <div class="col-lg-12">
               <div class="row grid">
-                {% for t in sports %}
+                {% for t in page_obj.object_list %}
                 <div class="col-lg-4 templatemo-item-col all {{t.type_of_event}}">
                   <div class="meeting-item">
                     <div class="thumb">
@@ -266,10 +308,17 @@ https://templatemo.com/tm-569-edu-meeting
             <div class="col-lg-12">
               <div class="pagination">
                 <ul>
-                  <li class="active"><a href="#">1</a></li>
+                  {%if page_obj.has_previous %}
+                  <a href="?page={{page_obj.previous_page_number}}"><</a> {# link to the prev page #}
+                  {% endif %}
+                  <span style="color:white">{{page_obj.number}}</span> {# the current page number #}
+                  {%if page_obj.has_next %} {# whether the next page exists #}
+                      <a href="?page={{page_obj.next_page_number}}">></a> {# link to the next page #}
+                  {% endif %}
+                  <!-- <li class="active"><a href="#">1</a></li>
                   <li ><a href="#">2</a></li>
                   <li><a href="#">3</a></li>
-                  <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                  <li><a href="#"><i class="fa fa-angle-right"></i></a></li> -->
                 </ul>
               </div>
             </div>

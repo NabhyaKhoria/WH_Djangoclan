@@ -1,8 +1,6 @@
 **/__pycache__
 **/db.sqlite3
 **/DB backup
-**/log.txt
 **/staticfiles
-
-
-event/migrations*
+**/media
+ftp/migrations*

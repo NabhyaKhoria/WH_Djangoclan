@@ -682,12 +682,14 @@ banner
 --------------------------------------------- 
 */
 
-.main-banner {
-  position: relative;
-  max-height: 100%;
-  overflow: hidden;
-  margin-bottom: -7px;
-}
+section.main-banner {
+    background-image: url(../images/home-bg2.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 379px 0px;}
+
 
 #bg-video {
     min-width: 100%;

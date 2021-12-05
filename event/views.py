@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
 from event.models import *
 
+from django.core.paginator import PageNotAnInteger, Paginator
 # Create your views here.
 
 
@@ -13,8 +13,23 @@ def eventhome(request):
 
 def technology(request):
     technology = Technology.objects.all()
-    context = {
+    # context = {
+    #     'technology': technology,
+    # }
+    p=Paginator(technology, 6) # creating paginator objects
+    # getting the desired page number from url
+    page_number = request.GET.get('page')
+    try:
+        page_obj = p.get_page(page_number) # returns desired page object
+    except PageNotAnInteger:
+        # if page_number is not an integer then assign the first page
+        page_obj=p.page(1)
+    except EmptyPage:
+        # if page is empty then return last page
+        page_obj = p.page(p.num_pages)
+    context={
         'technology': technology,
+        'page_obj': page_obj,
     }
     return render(request, 'events/technology.html', context)
 
@@ -23,12 +38,28 @@ def technology_details(request, name):
     context = {
         'technology': technology,
     }
+
     return render(request, 'events/technology_details.html', context)
 
 def social(request):
     social = Social.objects.all()
-    context = {
-        'social': social,
+    # context = {
+    #     'social': social,
+    # }
+    p=Paginator(social, 6) # creating paginator objects
+    # getting the desired page number from url
+    page_number = request.GET.get('page')
+    try:
+        page_obj = p.get_page(page_number) # returns desired page object
+    except PageNotAnInteger:
+        # if page_number is not an integer then assign the first page
+        page_obj=p.page(1)
+    except EmptyPage:
+        # if page is empty then return last page
+        page_obj = p.page(p.num_pages)
+    context={
+    'social': social,
+    'page_obj': page_obj,
     }
     return render(request, 'events/SocialCulture.html', context)
 
@@ -36,8 +67,23 @@ def social(request):
 
 def studentWelfare(request):
     studentWelfare = StudentWelfare.objects.all()
-    context = {
-        'studentWelfare': studentWelfare,
+    # context = {
+    #     'studentWelfare': studentWelfare,
+    # }
+    p=Paginator(studentWelfare, 6) # creating paginator objects
+    # getting the desired page number from url
+    page_number = request.GET.get('page')
+    try:
+        page_obj = p.get_page(page_number) # returns desired page object
+    except PageNotAnInteger:
+        # if page_number is not an integer then assign the first page
+        page_obj=p.page(1)
+    except EmptyPage:
+        # if page is empty then return last page
+        page_obj = p.page(p.num_pages)
+    context={
+    'studentWelfare': studentWelfare,
+    'page_obj': page_obj,
     }
     return render(request, 'events/studentWelfare.html', context)
 
@@ -58,8 +104,23 @@ def studentWelfare_details(request, name):
 
 def sports(request):
     sports = Sports.objects.all()
-    context = {
-        'sports': sports,
+    # context = {
+    #     'sports': sports,
+    # }
+    p=Paginator(sports, 6) # creating paginator objects
+    # getting the desired page number from url
+    page_number = request.GET.get('page')
+    try:
+        page_obj = p.get_page(page_number) # returns desired page object
+    except PageNotAnInteger:
+        # if page_number is not an integer then assign the first page
+        page_obj=p.page(1)
+    except EmptyPage:
+        # if page is empty then return last page
+        page_obj = p.page(p.num_pages)
+    context={
+    'sports': sports,
+    'page_obj': page_obj,
     }
     return render(request, 'events/SportsAndGames.html', context)
 
@@ -75,3 +136,23 @@ def result(request):
 
     }
     return render(request, 'events/results.html', context)
+
+
+
+# def listing(request):
+#     studentWelfare = StudentWelfare.objects.all()
+#     technologys = Technology.objects.all()
+#     socials = Social.objects.all()
+#     sports = Sports.objects.all()
+
+#     context = {
+#         'studentWelfare': studentWelfare,
+#         'technologys':technologys,
+#         'socials':socials,
+#         'sports':sports,
+#     }
+#     paginator = Paginator(context, 6) # Show 6 contacts per page.
+
+#     page_number = request.GET.get('page')
+#     page_obj = paginator.get_page(page_number)
+#     return render(request, 'technology.html', {'page_obj': page_obj})
