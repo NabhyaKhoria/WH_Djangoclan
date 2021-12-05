@@ -5,7 +5,11 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.contrib import messages
 from django.conf import settings
-from event.models import StudentWelfare
+# from event.models import StudentWelfare
+# from event.models import Technology
+# from event.models import Social
+# from event.models import Sports
+from event.models import *
 
 
 def home(request):
@@ -14,8 +18,15 @@ def home(request):
 
 def base(request):
     studentWelfare = StudentWelfare.objects.all()
+    technologys = Technology.objects.all()
+    socials = Social.objects.all()
+    sports = Sports.objects.all()
+
     context = {
         'studentWelfare': studentWelfare,
+        'technologys':technologys,
+        'socials':socials,
+        'sports':sports,
     }
     return render(request, 'base.html', context)
 
