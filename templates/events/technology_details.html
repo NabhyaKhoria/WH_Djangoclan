@@ -10,7 +10,7 @@
     <meta name="author" content="Template Mo">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <title>Technology - Event Detail Page</title>
+    <title>{{technology.name}}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -51,7 +51,7 @@ https://templatemo.com/tm-569-edu-meeting
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
                           <li><a href="{% url 'base' %}">Home</a></li>
-                          <li><a href="{% url 'base' %}" class="active">Meetings</a></li>
+                          <li><a href="{% url 'base' %}" class="active">Events</a></li>
                           <li><a href="{% url 'base' %}">Apply Now</a></li>
                           <li class="has-sub">
                               <a href="javascript:void(0)">Events</a>
@@ -134,7 +134,7 @@ https://templatemo.com/tm-569-edu-meeting
                         <ul>
                           <li><a href="{{technology.facebook}}">Facebook</a>,</li>
                           <li><a href="{{technology.twitter}}">Twitter</a>,</li>
-                          <li><a href="{{technology.linkedin}}">LinkedIn</a></li>
+                          <li><a href="{{technology.linkedin}}">LinkedIn</a>,</li>
                           <li><a href="{{technology.instagram}}">Instagram</a></li>
                         </ul>
                       </div>
@@ -145,7 +145,7 @@ https://templatemo.com/tm-569-edu-meeting
             </div>
             <div class="col-lg-12">
               <div class="main-button-red">
-                <a href="{%url 'event:technology'%}">Back To Meetings List</a>
+                <a href="{%url 'event:technology'%}">Back To Technology Events Page</a>
               </div>
             </div>
           </div>
@@ -153,8 +153,8 @@ https://templatemo.com/tm-569-edu-meeting
       </div>
     </div>
     <div class="footer">
-      <p>Copyright © 2022 TSG Gymkhana Co., Ltd. All Rights Reserved. 
-          <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a></p>
+      <p>Copyright © 2022. All Rights Reserved. 
+          <!-- <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a></p> -->
     </div>
   </section>
 
