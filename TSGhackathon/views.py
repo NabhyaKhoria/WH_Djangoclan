@@ -7,6 +7,32 @@ from django.contrib import messages
 from django.conf import settings
 from event.models import *
 import openpyxl
+from datetime import date
+from django.utils import timezone
+
+
+
+# def base(request):
+#     studentWelfare = StudentWelfare.objects.all().order_by('date')
+#     student = []
+#     now = timezone.now()
+#     today = date.today()
+#     variable = 0
+#     for stud in studentWelfare:
+#         if stud.date >= today:
+#             student.append(stud)
+#             variable += 1
+#         if variable == 3:
+#             break
+
+#     context = {
+#         'studentWelfare': studentWelfare,
+#         'student': student,
+#     }
+#     return render(request, 'base.html', context)
+
+
+
 
 
 def home(request):
@@ -18,6 +44,8 @@ def base(request):
     technologys = Technology.objects.all()
     socials = Social.objects.all()
     sports = Sports.objects.all()
+    events=[]
+    events.append(studentWelfare)
 
     context = {
         'studentWelfare': studentWelfare,
