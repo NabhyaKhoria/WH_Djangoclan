@@ -87,3 +87,27 @@
 .today {
   background-color: #167e56;
 }
+
+.datum{
+  position: relative;
+}
+
+.eventCard{
+  display: none !important;
+}
+
+.eventCard__showEvent{
+  display: flex !important;
+  background-color: #A02C2F !important;
+  font-size: 1.5rem;
+  width: 300px !important;
+  height: fit-content !important;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  bottom: 5rem;
+  left: calc(-100px + 15.1rem/7);
+  padding: 1rem;
+  border-radius: 10px !important;
+}
