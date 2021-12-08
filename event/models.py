@@ -16,6 +16,7 @@ class Technology(models.Model):
             MaxValueValidator(31),
             MinValueValidator(1)
         ])
+    dates = models.DateField(null=True)
     type_of_events = [('soon','soon'), ('att','att'), ('imp','imp')]
     type_of_event = models.CharField(max_length=30, default='soon', choices = type_of_events)
     
@@ -50,6 +51,7 @@ class StudentWelfare(models.Model):
             MaxValueValidator(31),
             MinValueValidator(1)
         ])
+    dates = models.DateField(null=True)
     type_of_events = [('soon','soon'), ('att','att'), ('imp','imp')]
     type_of_event = models.CharField(max_length=30, default='soon', choices = type_of_events)
     
@@ -88,6 +90,7 @@ class Social(models.Model):
             MaxValueValidator(31),
             MinValueValidator(1)
         ])
+    dates = models.DateField(null=True)
     type_of_events = [('soon','soon'), ('att','att'), ('imp','imp')]
     type_of_event = models.CharField(max_length=30, default='soon', choices = type_of_events)
     
@@ -122,6 +125,7 @@ class Sports(models.Model):
             MaxValueValidator(31),
             MinValueValidator(1)
         ])
+    dates = models.DateField(null=True)
     type_of_events = [('soon','soon'), ('att','att'), ('imp','imp')]
     type_of_event = models.CharField(max_length=30, default='soon', choices = type_of_events)
     
