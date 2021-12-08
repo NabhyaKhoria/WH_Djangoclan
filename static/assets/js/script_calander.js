@@ -57,13 +57,13 @@ const renderCalendar = () => {
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
-      days += `<div class="today">${i}</div>`;
+      days += `<div class="today ${i}-${date.getMonth()+1}-${date.getFullYear()} datum">${i}</div>`;
     } else {
-      days += `<div>${i}</div>`;
+      days += `<div class="${i}-${date.getMonth()+1}-${date.getFullYear()} datum">${i}</div>`;
     }
   }
 
-  for (let j = 1; j <= nextDays; j++) {
+  for (let j = 1; j <= nextDays; j++) { 
     days += `<div class="next-date">${j}</div>`;
     monthDays.innerHTML = days;
   }
@@ -80,3 +80,55 @@ document.querySelector(".next").addEventListener("click", () => {
 });
 
 renderCalendar();
+
+
+// for(j=0;j<page.childElementCount;j++){
+  //   var d = page.children[j].options[0].value
+//   var cd = document.getElementsByClassName(d)
+//   var a =page.children[j].options[1].value
+
+//   cd[0].addEventListener('mouseover', () => {
+  //     console.log(cd[0]);
+  //     document.querySelector("#entry").innerText = a;
+  //   })
+  //   cd[0].addEventListener('mouseout', () => {
+    //     document.querySelector("#entry").innerHTML = "";
+    //   })
+    // }
+    
+  const dates = document.querySelectorAll(".datum");
+  var d = Array.from(document.getElementById("data-calendar").children);
+  dates.forEach(date => {
+    const i = d.findIndex(d => d.options[0].value===date.classList[0]);
+    if(i !== -1){
+      const eventCard = document.createElement("div");
+      eventCard.classList.add("eventCard");
+      eventCard.innerHTML = `
+        
+        <p style="color: white">${d[i].options[1].value}</p>
+      `;
+      date.appendChild(eventCard);
+
+      date.addEventListener('mouseover', () => {
+        eventCard.classList.add("eventCard__showEvent");
+        document.querySelector("#entry1").innerText = d[i].options[1].value;
+      })
+      date.addEventListener('mouseout', () => {
+        eventCard.classList.remove("eventCard__showEvent");
+        document.querySelector("#entry1").innerHTML = "";
+      })
+    }
+  })
+  // dates.forEach(el => {
+  //   el.addEventListener('mouseover', () => {
+  //     if(el.classList.contains(page.children[j].options[0].value)) {
+  //       document.querySelector(".notif").style.display = "block";
+  //       alert("adv")
+  //     }
+      
+  
+  //   })
+  //   el.addEventListener('mouseout', () => {
+  //     document.querySelector(".notif").style.display = "none";
+  //   })
+  // })
