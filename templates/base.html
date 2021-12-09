@@ -1283,6 +1283,17 @@ xsigin/signup popup
     
      
   </section>
+  
+<div id="data-calendar" style="display:none">
+{% for p in events %}
+
+<select class={{p.id}}>
+<option class="dates-{{p.date}}">{{p.date|date:'d-m-Y'}}</option>
+<option class="details-{{p.date}}" >{{p.description}}</option>
+</select>
+{% endfor %}
+</div>
+  
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
