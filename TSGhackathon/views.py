@@ -15,18 +15,18 @@ def home(request):
 
 def base(request):
     studentWelfare = StudentWelfare.objects.all().order_by('date')
-    technology = Technology.objects.all().order_by('date')
-    social = Social.objects.all().order_by('date')
+    technologys = Technology.objects.all().order_by('date')
+    socials = Social.objects.all().order_by('date')
     sports = Sports.objects.all()
 
     events = []
     for stud in studentWelfare:
         events.append(stud)
 
-    for stud in technology:
+    for stud in technologys:
         events.append(stud)
 
-    for stud in social:
+    for stud in socials:
         events.append(stud)
 
     for stud in sports:
