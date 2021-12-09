@@ -107,7 +107,7 @@ height: 323.24px;}
               <div class="col-12">
                   <nav class="main-nav">
                       <!-- ***** Logo Start ***** -->
-                      <a href="{% url 'base' %}" class="logo">
+                      <a href="{% url 'base' %}" class="logo" style="margin: 0px 7px;">
                           TSG Gymkhana
                       </a>
                       <!-- ***** Logo End ***** -->
@@ -192,12 +192,12 @@ height: 323.24px;}
               </div>
             </div> 
             <div class="col-lg-12">
-              <div class="pagination">
+              <div class="pagination" style="font-size: 20px;">
                 <ul>
                   {%if page_obj.has_previous %}
                   <a href="?page={{page_obj.previous_page_number}}"><</a> {# link to the prev page #}
                   {% endif %}
-                  <span style="color:white">{{page_obj.number}}</span> {# the current page number #}
+                  <span style="background: #949697c9; border-radius: 20px; color: #ffffff;padding: 3px 17px;">{{page_obj.number}}</span> {# the current page number #}
                   {%if page_obj.has_next %} {# whether the next page exists #}
                       <a href="?page={{page_obj.next_page_number}}">></a> {# link to the next page #}
                   {% endif %}
