@@ -8,52 +8,65 @@ from django.conf import settings
 from event.models import *
 import openpyxl
 from datetime import date
-from django.utils import timezone
-
-
-
-# def base(request):
-#     studentWelfare = StudentWelfare.objects.all().order_by('date')
-#     student = []
-#     now = timezone.now()
-#     today = date.today()
-#     variable = 0
-#     for stud in studentWelfare:
-#         if stud.date >= today:
-#             student.append(stud)
-#             variable += 1
-#         if variable == 3:
-#             break
-
-#     context = {
-#         'studentWelfare': studentWelfare,
-#         'student': student,
-#     }
-#     return render(request, 'base.html', context)
-
-
-
-
 
 def home(request):
     return render(request, 'nav.html')
 
 
 def base(request):
-    studentWelfare = StudentWelfare.objects.all()
-    technologys = Technology.objects.all()
-    socials = Social.objects.all()
+    studentWelfare = StudentWelfare.objects.all().order_by('date')
+    technology = Technology.objects.all().order_by('date')
+    social = Social.objects.all().order_by('date')
     sports = Sports.objects.all()
-    events=[]
-    events.append(studentWelfare)
+
+    events = []
+    for stud in studentWelfare:
+        events.append(stud)
+
+    for stud in technology:
+        events.append(stud)
+
+    for stud in social:
+        events.append(stud)
+
+    for stud in sports:
+        events.append(stud)
+        
+    now = date.today()
+    date_new = []
+    event2 = []
+    for event in events:
+        date_new.append(event.date)
+
+    date_new.sort()
+
+    for i in range(len(events)):
+        for stu in events:
+            if date_new[i] == stu.date:
+                event2.append(stu)
+                break
+            else:
+                pass
+
+    student = []
+    var_new = 0
+    for event in event2:
+        if event.date >= now:
+            student.append(event)
+            var_new += 1
+        if var_new == 3:
+            break
 
     context = {
+        'student': student,
+        'events': events,
         'studentWelfare': studentWelfare,
         'technologys':technologys,
         'socials':socials,
         'sports':sports,
     }
     return render(request, 'base.html', context)
+
 
 def login(request):
     if(request.method == 'POST'):
