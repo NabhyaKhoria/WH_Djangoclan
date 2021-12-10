@@ -3,4 +3,7 @@
 **/DB backup
 **/staticfiles
 **/media
-ftp/migrations*
+event/migrations*
+users/migrations*
+event/__pycache__*
+users/__pycache__*
