@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'event',
     'TSGhackathon',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,5 @@ EMAIL_USE_SSL = False
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'djangoclantsg@gmail.com'
 EMAIL_HOST_PASSWORD = 'Qwerty@123'
+
+AUTH_USER_MODEL = 'users.User'
