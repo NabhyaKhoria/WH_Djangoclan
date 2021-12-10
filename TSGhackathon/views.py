@@ -14,6 +14,11 @@ def home(request):
 
 
 def base(request):
+    if request.user.is_authenticated:
+        print(request.user)
+        print("USer Successfullyy logged in ")
+    else:
+        print("User Login Failed")
     studentWelfare = StudentWelfare.objects.all().order_by('date')
     technologys = Technology.objects.all().order_by('date')
     socials = Social.objects.all().order_by('date')
@@ -68,7 +73,7 @@ def base(request):
     return render(request, 'base.html', context)
 
 
-def login(request):
+def login1(request):
     if(request.method == 'POST'):
         OTP = ""
         email = request.POST['signin-email']
@@ -95,10 +100,43 @@ def login(request):
     else:
         return render(request,'base.html')
 
+
 def loginuser(request):
     if(request.method == 'POST'):
         email = request.POST['signin-email']
-        OTP=""
-        return render(request,'baselogin.html', {'email':email,'OTP':OTP})
+        OTP=request.POST['rotp']
+        gotp=request.POST['otp']
+        if OTP==gotp:
+            print("success")
+            # print(User.objects.get(email=request.POST.get("signin-email")))
+            # print(User.objects.get(email=email))
+            try :
+                a=User.objects.get(email=email)
+                print(a)
+                print("success101")
+                b=authenticate(username=email,password="1234")
+                print(b)
+                print('success103')
+                if b is not None:
+                    login(request, b)
+                    print('success104')
+                else:
+                    login(request, a)
+                    print('success105')
+            except:
+                print("success102")
+                user=User.objects.create(email=email)
+                user.save()
+
+                login(request, user)
+
+            if request.user.is_authenticated:
+                print('SUCCESS AGAIN')
+                return redirect('base')  
+                
+            
+            
+        else:
+            print("fail")
     else:
-        return render(request,'base.html')
+        return render(request,'base.html')  
