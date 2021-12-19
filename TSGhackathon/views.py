@@ -5,7 +5,9 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.contrib import messages
 from django.conf import settings
+from django.contrib.auth import get_user_model, login, authenticate, logout
 from event.models import *
+from .models import *
 import openpyxl
 from datetime import date
 
@@ -14,11 +16,7 @@ def home(request):
 
 
 def base(request):
-    if request.user.is_authenticated:
-        print(request.user)
-        print("USer Successfullyy logged in ")
-    else:
-        print("User Login Failed")
+    
     studentWelfare = StudentWelfare.objects.all().order_by('date')
     technologys = Technology.objects.all().order_by('date')
     socials = Social.objects.all().order_by('date')
@@ -56,21 +54,44 @@ def base(request):
     student = []
     var_new = 0
     for event in event2:
-        if event.date >= now:
+        if event.date >= now and date_new[var_new]==event.date:
             student.append(event)
             var_new += 1
         if var_new == 3:
             break
-
-    context = {
+    if request.user.is_authenticated:
+        print(request.user)
+        P=Profile.objects.get(username=request.user)
+        print("USer Successfullyy logged in ")
+        print("USername= "+ str(request.user)+"has fullname ="+str(P.fullname) )
+        print(P.fullname)
+        context = {
         'student': student,
         'events': events,
         'studentWelfare': studentWelfare,
         'technologys':technologys,
         'socials':socials,
         'sports':sports,
-    }
-    return render(request, 'base.html', context)
+        'user' :request.user,
+        'profile':P
+
+        }
+        return render(request, 'base.html', context)
+    else:
+        print(request.user)
+        print("User Login Failed")
+        context = {
+        'student': student,
+        'events': events,
+        'studentWelfare': studentWelfare,
+        'technologys':technologys,
+        'socials':socials,
+        'sports':sports,
+        'user' :request.user,
+
+        }
+        return render(request, 'base.html', context)
+    
 
 
 def login1(request):
@@ -104,9 +125,19 @@ def login1(request):
 def loginuser(request):
     if(request.method == 'POST'):
         email = request.POST['signin-email']
+        fname=""
+        rollno=""
         OTP=request.POST['rotp']
         gotp=request.POST['otp']
         if OTP==gotp:
+            wb_obj = openpyxl.load_workbook("media\student\Student Data.xlsx")
+            sheet_obj = wb_obj.active
+            for j in range(3,sheet_obj.max_row+1):
+                cell_obj = sheet_obj.cell(row = j, column = 1)
+                if cell_obj.value==email:
+                    fname=sheet_obj.cell(row = j, column = 2).value
+                    rollno=sheet_obj.cell(row = j, column = 3).value
+            
             print("success")
             # print(User.objects.get(email=request.POST.get("signin-email")))
             # print(User.objects.get(email=email))
@@ -114,21 +145,18 @@ def loginuser(request):
                 a=User.objects.get(email=email)
                 print(a)
                 print("success101")
-                b=authenticate(username=email,password="1234")
-                print(b)
                 print('success103')
-                if b is not None:
-                    login(request, b)
-                    print('success104')
-                else:
-                    login(request, a)
-                    print('success105')
+                login(request, a)
+                print('success105')
+
             except:
                 print("success102")
                 user=User.objects.create(email=email)
                 user.save()
-
                 login(request, user)
+                profile=Profile.objects.create(username=user,fullname=fname,rollno=rollno )
+                profile.save()
+
 
             if request.user.is_authenticated:
                 print('SUCCESS AGAIN')
@@ -140,3 +168,6 @@ def loginuser(request):
             print("fail")
     else:
         return render(request,'base.html')  
+
+def student(request):
+    return render(request,'student.html')

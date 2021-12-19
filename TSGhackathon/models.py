@@ -2,6 +2,7 @@ import uuid
 
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from users.models import *
 
 Role = (
     ('Admin','ADMIN'),
@@ -15,7 +16,7 @@ class Society(models.Model):
 
 
 class Profile(models.Model):
-    email = models.CharField(max_length=250, null=True)
+    username = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     fullname = models.CharField(max_length=250, null=True)
     rollno = models.CharField(max_length=10, null=True)
     role = models.CharField(max_length=30, choices=Role, default='Student')

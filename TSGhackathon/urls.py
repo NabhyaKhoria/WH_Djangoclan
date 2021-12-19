@@ -25,7 +25,7 @@ urlpatterns = [
     path('loginuser/',views.loginuser, name='loginuser'),
     path('',views.base, name="base"),
     path('event/', include('event.urls', namespace='event'), name='event'),
-    #path('register/',views.register, name="register"),
+    path('student/',views.student, name="student"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

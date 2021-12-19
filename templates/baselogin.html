@@ -444,17 +444,18 @@ xsigin/signup popup
       <form class="cd-form" action="{% url 'loginuser' %}" method="POST">
         {% csrf_token %}
         <p class="fieldset">
-          <label class="image-replace cd-email" for="signin-email">E-mail</label>
+          <label class="image-replace cd-email" for="signin-email" disable>E-mail</label>
           <input class="full-width has-padding has-border" id="signin-email" name="signin-email" type="email" placeholder="E-mail" value="{{email}}">
           <span class="cd-error-message">Error message here!</span>
         </p>
         {% if val %}
         <p class="fieldset"  id="otp">
           <label class="image-replace cd-password" for="signin-password">OTP</label>
-          <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="OTP" required>
+          <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="OTP" name="otp" required>
           <!-- <a href="#0" class="hide-password">Hide</a> -->
           <!-- <span class="cd-error-message">Error message here!</span> -->
         </p>
+        <input style="display:none" name="rotp" value={{OTP}}>
         {% else %}
         <span>Email id not valid</span>
         {% endif %}
