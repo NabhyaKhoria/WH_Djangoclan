@@ -473,7 +473,7 @@ xsigin/signup popup
               {% if user.is_authenticated %}
               <nav>
                 <ul>
-                  <li><a href="{% url 'student' %}"><img id="userimg" data-hex={{profile.fullname}}> </a></li>
+                  <li><a href="{% url 'student' %}"><img id="userimg" data-hex={{profile.fullname}} style="border-radius: 35px; width: 30px;"> </a></li>
                 </ul>
               </nav>
               {% else %}
