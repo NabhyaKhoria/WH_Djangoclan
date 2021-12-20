@@ -1453,8 +1453,7 @@ section.contact-us .right-info ul li span {
 /*
 ---------------------------------------------
 heading page
----------------------------------------------
-*/
+
 
 section.heading-page {
   background-image: url(../images/heading-bg.jpg);
@@ -1484,6 +1483,8 @@ section.heading-page h2 {
   color: #fff;
   letter-spacing: 1px;
 }
+---------------------------------------------
+*/
 
 
 /*
