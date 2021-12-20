@@ -89,7 +89,20 @@ height: 346.24px;}
 height: 323.24px;}
 }
 
-
+#pageee{
+  background:#ffffff ;
+  border-radius: 20px;
+  color: #a12c2f;
+  padding: 3px 17px;
+  font-size: 1.5rem;
+}
+#pageee:hover{
+  background: #a12c2f;
+  border-radius: 20px;
+  color: #ffffff;
+  padding: 3px 17px;
+  font-size: 1.5rem;
+}
 </style>
   </head>
 
@@ -197,7 +210,7 @@ height: 323.24px;}
                   {%if page_obj.has_previous %}
                   <a href="?page={{page_obj.previous_page_number}}"><</a> {# link to the prev page #}
                   {% endif %}
-                  <span style="background: #949697c9; border-radius: 20px; color: #ffffff;padding: 3px 17px;">{{page_obj.number}}</span> {# the current page number #}
+                  <span id="pageee">{{page_obj.number}}</span> {# the current page number #}
                   {%if page_obj.has_next %} {# whether the next page exists #}
                       <a href="?page={{page_obj.next_page_number}}">></a> {# link to the next page #}
                   {% endif %}
