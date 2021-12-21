@@ -11,6 +11,8 @@ from .models import *
 import openpyxl
 from datetime import date
 
+from django.core.paginator import PageNotAnInteger, Paginator
+
 def home(request):
     return render(request, 'nav.html')
 
@@ -170,4 +172,19 @@ def loginuser(request):
         return render(request,'base.html')  
 
 def student(request):
-    return render(request,'student.html')
+    achivement=Achivement.objects.all()
+    p=Paginator(achivement, 6) # creating paginator objects
+    # getting the desired page number from url
+    page_number = request.GET.get('page')
+    try:
+        page_obj = p.get_page(page_number) # returns desired page object
+    except PageNotAnInteger:
+        # if page_number is not an integer then assign the first page
+        page_obj=p.page(1)
+    except EmptyPage:
+        # if page is empty then return last page
+        page_obj = p.page(p.num_pages)
+    context={
+        'page_obj': page_obj,
+    }
+    return render(request,'student.html',context)

@@ -14,7 +14,7 @@ def eventhome(request):
 def technology(request):
     technology = Technology.objects.all()
     # context = {
-    #     'technology': technology,
+    #     'technology': technology, 
     # }
     p=Paginator(technology, 6) # creating paginator objects
     # getting the desired page number from url
