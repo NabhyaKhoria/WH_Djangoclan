@@ -199,3 +199,7 @@ def student(request):
         'Others': o,
     }
     return render(request,'student.html',context)
+
+def out(request):
+    logout(request)
+    return redirect('base')

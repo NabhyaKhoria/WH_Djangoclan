@@ -458,7 +458,7 @@ xsigin/signup popup
               <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
 
               <li class="scroll-to-section"><a href="#apply">Apply Now</a></li>
-              <li class="has-sub">
+              <li class="has-sub drop">
                 <a href="javascript:void(0)">Events</a>
                 <ul class="sub-menu">
                   <li><a href="{% url 'event:technology' %}">Technology</a></li>
@@ -474,7 +474,16 @@ xsigin/signup popup
               {% if user.is_authenticated %}
               <nav>
                 <ul>
-                  <li><a href="{% url 'student' %}"><img id="userimg" data-hex={{profile.fullname}} style="border-radius: 35px; width: 50px;"> </a></li>
+                  <div>
+                    <li class="has-sub">
+                      <a href="{% url 'student' %}"><img id="userimg" data-hex={{profile.fullname}} style="border-radius: 35px; width: 50px;"> </a>
+                      <ul class="sub-menu">
+                        <li><a href="{% url 'student' %}">Achivements</a></li>
+                        <li><a href="{% url 'base' %}">Grivience</a></li>
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                      </ul>
+                    </li>
+                  </div>
                 </ul>
               </nav>
               {% else %}
