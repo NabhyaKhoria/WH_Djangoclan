@@ -3,6 +3,7 @@
 **/DB backup
 **/staticfiles
 **/media
+TSGhackathon/TSGhackathon/__pycache__*
 event/migrations*
 users/migrations*
 event/__pycache__*
