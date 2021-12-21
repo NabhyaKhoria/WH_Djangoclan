@@ -173,7 +173,13 @@ def loginuser(request):
 
 def student(request):
     achivement=Achivement.objects.all()
-    p=Paginator(achivement, 6) # creating paginator objects
+    t=Achivement.objects.filter(category='Technology')
+    sc=Achivement.objects.filter(category='Social_Culture')
+    sg=Achivement.objects.filter(category='Sports_Games')
+    sw=Achivement.objects.filter(category='Social_Welfare')
+    o=Achivement.objects.filter(category='Others')
+    
+    p=Paginator(t, 6) # creating paginator objects
     # getting the desired page number from url
     page_number = request.GET.get('page')
     try:
@@ -186,5 +192,10 @@ def student(request):
         page_obj = p.page(p.num_pages)
     context={
         'page_obj': page_obj,
+        'Technology': t,
+        'Social_Culture': sw,
+        'Sports_Games': sg,
+        'Student_Welfare': sw,
+        'Others': o,
     }
     return render(request,'student.html',context)

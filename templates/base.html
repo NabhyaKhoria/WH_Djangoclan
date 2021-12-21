@@ -474,7 +474,7 @@ xsigin/signup popup
               {% if user.is_authenticated %}
               <nav>
                 <ul>
-                  <li><a href="{% url 'student' %}"><img id="userimg" data-hex={{profile.fullname}} style="border-radius: 35px; width: 30px;"> </a></li>
+                  <li><a href="{% url 'student' %}"><img id="userimg" data-hex={{profile.fullname}} style="border-radius: 35px; width: 50px;"> </a></li>
                 </ul>
               </nav>
               {% else %}
@@ -502,7 +502,7 @@ xsigin/signup popup
     var img = document.getElementById('userimg')
     var name = img.dataset.hex
     console.log(name)
-    img.src = `https://ui-avatars.com/api/?name=${name}`
+    img.src = `https://ui-avatars.com/api/?name=${name} &bold=true`
   </script>
   <!-- modal -->
   <div class="cd-user-modal">

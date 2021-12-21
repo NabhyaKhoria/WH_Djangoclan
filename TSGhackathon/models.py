@@ -13,9 +13,9 @@ Role = (
 
 Category = (
     ('Technology','Technology'),
-    ('Social-Culture','Social-Culture'),
-    ('Sports-Games','Sports-Games'),
-    ('Student Welfare','Student-Welfare'),
+    ('Social_Culture','Social_Culture'),
+    ('Sports_Games','Sports_Games'),
+    ('Student_Welfare','Student_Welfare'),
     ('Others','Others'),
 )
     
