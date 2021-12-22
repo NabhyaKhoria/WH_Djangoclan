@@ -1832,3 +1832,10 @@ responsive
   }
 
 }
+
+.owl-icon img{
+  width: 60% !important;
+  overflow: hidden;
+  padding:  1rem 0.5rem 0.5rem 0.5rem;
+
+}

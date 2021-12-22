@@ -650,56 +650,28 @@ xsigin/signup popup
       <div class="row">
         <div class="col-lg-12">
           <div class="owl-service-item owl-carousel">
-
-            <div class="item">
-              <div class="icon">
-                <img src="{% static 'assets/images/service-icon-01.png' %}" alt="">
+            {% for eve in event2 %}
+            <div class="meeting-item">
+              <div class="thumb">
+                
+                <a href="meeting-details.html"><img class="owl-img" src="{{eve.image.url}}"
+                    alt="New Lecturer Meeting"></a>
               </div>
               <div class="down-content">
-                <h4>Best Education</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <div class="date">
+                  <h6>{{eve.date}}</h6>
+                  <a class="owl-icon" href="{{eve.facebook}}">
+                    <img src="{% static 'assets/images/facebook.png' %}" alt="">
+                  </a>
+                </div>
+                <a href="meeting-details.html">
+                  <h4>{{eve.name}}</h4>
+                </a>
+                <p>{{eve.small_description}}</p>
               </div>
             </div>
-
-            <div class="item">
-              <div class="icon">
-                <img src="{% static 'assets/images/service-icon-02.png' %}" alt="">
-              </div>
-              <div class="down-content">
-                <h4>Best Teachers</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="icon">
-                <img src="{% static 'assets/images/service-icon-03.png' %}" alt="">
-              </div>
-              <div class="down-content">
-                <h4>Best Students</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="icon">
-                <img src="{% static 'assets/images/service-icon-02.png' %}" alt="">
-              </div>
-              <div class="down-content">
-                <h4>Online Meeting</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="icon">
-                <img src="{% static 'assets/images/service-icon-03.png' %}" alt="">
-              </div>
-              <div class="down-content">
-                <h4>Best Networking</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
-              </div>
-            </div>
+            {% endfor%}
+            
 
           </div>
         </div>
@@ -709,6 +681,7 @@ xsigin/signup popup
 
   <section class="upcoming-meetings" id="meetings">
     <div class="container">
+      <br><br><br><br><br><br>
       <div class="row">
         <div class="col-lg-12">
           <div class="section-heading">
