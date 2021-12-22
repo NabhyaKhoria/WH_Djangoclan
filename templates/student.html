@@ -193,18 +193,18 @@ height: 323.24px;}
               <div class="filters">
                 <ul>
                   
-                  <li data-filter=".soon" class="ss">Technology</li>
-                  <li data-filter=".imp" class="ss">Social & Culture</li>
-                  <li data-filter=".att" class="ss">Sports and Games</li>
-                  <li data-filter=".imp" class="ss">Students Welfare</li>
-                  <li data-filter=".att" class="ss">Others</li>
+                  <li data-filter=".tech" class="ss">Technology</li>
+                  <li data-filter=".soc" class="ss">Social & Culture</li>
+                  <li data-filter=".spg" class="ss">Sports and Games</li>
+                  <li data-filter=".stw" class="ss">Students Welfare</li>
+                  <li data-filter=".ot" class="ss">Others</li>
                 </ul>
               </div>
             </div>
 
             <div class="col-lg-12">
               <div class="row grid">
-                {% for t in page_obj1.object_list %}
+                {% for t in page_obj.object_list %}
                 <div class="col-lg-4 templatemo-item-col all {{t.type_of_event}}" style="position:relative; top:0;">
                   <div class="meeting-item">
                     <div class="thumb">

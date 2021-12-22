@@ -35,10 +35,13 @@ class Profile(models.Model):
 
 
 class Achivement(models.Model):
-    profile = models.OneToOneField(Profile, on_delete=models.CASCADE, null=True, blank=True)
+    id = models.AutoField(primary_key=True)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True, blank=True)
     category = models.CharField(max_length=30, choices=Category, default='Technology')
-    photo = models.FileField(null=True, blank=True)
+    image = models.ImageField(upload_to='student/')
     name = models.CharField(max_length=250, null=True)
+    type_of_events = [('tech','tech'), ('soc','soc'), ('spg','spg'), ('stw','stw'), ('ot','ot')]
+    type_of_event = models.CharField(max_length=30, default='tech', choices = type_of_events)
 
     def __str__(self):
         return str(self.category) + str(' | ') + self.name

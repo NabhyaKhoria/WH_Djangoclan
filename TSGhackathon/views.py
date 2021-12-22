@@ -47,7 +47,7 @@ def base(request):
 
     for i in range(len(events)):
         for stu in events:
-            if date_new[i] == stu.date:
+            if date_new[i] == stu.date and stu.date >= now:
                 event2.append(stu)
                 break
             else:
@@ -56,7 +56,7 @@ def base(request):
     student = []
     var_new = 0
     for event in event2:
-        if event.date >= now and date_new[var_new]==event.date:
+        if event.date >= now:
             student.append(event)
             var_new += 1
         if var_new == 3:
@@ -75,7 +75,8 @@ def base(request):
         'socials':socials,
         'sports':sports,
         'user' :request.user,
-        'profile':P
+        'profile':P,
+        'event2':event2
 
         }
         return render(request, 'base.html', context)
@@ -90,6 +91,7 @@ def base(request):
         'socials':socials,
         'sports':sports,
         'user' :request.user,
+        'event2':event2
 
         }
         return render(request, 'base.html', context)
@@ -179,7 +181,7 @@ def student(request):
     sw=Achivement.objects.filter(category='Social_Welfare')
     o=Achivement.objects.filter(category='Others')
     
-    p=Paginator(t, 6) # creating paginator objects
+    p=Paginator(achivement, 6) # creating paginator objects
     # getting the desired page number from url
     page_number = request.GET.get('page')
     try:
