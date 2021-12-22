@@ -1,0 +1,549 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Education - List of Meetings</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-edu-meeting.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css'%}">
+<!--
+
+TemplateMo 569 Edu Meeting
+
+https://templatemo.com/tm-569-edu-meeting
+
+-->
+<style> 
+  section.heading-page.header-text{
+    background-image: url(http://127.0.0.1:8000/static/assets/images/welfare-5.jpg);
+    background-color: #cccccc;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 230px;
+    padding-bottom: 130px;
+    text-align: center;
+  }
+
+  section.heading-page h6 {
+    margin-top: 0px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  section.heading-page h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  
+  img{
+    width: 385.2px;
+    height: 346.24px;
+  }
+
+  @media only screen and (min-width: 279px) and (max-width: 380px){
+    section.meetings-page .filters li{
+
+      margin-bottom: 0.5rem;
+    width: 11.45rem;
+    }
+    section.meetings-page .filters ul li:hover{
+
+      margin-bottom: 0.5rem;
+    width: 11.45rem;
+    }
+  
+  }
+
+  @media only screen and (min-width: 279px) and (max-width: 281px){
+    .header-area .main-nav .logo{
+      font-size:1.2rem;
+    }
+    img{
+      width:100%
+    }
+  }
+
+  @media only screen and (min-width: 410px) and (max-width: 541px){
+    
+    ul, li 
+    {
+      padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    }
+  }
+
+  #pageee{
+    background:#ffffff ;
+    border-radius: 20px;
+    color: #a12c2f;
+    padding: 3px 17px;
+    font-size: 1.5rem;
+  }
+  #pageee:hover{
+    background: #a12c2f;
+    border-radius: 20px;
+    color: #ffffff;
+    padding: 3px 17px;
+    font-size: 1.5rem;
+  }
+</style>
+  </head>
+
+<body>
+
+   
+
+  <!-- Sub Header -->
+  
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky" style="top:0px;">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="{% url 'base' %}" class="logo">
+                        TSG Gymkhana
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li><a href="{% url 'base' %}">Home</a></li>
+                          
+                          <li><a href="{% url 'base' %}">Apply Now</a></li>
+                          <li class="has-sub">
+                              <a href="javascript:void(0)">Events</a>
+                              <ul class="sub-menu">
+                                <li><a href = "{% url 'event:technology' %}">Technology</a></li>
+                                <li><a href="{% url 'event:social' %}">Social and Culture</a></li>
+                                <li><a href="{% url 'event:SportsAndGames' %}">Sports and Games</a></li>
+                                <li><a href="{% url 'event:studentWelfare' %} ">Students’ Welfare</a></li>
+                                <li><a href="{% url 'event:result' %} ">Results</a></li>
+                              </ul>
+                          </li>
+                          <li><a href="{% url 'base' %}">Courses</a></li> 
+                          <li><a href="{% url 'base' %}">Contact Us</a></li> 
+                      </ul>        
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          
+          <h1>Students’ Welfare Events</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="filters">
+                <ul>
+                  
+                  <li data-filter=".soon">Upcoming Events</li>
+                  <li data-filter=".imp">Ongoing events</li>
+                  <li data-filter=".att">Past events</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div class="row grid">
+                {% for t in page_obj.object_list %}
+                <div class="col-lg-4 templatemo-item-col all {{t.type_of_event}}">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        
+                      </div>
+                      <a href="{% url 'event:studentWelfare' t.name %}"><img style="width:385.2px; height: 346.68px;" src="{{t.image.url}}" /></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="date">
+                        <h6>{{t.month_of_event}}<span>{{t.date}}</span></h6>
+                      </div>
+                      <a href="meeting-details.html"><h4>{{t.name}}</h4></a>
+                      <p>{{t.small_description}}</p>
+                    </div>
+                  </div>
+                </div>
+{% endfor %}
+                {% comment %} <div class="col-lg-4 templatemo-item-col all imp">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$22.00</span>
+                      </div>
+                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-02.jpg' %}" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="date">
+                        <h6>Nov <span>14</span></h6>
+                      </div>
+                      <a href="meeting-details.html"><h4>Online Teaching Techniques</h4></a>
+                      <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 templatemo-item-col all soon">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$24.00</span>
+                      </div>
+                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-03.jpg' %}" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="date">
+                        <h6>Nov <span>16</span></h6>
+                      </div>
+                      <a href="meeting-details.html"><h4>Network Teaching Concept</h4></a>
+                      <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 templatemo-item-col all att">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$32.00</span>
+                      </div>
+                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-04.jpg'%}" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="date">
+                        <h6>Nov <span>18</span></h6>
+                      </div>
+                      <a href="meeting-details.html"><h4>Online Teaching Tools</h4></a>
+                      <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 templatemo-item-col all att">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$34.00</span>
+                      </div>
+                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-04.jpg'%}" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="date">
+                        <h6>Nov <span>22</span></h6>
+                      </div>
+                      <a href="meeting-details.html"><h4>New Teaching Techniques</h4></a>
+                      <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 templatemo-item-col all imp">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$45.00</span>
+                      </div>
+                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-04.jpg'%}" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="date">
+                        <h6>Nov <span>24</span></h6>
+                      </div>
+                      <a href="meeting-details.html"><h4>Technology Conference</h4></a>
+                      <p>TemplateMo is the best website<br>when it comes to Free CSS.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 templatemo-item-col all imp att">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$52.00</span>
+                      </div>
+                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-04.jpg'%}" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="date">
+                        <h6>Nov <span>27</span></h6>
+                      </div>
+                      <a href="meeting-details.html"><h4>Online Teaching Techniques</h4></a>
+                      <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 templatemo-item-col all soon imp">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$64.00</span>
+                      </div>
+                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-04.jpg'%}" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="date">
+                        <h6>Nov <span>28</span></h6>
+                      </div>
+                      <a href="meeting-details.html"><h4>Instant Lecture Design</h4></a>
+                      <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 templatemo-item-col all att soon">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$74.00</span>
+                      </div>
+                      <a href="meeting-details.html"><img src="{%static 'assets/images/meeting-04.jpg'%}" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="date">
+                        <h6>Nov <span>30</span></h6>
+                      </div>
+                      <a href="meeting-details.html"><h4>Online Social Networking</h4></a>
+                      <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                    </div>
+                  </div>
+                  {% endcomment %}
+                </div>
+              </div>
+            </div> 
+            <div class="col-lg-12">
+              <div class="pagination">
+                <ul>
+                  {%if page_obj.has_previous %}
+                  <a href="?page={{page_obj.previous_page_number}}"><</a> {# link to the prev page #}
+                  {% endif %}
+                  <span id="pageee">{{page_obj.number}}</span> {# the current page number #}
+                  {%if page_obj.has_next %} {# whether the next page exists #}
+                      <a href="?page={{page_obj.next_page_number}}">></a> {# link to the next page #}
+                  {% endif %}
+                  <!-- <li class="active"><a href="#">1</a></li>
+                  <li ><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#"><i class="fa fa-angle-right"></i></a></li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Start Footer -->
+    <footer class="bg-secondary pt-4">
+
+      <div class="container">
+       <div class="row py-4">
+
+           <div class="col-lg-3 col-12 align-left">
+               <a class="navbar-brand" href="index.html">
+                   <i class="bx bx-buildings bx-sm text-light"></i>
+                   <span class="text-light h5">Purple</span> <span class="text-light h5 semi-bold-600">Buzz</span>
+               </a>
+               <p class="text-light my-lg-4 my-2">
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                   sed do eiusmod tempor incididunt ut.
+               </p>
+               <ul class="list-inline footer-icons light-300">
+                   <li class="list-inline-item m-0">
+                       <a class="text-light" target="_blank" href="http://facebook.com/">
+                           <i class="bx bxl-facebook-square bx-md"></i>
+                       </a>
+                   </li>
+                   <li class="list-inline-item m-0">
+                       <a class="text-light" target="_blank" href="https://www.linkedin.com/">
+                           <i class="bx bxl-linkedin-square bx-md"></i>
+                       </a>
+                   </li>
+                   <li class="list-inline-item m-0">
+                       <a class="text-light" target="_blank" href="https://www.whatsapp.com/">
+                           <i class="bx bxl-whatsapp-square bx-md"></i>
+                       </a>
+                   </li>
+                   <li class="list-inline-item m-0">
+                       <a class="text-light" target="_blank" href="https://www.flickr.com/">
+                           <i class="bx bxl-flickr-square bx-md"></i>
+                       </a>
+                   </li>
+                   <li class="list-inline-item m-0">
+                       <a class="text-light" target="_blank" href="https://www.medium.com/">
+                           <i class="bx bxl-medium-square bx-md"></i>
+                       </a>
+                   </li>
+               </ul>
+           </div>
+
+           <div class="col-lg-3 col-md-4 my-sm-0 mt-4">
+               <h3 class="h4 pb-lg-3 text-light light-300">Our Company</h3>
+                   <ul class="list-unstyled text-light light-300">
+                       <li class="pb-2">
+                           <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light" href="index.html">Home</a>
+                       </li>
+                       <li class="pb-2">
+                           <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="about.html">About Us</a>
+                       </li>
+                       <li class="pb-2">
+                           <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="work.html">Work</a>
+                       </li>
+                       <li class="pb-2">
+                           <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="pricing.html">Price</a>
+                       </li>
+                       <li class="pb-2">
+                           <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="contact.html">Contact</a>
+                       </li>
+                   </ul>
+           </div>
+
+           <div class="col-lg-3 col-md-4 my-sm-0 mt-4">
+               <h2 class="h4 pb-lg-3 text-light light-300">Our Works</h2>
+               <ul class="list-unstyled text-light light-300">
+                   <li class="pb-2">
+                       <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="#">Branding</a>
+                   </li>
+                   <li class="pb-2">
+                       <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="#">Business</a>
+                   </li>
+                   <li class="pb-2">
+                       <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="#">Marketing</a>
+                   </li>
+                   <li class="pb-2">
+                       <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="#">Social Media</a>
+                   </li>
+                   <li class="pb-2">
+                       <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="#">Digital Solution</a>
+                   </li>
+                   <li class="pb-2">
+                       <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="#">Graphic</a>
+                   </li>
+               </ul>
+           </div>
+
+           <div class="col-lg-3 col-md-4 my-sm-0 mt-4">
+               <h2 class="h4 pb-lg-3 text-light light-300">For Client</h2>
+                
+               <ul class="list-unstyled text-light light-300">
+                   <li class="pb-2">
+                       <i class="bx-fw bx bx-phone bx-xs"></i><a class="text-decoration-none text-light py-1" href="tel:010-020-0340">010-020-0340</a>
+                   </li>
+                   <li class="pb-2">
+                       <i class="bx-fw bx bx-mail-send bx-xs"></i><a class="text-decoration-none text-light py-1" href="mailto:info@company.com">info@company.com</a>
+                   </li>
+               </ul>
+           </div>
+
+       </div>
+   </div>
+
+    
+
+  </footer>
+  <!-- End Footer -->
+  </section>
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'assets/js/isotope.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+    <script src="{%static 'assets/js/lightbox.js' %}"></script>
+    <script src="{% static 'assets/js/tabs.js'%}"></script>
+    <script src="{% static 'assets/js/isotope.js'%}"></script>
+    <script src="{%static 'assets/js/video.js'%}"></script>
+    <script src="{% static 'assets/js/slick-slider.js'%}"></script>
+    <script src="{% static 'assets/js/custom.js'%}"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+          e.preventDefault();
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+    </script>
+</body>
+
+
+  </body>
+
+</html>
