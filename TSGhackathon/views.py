@@ -179,7 +179,7 @@ def student(request):
     sw=Achivement.objects.filter(category='Social_Welfare')
     o=Achivement.objects.filter(category='Others')
     
-    p=Paginator(t, 6) # creating paginator objects
+    p=Paginator(achivement, 6) # creating paginator objects
     # getting the desired page number from url
     page_number = request.GET.get('page')
     try:
