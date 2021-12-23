@@ -5,6 +5,10 @@ from event.models import *
 from django.core.paginator import PageNotAnInteger, Paginator
 # Create your views here.
 
+def interIIT(request):
+    context = {
+    }
+    return render(request, 'results/tables-data.html', context)
 
 def eventhome(request):
     context = {
