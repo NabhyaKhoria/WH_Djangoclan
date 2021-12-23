@@ -27,4 +27,6 @@ urlpatterns = [
     path('SportsandGames/<name>', views.sports_details, name='sports'),
     path('Results', views.result, name='result'),
     path('interIIT', views.interIIT, name='interIIT'),
+    path('interIIT-Technology', views.interIITtechnology,name='interIIT-Technology'),
+    path('interIITSocult', views.interIITsocult, name='interIIT-socult'),
 ]
