@@ -22,6 +22,12 @@ def interIITtechnology(request):
     }
     return render(request, 'results/inter-IIT-technology.html', context)
 
+
+def GCTechnology(request):
+    context = {
+    }
+    return render(request, 'results/charts-chartjs.html', context)
+
 def eventhome(request):
     context = {
     }
