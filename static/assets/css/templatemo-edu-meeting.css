@@ -982,7 +982,7 @@ section.upcoming-meetings .categories .main-button-red a {
 }
 
 .meeting-item .down-content .date {
-  float: left;
+  /* float: left; */
   text-align: center;
   display: inline-block;
   margin-right: 20px;

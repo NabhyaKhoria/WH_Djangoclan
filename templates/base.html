@@ -436,6 +436,25 @@ xsigin/signup popup
     #cd-reset-password.is-selected {
       display: block;
     }
+
+    #TSG_logo {
+      width: 10%;
+    }
+    @media screen and (max-width: 767px) {
+      #TSG_span {
+        display: none;
+      }
+
+      #TSG_logo {
+        width: 20%;
+      }
+
+      .logo {
+        text-align: left;
+      }
+    }
+      
+
   </style>
 </head>
 
@@ -450,7 +469,8 @@ xsigin/signup popup
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
             <a href="index.html" class="logo">
-              TSG Gymkhana
+              <img src="{% static 'TSG Logo.png' %}" alt="TSG Logo" id="TSG_logo">
+              <span id="TSG_span" >Technology Students' Gymkhana</span>
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
