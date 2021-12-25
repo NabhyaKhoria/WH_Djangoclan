@@ -50,6 +50,13 @@
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
+    <div class="nav-link nav-profile d-flex align-items-center pe-0">
+      <a href="{% url 'base' %}" class="logo d-flex align-items-center">
+        
+        <span class="d-none d-lg-block">Back</span>
+      </a>
+      
+    </div>
     
 
     
@@ -75,12 +82,12 @@
         </a>
         <ul id="charts-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="charts-chartjs.html" class="active">
+            <a href="#2018-2019" class="active">
               <i class="bi bi-circle"></i><span>2018-2019</span>
             </a>
           </li>
           <li>
-            <a href="charts-apexcharts.html">
+            <a href="#2017-2018">
               <i class="bi bi-circle"></i><span>2017-2018</span>
             </a>
           </li>
@@ -89,17 +96,17 @@
       </li><!-- End Charts Nav -->
       
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed"  href="{% url 'event:GCSocult' %}">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Socult</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="charts-chartjs.html" class="active">
+            <a href="#2018-2019" class="active">
               <i class="bi bi-circle"></i><span>2018-2019</span>
             </a>
           </li>
           <li>
-            <a href="charts-apexcharts.html">
+            <a href="#2017-2018">
               <i class="bi bi-circle"></i><span>2017-2018</span>
             </a>
           </li>
@@ -115,7 +122,7 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1 style="font-size:50px;">2019-2020</h1>
+      <h1 style="font-size:50px;" id ="2018-2019">2018-2019</h1>
       
     </div><!-- End Page Title -->
 
@@ -185,62 +192,80 @@
 
 
 
+        
+        
+      </div>
+    </section>
+
+
+
+    <div class="pagetitle">
+      <h1 style="font-size:50px;" id="2017-2018">2017-2018</h1>
+      
+    </div><!-- End Page Title -->
+
+
+    <section class="section">
+      <div class="row">
+
+        
+                      
+
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Stacked Bar Chart</h5>
 
               <!-- Stacked Bar Chart -->
-              <canvas id="stakedBarChart" style="max-height: 400px;"></canvas>
+              <canvas id="myChart" width="400" height="400"></canvas>
               <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                  new Chart(document.querySelector('#stakedBarChart'), {
-                    type: 'bar',
-                    data: {
-                      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                      datasets: [{
-                          label: 'Dataset 1',
-                          data: [-75, -15, 18, 48, 74],
-                          backgroundColor: 'rgb(255, 99, 132)',
-                        },
-                        {
-                          label: 'Dataset 2',
-                          data: [-11, -1, 12, 62, 95],
-                          backgroundColor: 'rgb(75, 192, 192)',
-                        },
-                        {
-                          label: 'Dataset 3',
-                          data: [-44, -5, 22, 35, 62],
-                          backgroundColor: 'rgb(255, 205, 86)',
-                        },
-                      ]
-                    },
-                    options: {
-                      plugins: {
-                        title: {
-                          display: true,
-                          text: 'Chart.js Bar Chart - Stacked'
-                        },
-                      },
-                      responsive: true,
-                      scales: {
-                        x: {
-                          stacked: true,
-                        },
-                        y: {
-                          stacked: true
-                        }
-                      }
-                    }
-                  });
-                });
-              </script>
+const ctx = document.getElementById('myChart');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+              
               <!-- End Stacked Bar Chart -->
 
             </div>
           </div>
         </div>
 
+
+
+
+        
         
       </div>
     </section>

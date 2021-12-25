@@ -30,4 +30,5 @@ urlpatterns = [
     path('interIIT-Technology', views.interIITtechnology,name='interIIT-Technology'),
     path('interIITSocult', views.interIITsocult, name='interIIT-socult'),
     path('GCTechnology', views.GCTechnology, name='GCTechnology'),
+    path('GCSocult', views.GCSocult, name='GCSocult'),
 ]

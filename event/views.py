@@ -28,6 +28,12 @@ def GCTechnology(request):
     }
     return render(request, 'results/charts-chartjs.html', context)
 
+
+def GCSocult(request):
+    context = {
+    }
+    return render(request, 'results/GCsocult.html', context)
+
 def eventhome(request):
     context = {
     }
