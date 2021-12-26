@@ -104,7 +104,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ul {
-  margin-bottom: 0px;
+  margin-bottom: 90px;
 }
 
 p {
@@ -982,7 +982,7 @@ section.upcoming-meetings .categories .main-button-red a {
 }
 
 .meeting-item .down-content .date {
-  float: left;
+  /* float: left; */
   text-align: center;
   display: inline-block;
   margin-right: 20px;
@@ -1003,6 +1003,7 @@ section.upcoming-meetings .categories .main-button-red a {
 }
 
 .meeting-item .down-content h4 {
+  margin-left: 60px;
   font-size: 18px;
   color: #1f272b;
   font-weight: 600;
@@ -1011,7 +1012,7 @@ section.upcoming-meetings .categories .main-button-red a {
 }
 
 .meeting-item .down-content p {
-  margin-left: 50px;
+  margin-left: 0px;
   color: #1f272b;
   font-size: 14px;
 }

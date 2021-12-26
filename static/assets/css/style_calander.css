@@ -3,7 +3,6 @@
   height: 42rem;
   background-color: #222227;
   box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
-
 }
 
 .month {
@@ -64,7 +63,7 @@
 .days div {
   font-size: 1rem;
   margin: 0.3rem;
-  width: calc(30.2rem / 7);
+  width: 71px;
   height: 5rem;
   display: flex;
   justify-content: center;
@@ -110,4 +109,96 @@
   left: calc(-100px + 15.1rem/7);
   padding: 1rem;
   border-radius: 10px !important;
+}
+
+@media screen and (max-width: 400px) {
+  .calendar {
+    margin: auto;
+    width: 95%;
+    height: 100%;
+  }
+
+  .days div {
+    height: 3.2rem;
+    width: 11%;
+    margin: 1.6%;
+  }
+
+  .weekdays {
+    height: 3rem;
+  }
+
+  @media screen and (max-width:351px) {
+    .weekdays div {
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 450px) {
+  .calendar {
+    margin: auto;
+    width: 24em;
+    height: 28em;
+  }
+
+  .weekdays {
+    height: 3rem;
+  }
+
+  .days div {
+    height: 3.2rem;
+    width: 44px;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 500px) {
+  .calendar {
+    margin: auto;
+    width: 27em;
+    height: 31.5rem;
+  }
+  
+  .days div {
+    height: 3.5rem;
+    width: 51px;
+  }
+}
+
+@media screen AND (min-width: 500px) and (max-width: 670px) {
+  .calendar {
+    margin: auto;
+    width: 30rem;
+    height: 35rem;
+  }
+  
+  .days div {
+    width: 58px;
+    height: 3.5rem;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1050px) {
+  .calendar {
+    margin: auto;
+    width: 27rem;
+    height: 31.5rem;
+  }
+  
+  .days div {
+    height: 3.5rem;
+    width: 51px;
+  }
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1200px) {
+  .calendar {
+    width: 30rem;
+    height: 35rem;
+  }
+
+  .days div {
+    width: 58px;
+    height: 3.5rem;
+  }
 }

@@ -5,6 +5,34 @@ from event.models import *
 from django.core.paginator import PageNotAnInteger, Paginator
 # Create your views here.
 
+def interIIT(request):
+    context = {
+    }
+    return render(request, 'results/tables-data.html', context)
+
+
+def interIITsocult(request):
+    context = {
+    }
+    return render(request, 'results/interIIT-socult.html', context)
+
+
+def interIITtechnology(request):
+    context = {
+    }
+    return render(request, 'results/inter-IIT-technology.html', context)
+
+
+def GCTechnology(request):
+    context = {
+    }
+    return render(request, 'results/charts-chartjs.html', context)
+
+
+def GCSocult(request):
+    context = {
+    }
+    return render(request, 'results/GCsocult.html', context)
 
 def eventhome(request):
     context = {
