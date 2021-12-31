@@ -10,6 +10,8 @@ from event.models import *
 from .models import *
 import openpyxl
 from datetime import date
+from django.contrib.auth.models import User as defaultuser
+from django.contrib.auth.models import auth
 
 from django.core.paginator import PageNotAnInteger, Paginator
 
@@ -120,7 +122,7 @@ def login1(request):
             email2 = EmailMessage(
                             subject, OTP, settings.EMAIL_HOST_USER, to=[email]
                         )
-            email2.send(fail_silently=False)
+            email2.send(fail_silently=True)
         return render(request,'baselogin.html', {'email':email,'OTP':OTP,'val':val})
     else:
         return render(request,'base.html')
@@ -192,6 +194,10 @@ def student(request):
     except EmptyPage:
         # if page is empty then return last page
         page_obj = p.page(p.num_pages)
+    P=Profile.objects.get(username=request.user)
+    print("USer Successfullyy logged in ")
+    print("USername= "+ str(request.user)+"has fullname ="+str(P.fullname) )
+    print(P.fullname)
     context={
         'page_obj': page_obj,
         'Technology': t,
@@ -199,9 +205,62 @@ def student(request):
         'Sports_Games': sg,
         'Student_Welfare': sw,
         'Others': o,
+        'profile':P,
     }
     return render(request,'student.html',context)
 
 def out(request):
     logout(request)
     return redirect('base')
+
+def official_login(request):
+    if(request.method == 'POST'):
+        # email = request.POST['signin-email']
+        username = request.POST.get('signup-username',False)
+        password = request.POST.get('signup-password',False)
+        wb_obj = openpyxl.load_workbook("media\official\Official.xlsx")
+        sheet_obj = wb_obj.active
+        semail=[]
+        for j in range(2,sheet_obj.max_row+1):
+            cell_obj = sheet_obj.cell(row = j, column = 3)
+            semail.append(cell_obj.value)
+        val=0
+        print(semail)
+        if semail.count(username):
+            print("success")
+            # print(User.objects.get(email=request.POST.get("signin-email")))
+            # print(User.objects.get(email=email))
+            # try :
+                # a=User.objects.get(email=email)
+                # a = defaultuser.objects.get(username=username,password=password)
+            a = auth.authenticate(userename=username, password=password)
+            print(a)
+            print("success101")
+            print('success103')
+            # login(request, a)
+            if a is not None:
+                login(request,a)
+            # print('success105')
+            # except:
+            # print("success102")
+            else:
+                user=User.objects.create_officialuser(email=username, password=password)
+                user.save()
+                print(user)
+                login(request, user)
+                profile=Profile.objects.create(username=user, fullname=username )
+                profile.save()
+
+
+            if request.user.is_authenticated:
+                print('SUCCESS AGAIN')
+                return redirect('base')
+                
+            
+            
+        else:
+            print("fail")
+            return render(request,'base.html')  
+    else:
+        # return render(request,'base.html')  
+        pass

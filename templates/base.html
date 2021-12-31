@@ -509,7 +509,7 @@ xsigin/signup popup
                       <a href="{% url 'student' %}"><img id="userimg" data-hex={{profile.fullname}} style="border-radius: 35px; width: 50px;"> </a>
                       <ul class="sub-menu">
                         <li><a href="{% url 'student' %}">Achivements</a></li>
-                        <li><a href="{% url 'base' %}">Grivience</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSft9FXZYvLiNt3oy0K3Iu4d6HoE830RhNWFHMXx1R4IjlhHKA/viewform">Grivience</a></li>
                         <li><a href="{% url 'logout' %}">Logout</a></li>
                       </ul>
                     </li>
@@ -549,8 +549,8 @@ xsigin/signup popup
     <div class="cd-user-modal-container" style="margin-top: 150px">
       <!-- this is the container wrapper -->
       <ul class="cd-switcher" style="margin-bottom: 0px;">
-        <li><a href="#0">Sign in</a></li>
-        <li><a href="#0">New account</a></li>
+        <li><a href="#0">Students Login</a></li>
+        <li><a href="#0">Official Login</a></li>
       </ul>
 
       <div id="cd-login">
@@ -592,18 +592,19 @@ xsigin/signup popup
 
       <div id="cd-signup">
         <!-- sign up form -->
-        <form class="cd-form">
+        <form class="cd-form" action="{% url 'official_login' %}" method="POST">
+          {% csrf_token %}
           <p class="fieldset">
             <label class="image-replace cd-username" for="signup-username">Username</label>
-            <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+            <input class="full-width has-padding has-border" id="signup-username" name="signup-username" type="text" placeholder="Username">
             <span class="cd-error-message">Error message here!</span>
           </p>
 
-          <p class="fieldset">
+          <!-- <p class="fieldset">
             <label class="image-replace cd-email" for="signup-email">E-mail</label>
             <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
             <span class="cd-error-message">Error message here!</span>
-          </p>
+          </p> -->
 
           <p class="fieldset">
             <label class="image-replace cd-password" for="signup-password">Password</label>
@@ -612,10 +613,10 @@ xsigin/signup popup
             <span class="cd-error-message">Error message here!</span>
           </p>
 
-          <p class="fieldset">
+          <!-- <p class="fieldset">
             <input type="checkbox" id="accept-terms">
             <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
-          </p>
+          </p> -->
 
           <p class="fieldset">
             <input class="full-width has-padding" type="submit" value="Create account">
@@ -822,14 +823,18 @@ xsigin/signup popup
   <section class="apply-now" id="apply">
     <div class="container">
       <div class="row">
-        <h2 class="text-light" style="padding-bottom: 1rem;">Recent Events</h2>
-        <div class="col-lg-6 align-self-center">
+       <div class="col-lg-6 align-self-center" >
+          <h2 class="text-light text-center" style="font-size: xxx-large;padding-bottom: 1rem;">Recent Events</h2>
+
           <div class="row">
             {% for p in student %}
-            <div class="col-lg-12 item text-light">
-              <b>Event name</b>: {{p.name}}<br>
-              <b>Description</b>: {{p.description}}<br>
-              <b>date</b>: {{p.date}}
+            <div class="col-lg-12 item text-light" style="
+            border-radius: 25px;
+            border: 3px solid;
+            background: rgba(0,0,0,0.5);"> 
+              <b style="font-size:20px;">Event name -:</b> <span style="font-size:20px;"> {{p.name}} </span> <br> 
+              <b style="font-size:20px;" >Description -:</b> <span style="font-size:20px;"> {{p.small_description}} </span><br>
+              <b style="font-size:20px;">Date -: </b> <span style="font-size:20px;"> {{p.date}} </span>
             </div>
             {% endfor %}
 
@@ -839,7 +844,11 @@ xsigin/signup popup
 
 
         {% comment %} Calendar start {% endcomment %}
-        <div class="col-lg-6">
+        <div class="col-lg-6" style="
+        display: flex;
+        justify-content: center;
+    ">
+    
           <div class="calendar">
             <div class="month">
               <i class="fas fa-angle-left prev"></i>
@@ -1152,12 +1161,13 @@ xsigin/signup popup
 
   <section class="our-facts">
     <div class="container">
+      <div class="col-lg-12">
+        <h2 Class="text-center">A Few Facts About TSG</h2>
+      </div>
       <div class="row">
         <div class="col-lg-6">
           <div class="row">
-            <div class="col-lg-12">
-              <h2>A Few Facts About TSG</h2>
-            </div>
+         
             <div class="col-lg-6">
               <div class="row">
                 <div class="col-12">

@@ -123,43 +123,79 @@ https://templatemo.com/tm-569-edu-meeting
   
 
   <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky" style="top:0px;">
-      <div class="container">
-          <div class="row">
-              <div class="col-12">
-                  <nav class="main-nav">
-                      <!-- ***** Logo Start ***** -->
-                      <a href="{% url 'base' %}" class="logo">
-                        TSG Gymkhana
-                      </a>
-                      <!-- ***** Logo End ***** -->
-                      <!-- ***** Menu Start ***** -->
-                      <ul class="nav">
-                          <li><a href="{% url 'base' %}">Home</a></li>
-                          
-                          <li><a href="{% url 'base' %}">Apply Now</a></li>
-                          <li class="has-sub">
-                              <a href="javascript:void(0)">Events</a>
-                              <ul class="sub-menu">
-                                <li><a href = "{% url 'event:technology' %}">Technology</a></li>
-                                <li><a href="{% url 'event:social' %}">Social and Culture</a></li>
-                                <li><a href="{% url 'event:SportsAndGames' %}">Sports and Games</a></li>
-                                <li><a href="{% url 'event:studentWelfare' %} ">Students’ Welfare</a></li>
-                                <li><a href="{% url 'event:result' %} ">Results</a></li>
-                              </ul>
-                          </li>
-                          <li><a href="{% url 'base' %}">Courses</a></li> 
-                          <li><a href="{% url 'base' %}">Contact Us</a></li> 
-                      </ul>        
-                      <a class='menu-trigger'>
-                          <span>Menu</span>
-                      </a>
-                      <!-- ***** Menu End ***** -->
-                  </nav>
-              </div>
-          </div>
+  <header class="header-area header-sticky">
+    <div class="container" id="idontcare" >
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <span href="#" class="logo col-lg-6">
+              <img src="{% static 'TSG Logo.png' %}" alt="TSG Logo" id="TSG_logo">
+              <span id="TSG_span" >Technology Students' Gymkhana</span>
+              
+            </span>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav col-lg-6">
+              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+
+              <li class="scroll-to-section"><a href="#apply">Apply Now</a></li>
+              <li class="has-sub drop">
+                <a href="javascript:void(0)">Events</a>
+                <ul class="sub-menu">
+                  <li><a href="{% url 'event:technology' %}">Technology</a></li>
+                  <li><a href="{% url 'event:social' %}">Social and Culture</a></li>
+                  <li><a href="{% url 'event:SportsAndGames' %}">Sports and Games</a></li>
+                  <li><a href="{% url 'event:studentWelfare' %}">Students’ Welfare</a></li>
+                  <li><a href="{% url 'event:interIIT' %} ">Inter IIT Meet</a></li>
+                  <li><a href="{% url 'event:GCTechnology' %} ">General Championship</a></li>
+                </ul>
+              </li>
+              <li class="scroll-to-section"><a href="#courses">Courses</a></li>
+              <li class="scroll-to-section"><a href="#contact">Contact Us</a></li>
+
+              {% if user.is_authenticated %}
+              <nav>
+                <ul>
+                  <div>
+                    <li class="has-sub">
+                      <a href="{% url 'student' %}"><img id="userimg" data-hex={{profile.fullname}} style="border-radius: 35px; width: 50px;"> </a>
+                      <ul class="sub-menu">
+                        <li><a href="{% url 'student' %}">Achivements</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSft9FXZYvLiNt3oy0K3Iu4d6HoE830RhNWFHMXx1R4IjlhHKA/viewform">Grivience</a></li>
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                      </ul>
+                    </li>
+                  </div>
+                </ul>
+              </nav>
+              {% else %}
+              <nav class="main-nav2">
+                <ul>
+                  <li class="scroll-to-section"><a class="cd-signin" href="#0">Login</a></li>
+                </ul>
+              </nav>
+              {%endif %}
+
+
+
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
       </div>
+    </div>
   </header>
+  <!-- ***** Header Area End ***** -->
+  <script>
+    var img = document.getElementById('userimg')
+    var name = img.dataset.hex
+    console.log(name)
+    img.src = `https://ui-avatars.com/api/?name=${name} &bold=true`
+  </script>
   <!-- ***** Header Area End ***** -->
 
   <section class="heading-page header-text" id="top">

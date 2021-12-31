@@ -51,7 +51,7 @@ https://templatemo.com/tm-569-edu-meeting
   
   img{
     width: 385.2px;
-    height: 346.24px;
+    {% comment %} height: 346.24px; {% endcomment %}
   }
 
   @media only screen and (min-width: 279px) and (max-width: 380px){
@@ -166,6 +166,29 @@ height: 323.24px;}
                           </li>
                           <li><a href="{% url 'base' %}">Courses</a></li> 
                           <li><a href="{% url 'base' %}">Contact Us</a></li> 
+                          
+              {% if user.is_authenticated %}
+              <nav>
+                <ul>
+                  <div>
+                    <li class="has-sub">
+                      <a href="{% url 'student' %}"><img id="userimg" data-hex={{profile.fullname}} style="border-radius: 35px; width: 50px;"> </a>
+                      <ul class="sub-menu">
+                        <li><a href="{% url 'student' %}">Achivements</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSft9FXZYvLiNt3oy0K3Iu4d6HoE830RhNWFHMXx1R4IjlhHKA/viewform">Grivience</a></li>
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                      </ul>
+                    </li>
+                  </div>
+                </ul>
+              </nav>
+              {% else %}
+              <nav class="main-nav2">
+                <ul>
+                  <li class="scroll-to-section"><a class="cd-signin" href="#0">Login</a></li>
+                </ul>
+              </nav>
+              {%endif %}
                       </ul>        
                       <a class='menu-trigger'>
                           <span>Menu</span>
@@ -176,6 +199,12 @@ height: 323.24px;}
           </div>
       </div>
   </header>
+  <script>
+    var img = document.getElementById('userimg')
+    var name = img.dataset.hex
+    console.log(name)
+    img.src = `https://ui-avatars.com/api/?name=${name} &bold=true`
+  </script>
   <!-- ***** Header Area End ***** -->
 
   {% comment %} <section class="heading-page header-text" id="top">
