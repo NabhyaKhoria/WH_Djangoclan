@@ -114,6 +114,7 @@ def social(request):
     'social': social,
     'page_obj': page_obj,
     'profile':P,
+    
     }
     return render(request, 'events/SocialCulture.html', context)
 
