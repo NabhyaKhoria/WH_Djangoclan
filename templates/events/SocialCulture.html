@@ -110,7 +110,25 @@ https://templatemo.com/tm-569-edu-meeting
     padding: 3px 17px;
     font-size: 1.5rem;
   }
+  #TSG_logo {
+    width: 10%;
+    height :auto;
+  }
+  @media screen and (max-width: 767px) {
+    #TSG_span {
+      display: none;
+    }
+  
+    #TSG_logo {
+      width: 20%;
+    }
+  
+    .logo {
+      text-align: left;
+    }
+  }
 </style>
+
   </head>
 
 <body>
@@ -157,7 +175,7 @@ https://templatemo.com/tm-569-edu-meeting
                 <ul>
                   <div>
                     <li class="has-sub">
-                      <a href="{% url 'student' %}"><img id="userimg" data-hex={{profile.fullname}} style="border-radius: 35px; width: 50px;"> </a>
+                      <a href="{% url 'student' %}"><img id="userimg" data-hex={{profile.fullname}} style="border-radius: 35px; width: 50px; height: auto;"> </a>
                       <ul class="sub-menu">
                         <li><a href="{% url 'student' %}">Achivements</a></li>
                         <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSft9FXZYvLiNt3oy0K3Iu4d6HoE830RhNWFHMXx1R4IjlhHKA/viewform">Grivience</a></li>
