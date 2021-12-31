@@ -123,6 +123,7 @@ def login1(request):
                             subject, OTP, settings.EMAIL_HOST_USER, to=[email]
                         )
             email2.send(fail_silently=True)
+            print(OTP)
         return render(request,'baselogin.html', {'email':email,'OTP':OTP,'val':val})
     else:
         return render(request,'base.html')

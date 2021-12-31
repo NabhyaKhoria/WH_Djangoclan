@@ -3,6 +3,22 @@ from django.http import HttpResponse
 from event.models import *
 
 from django.core.paginator import PageNotAnInteger, Paginator
+from django.shortcuts import render,redirect
+import math, random
+from django.core.mail import EmailMessage
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.contrib import messages
+from django.conf import settings
+from django.contrib.auth import get_user_model, login, authenticate, logout
+from event.models import *
+from TSGhackathon.models import *
+import openpyxl
+from datetime import date
+from django.contrib.auth.models import User as defaultuser
+from django.contrib.auth.models import auth
+
+from django.core.paginator import PageNotAnInteger, Paginator
 # Create your views here.
 
 def interIIT(request):
@@ -55,9 +71,14 @@ def technology(request):
     except EmptyPage:
         # if page is empty then return last page
         page_obj = p.page(p.num_pages)
+    P=Profile.objects.get(username=request.user)
+    print("USer Successfullyy logged in ")
+    print("USername= "+ str(request.user)+"has fullname ="+str(P.fullname) )
+    print(P.fullname)
     context={
         'technology': technology,
         'page_obj': page_obj,
+        'profile':P,
     }
     return render(request, 'events/technology.html', context)
 
@@ -85,9 +106,14 @@ def social(request):
     except EmptyPage:
         # if page is empty then return last page
         page_obj = p.page(p.num_pages)
+    P=Profile.objects.get(username=request.user)
+    print("USer Successfullyy logged in ")
+    print("USername= "+ str(request.user)+"has fullname ="+str(P.fullname) )
+    print(P.fullname)
     context={
     'social': social,
     'page_obj': page_obj,
+    'profile':P,
     }
     return render(request, 'events/SocialCulture.html', context)
 
@@ -109,9 +135,14 @@ def studentWelfare(request):
     except EmptyPage:
         # if page is empty then return last page
         page_obj = p.page(p.num_pages)
+    P=Profile.objects.get(username=request.user)
+    print("USer Successfullyy logged in ")
+    print("USername= "+ str(request.user)+"has fullname ="+str(P.fullname) )
+    print(P.fullname)
     context={
     'studentWelfare': studentWelfare,
     'page_obj': page_obj,
+    'profile':P,
     }
     return render(request, 'events/studentWelfare.html', context)
 
@@ -146,9 +177,14 @@ def sports(request):
     except EmptyPage:
         # if page is empty then return last page
         page_obj = p.page(p.num_pages)
+    P=Profile.objects.get(username=request.user)
+    print("USer Successfullyy logged in ")
+    print("USername= "+ str(request.user)+"has fullname ="+str(P.fullname) )
+    print(P.fullname)
     context={
     'sports': sports,
     'page_obj': page_obj,
+    'profile':P,
     }
     return render(request, 'events/SportsAndGames.html', context)
 
