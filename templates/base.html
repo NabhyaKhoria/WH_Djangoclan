@@ -162,6 +162,14 @@ xsigin/signup popup
       background: #FFF;
       color: #505260;
     }
+    @media only screen and (max-width: 400px)
+    {
+      #idontcare
+      {
+        margin-left:40px !important;
+        margin-right: 40px !important;
+      }
+    } 
 
     @media only screen and (min-width: 600px) {
       .cd-user-modal-container {
@@ -463,18 +471,19 @@ xsigin/signup popup
 
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
-    <div class="container">
+    <div class="container" id="idontcare" >
       <div class="row">
         <div class="col-12">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
-            <a href="index.html" class="logo">
+            <span href="#" class="logo col-lg-6">
               <img src="{% static 'TSG Logo.png' %}" alt="TSG Logo" id="TSG_logo">
               <span id="TSG_span" >Technology Students' Gymkhana</span>
-            </a>
+              
+            </span>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
-            <ul class="nav">
+            <ul class="nav col-lg-6">
               <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
 
               <li class="scroll-to-section"><a href="#apply">Apply Now</a></li>
@@ -539,7 +548,7 @@ xsigin/signup popup
     <!-- this is the entire modal form, including the background -->
     <div class="cd-user-modal-container" style="margin-top: 150px">
       <!-- this is the container wrapper -->
-      <ul class="cd-switcher">
+      <ul class="cd-switcher" style="margin-bottom: 0px;">
         <li><a href="#0">Sign in</a></li>
         <li><a href="#0">New account</a></li>
       </ul>
@@ -649,7 +658,8 @@ xsigin/signup popup
         <div class="row">
           <div class="col-lg-12">
             <div class="caption">
-              <h3 class="h3 pb-lg-3 text-light light-300">Welcome to Technology Students's Gymkhana</h3>
+              <h3 class="h3 pb-lg-3 text-light light-300">Welcome to
+                <br><span style="font-size:45px;"> Technology Students's Gymkhana</span></h3>
               <p>Technology Students’ Gymkhana is the hub of the numerous extra-curricular and co-curricular activities in IIT Kharagpur ranging from sports to socio-cultural. The Gymkhana is managed by the students, for the students, under the guidance and active participation of the faculty and staff members. Our goal is to bring overall development in IITians through cultivating and nurturing their extra-curricular talents.</p>
 
               <div class="main-button-red">
@@ -700,10 +710,10 @@ xsigin/signup popup
   <section class="upcoming-meetings" id="meetings">
     <div class="container">
       <br><br><br><br><br><br>
-      <div class="row">
+      <div class="row" style="margin-top: 70px;">
         <div class="col-lg-12">
           <div class="section-heading">
-            <h2>Upcoming Meetings</h2>
+            <h2>Facilities and Events</h2>
           </div>
         </div>
         <div class="col-lg-4">
@@ -1146,7 +1156,7 @@ xsigin/signup popup
         <div class="col-lg-6">
           <div class="row">
             <div class="col-lg-12">
-              <h2>A Few Facts About Our University</h2>
+              <h2>A Few Facts About TSG</h2>
             </div>
             <div class="col-lg-6">
               <div class="row">

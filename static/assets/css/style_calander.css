@@ -1,6 +1,6 @@
 .calendar {
   width: 36rem;
-  height: 42rem;
+  max-height: 45rem;
   background-color: #222227;
   box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
 }

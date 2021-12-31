@@ -47,7 +47,7 @@ def base(request):
 
     for i in range(len(events)):
         for stu in events:
-            if date_new[i] == stu.date and stu.date >= now:
+            if date_new[i] == stu.date:
                 event2.append(stu)
                 break
             else:
@@ -120,7 +120,7 @@ def login1(request):
             email2 = EmailMessage(
                             subject, OTP, settings.EMAIL_HOST_USER, to=[email]
                         )
-            email2.send(fail_silently=True)
+            email2.send(fail_silently=False)
         return render(request,'baselogin.html', {'email':email,'OTP':OTP,'val':val})
     else:
         return render(request,'base.html')

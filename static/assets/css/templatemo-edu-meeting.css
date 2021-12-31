@@ -291,7 +291,7 @@ header
 .header-area .main-nav .logo {
   line-height: 100px;
   color: #fff;
-  font-size: 28px;
+  font-size: 25px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -1308,7 +1308,7 @@ section.our-facts h2 {
 section.our-facts .video {
   text-align: center;
   margin-left: 70px;
-  background-image: url(../images/video-item-bg.jpg);
+  background-image: url(https://i.ytimg.com/vi_webp/kstN-Adi7r8/maxresdefault.webp);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
