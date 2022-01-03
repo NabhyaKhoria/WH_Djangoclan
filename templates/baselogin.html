@@ -1,0 +1,1554 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Education Meeting HTML5 Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-edu-meeting.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css'%}">
+<!--
+
+TemplateMo 569 Edu Meeting
+
+https://templatemo.com/tm-569-edu-meeting
+
+-->
+<style>
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  color: #2f889a;
+  text-decoration: none;
+}
+
+input, textarea {
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+}
+input::-ms-clear, textarea::-ms-clear {
+  display: none;
+}
+
+
+
+/* -------------------------------- 
+
+xsigin/signup popup 
+
+-------------------------------- */
+.cd-user-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(52, 54, 66, 0.9);
+  z-index: 3;
+  overflow-y: auto;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s 0, visibility 0 0.3s;
+  -moz-transition: opacity 0.3s 0, visibility 0 0.3s;
+  transition: opacity 0.3s 0, visibility 0 0.3s;
+}
+.cd-user-modal.is-visible {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s 0, visibility 0 0;
+  -moz-transition: opacity 0.3s 0, visibility 0 0;
+  transition: opacity 0.3s 0, visibility 0 0;
+}
+.cd-user-modal.is-visible .cd-user-modal-container {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.cd-user-modal-container {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  background: #FFF;
+  margin: 3em auto 4em;
+  cursor: auto;
+  border-radius: 0.25em;
+  -webkit-transform: translateY(-30px);
+  -moz-transform: translateY(-30px);
+  -ms-transform: translateY(-30px);
+  -o-transform: translateY(-30px);
+  transform: translateY(-30px);
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.cd-user-modal-container .cd-switcher::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.cd-user-modal-container .cd-switcher li {
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+.cd-user-modal-container .cd-switcher li:first-child a {
+  border-radius: 0.25em 0 0 0;
+}
+.cd-user-modal-container .cd-switcher li:last-child a {
+  border-radius: 0 0.25em 0 0;
+}
+.cd-user-modal-container .cd-switcher a {
+  display: block;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background: #d2d8d8;
+  color: #809191;
+}
+.cd-user-modal-container .cd-switcher a.selected {
+  background: #FFF;
+  color: #505260;
+}
+@media only screen and (min-width: 600px) {
+  .cd-user-modal-container {
+    margin: 4em auto;
+  }
+  .cd-user-modal-container .cd-switcher a {
+    height: 70px;
+    line-height: 70px;
+  }
+}
+
+.cd-form {
+  padding: 1.4em;
+}
+.cd-form .fieldset {
+  position: relative;
+  margin: 1.4em 0;
+}
+.cd-form .fieldset:first-child {
+  margin-top: 0;
+}
+.cd-form .fieldset:last-child {
+  margin-bottom: 0;
+}
+.cd-form label {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+.cd-form label.image-replace {
+  /* replace text with an icon */
+  display: inline-block;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  bottom: auto;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 20px;
+  width: 20px;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  color: transparent;
+  text-shadow: none;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+}
+.cd-form label.cd-username {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-username.svg");
+}
+.cd-form label.cd-email {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-email.svg");
+}
+.cd-form label.cd-password {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-password.svg");
+}
+.cd-form input {
+  margin: 0;
+  padding: 0;
+  border-radius: 0.25em;
+}
+.cd-form input.full-width {
+  width: 100%;
+}
+.cd-form input.has-padding {
+  padding: 12px 20px 12px 50px;
+}
+.cd-form input.has-border {
+  border: 1px solid #d2d8d8;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+.cd-form input.has-border:focus {
+  border-color: #343642;
+  box-shadow: 0 0 5px rgba(52, 54, 66, 0.1);
+  outline: none;
+}
+.cd-form input.has-error {
+  border: 1px solid #d76666;
+}
+.cd-form input[type=password] {
+  /* space left for the HIDE button */
+  padding-right: 65px;
+}
+.cd-form input[type=submit] {
+  padding: 16px 0;
+  cursor: pointer;
+  background: #2f889a;
+  color: #FFF;
+  font-weight: bold;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+.no-touch .cd-form input[type=submit]:hover, .no-touch .cd-form input[type=submit]:focus {
+  background: #3599ae;
+  outline: none;
+}
+.cd-form .hide-password {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 6px 15px;
+  border-left: 1px solid #d2d8d8;
+  top: 50%;
+  bottom: auto;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #343642;
+}
+.cd-form .cd-error-message {
+  display: inline-block;
+  position: absolute;
+  left: -5px;
+  bottom: -35px;
+  background: rgba(215, 102, 102, 0.9);
+  padding: 0.8em;
+  z-index: 2;
+  color: #FFF;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  border-radius: 0.25em;
+  /* prevent click and touch events */
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s 0, visibility 0 0.2s;
+  -moz-transition: opacity 0.2s 0, visibility 0 0.2s;
+  transition: opacity 0.2s 0, visibility 0 0.2s;
+}
+.cd-form .cd-error-message::after {
+  /* triangle */
+  content: "";
+  position: absolute;
+  left: 22px;
+  bottom: 100%;
+  height: 0;
+  width: 0;
+  border-bottom: 8px solid rgba(215, 102, 102, 0.9);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+.cd-form .cd-error-message.is-visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.2s 0, visibility 0 0;
+  -moz-transition: opacity 0.2s 0, visibility 0 0;
+  transition: opacity 0.2s 0, visibility 0 0;
+}
+@media only screen and (min-width: 600px) {
+  .cd-form {
+    padding: 2em;
+  }
+  .cd-form .fieldset {
+    margin: 2em 0;
+  }
+  .cd-form .fieldset:first-child {
+    margin-top: 0;
+  }
+  .cd-form .fieldset:last-child {
+    margin-bottom: 0;
+  }
+  .cd-form input.has-padding {
+    padding: 16px 20px 16px 50px;
+  }
+  .cd-form input[type=submit] {
+    padding: 16px 0;
+  }
+}
+
+.cd-form-message {
+  padding: 1.4em 1.4em 0;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  text-align: center;
+}
+@media only screen and (min-width: 600px) {
+  .cd-form-message {
+    padding: 2em 2em 0;
+  }
+}
+
+.cd-form-bottom-message {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -30px;
+  text-align: center;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+.cd-form-bottom-message a {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+.cd-close-form {
+  /* form X button on top right */
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 0;
+  top: -40px;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-close.svg") no-repeat center center;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+@media only screen and (min-width: 1170px) {
+  .cd-close-form {
+    display: none;
+  }
+}
+
+#cd-login, #cd-signup, #cd-reset-password {
+  display: none;
+}
+
+#cd-login.is-selected, #cd-signup.is-selected, #cd-reset-password.is-selected {
+  display: block;
+}
+
+</style>
+  </head>
+
+<body>
+
+
+  <!-- ** Header Area Start ** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ** Logo Start ** -->
+                      <a href="index.html" class="logo">
+                          TSG Gymkhana
+                      </a>
+                      <!-- ** Logo End ** -->
+                      <!-- ** Menu Start ** -->
+                      <ul class="nav">
+                          <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                          
+                          <li class="scroll-to-section"><a href="#apply">Apply Now</a></li>
+                          <li class="has-sub">
+                              <a href="javascript:void(0)">Events</a> 
+                              <ul class="sub-menu">
+                                <li><a href = "{% url 'event:technology' %}">Technology</a></li>
+                                  <li><a href="{% url 'event:social' %}">Social and Culture</a></li>
+                                  <li><a href="{% url 'event:SportsAndGames' %}">Sports and Games</a></li>
+                                  <li><a href="{% url 'event:studentWelfare' %}" >Students’ Welfare</a></li>
+                              </ul>
+                          </li>
+                          <li class="scroll-to-section"><a href="#courses">Courses</a></li> 
+                          <li class="scroll-to-section"><a href="#contact">Contact Us</a></li> 
+                          <nav class="main-nav2"><ul>
+                          <li class="scroll-to-section" ><a class="cd-signin" href="#0" id="auto">Login</a></li> </ul>
+                        </nav>
+                          
+                      </ul>        
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ** Menu End ** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ** Header Area End ** -->
+  
+<!-- modal -->
+<div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+  <div class="cd-user-modal-container" style="margin-top: 150px"> <!-- this is the container wrapper -->
+    <ul class="cd-switcher" style="margin-bottom: 0px;">
+      <li><a href="#0">Sign in</a></li>
+      <li><a href="#0">New account</a></li>
+    </ul>
+
+    <div id="cd-login"> <!-- log in form -->
+      <form class="cd-form" action="{% url 'loginuser' %}" method="POST">
+        {% csrf_token %}
+        <p class="fieldset">
+          <label class="image-replace cd-email" for="signin-email" disable>E-mail</label>
+          <input class="full-width has-padding has-border" id="signin-email" name="signin-email" type="email" placeholder="E-mail" value="{{email}}">
+          <span class="cd-error-message">Error message here!</span>
+        </p>
+        {% if val %}
+        <p class="fieldset"  id="otp">
+          <label class="image-replace cd-password" for="signin-password">OTP</label>
+          <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="OTP" name="otp" required>
+          <!-- <a href="#0" class="hide-password">Hide</a> -->
+          <!-- <span class="cd-error-message">Error message here!</span> -->
+        </p>
+        <input style="display:none" name="rotp" value={{OTP}}>
+        {% else %}
+        <span>Email id not valid</span>
+        {% endif %}
+
+        <p class="fieldset">
+          <input type="checkbox" id="remember-me" checked>
+          <label for="remember-me">Remember me</label>
+        </p>
+
+        <p class="fieldset" id="getotp" style="display:none">
+          <input class="full-width" type="submit" onclick="otp()" value="Get OTP" >
+        </p>
+        
+        <p class="fieldset"  id="log">
+          <input class="full-width" type="submit" value="Login">
+        </p>
+
+      </form>
+      
+      <!-- <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p> -->
+      <!-- <a href="#0" class="cd-close-form">Close</a> -->
+    </div> <!-- cd-login -->
+
+    <div id="cd-signup"> <!-- sign up form -->
+      <form class="cd-form">
+        <p class="fieldset">
+          <label class="image-replace cd-username" for="signup-username">Username</label>
+          <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+          <span class="cd-error-message">Error message here!</span>
+        </p>
+
+        <p class="fieldset">
+          <label class="image-replace cd-email" for="signup-email">E-mail</label>
+          <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+          <span class="cd-error-message">Error message here!</span>
+        </p>
+
+        <p class="fieldset">
+          <label class="image-replace cd-password" for="signup-password">Password</label>
+          <input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
+          <a href="#0" class="hide-password">Hide</a>
+          <span class="cd-error-message">Error message here!</span>
+        </p>
+
+        <p class="fieldset">
+          <input type="checkbox" id="accept-terms">
+          <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+        </p>
+
+        <p class="fieldset">
+          <input class="full-width has-padding" type="submit" value="Create account">
+        </p>
+      </form>
+
+      <!-- <a href="#0" class="cd-close-form">Close</a> -->
+    </div> <!-- cd-signup -->
+
+    <div id="cd-reset-password"> <!-- reset password form -->
+      <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+      <form class="cd-form">
+        <p class="fieldset">
+          <label class="image-replace cd-email" for="reset-email">E-mail</label>
+          <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+          <span class="cd-error-message">Error message here!</span>
+        </p>
+
+        <p class="fieldset">
+          <input class="full-width has-padding" type="submit" value="Reset password">
+        </p>
+      </form>
+
+      <p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+    </div> <!-- cd-reset-password -->
+    <a href="#0" class="cd-close-form">Close</a>
+  </div> <!-- cd-user-modal-container -->
+</div> <!-- cd-user-modal -->
+
+
+  <!-- ** Main Banner Area Start ** -->
+  <section class="section main-banner" id="top" data-section="section1">
+   
+      <div class="video-overlay header-text">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="caption">
+              <h3 class="h3 pb-lg-3 text-light light-300">Welcome to Technology Students's Gymkhana</h3>
+              <p>Technology Students’ Gymkhana is the hub of the numerous extra-curricular and co-curricular activities in IIT Kharagpur ranging from sports to socio-cultural. The Gymkhana is managed by the students, for the students, under the guidance and active participation of the faculty and staff members. Our goal is to bring overall development in IITians through cultivating and nurturing their extra-curricular talents.</p>
+              <div class="main-button-red">
+                  <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
+              </div>
+          </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </section>
+  <!-- ** Main Banner Area End ** -->
+
+  <section class="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-service-item owl-carousel">
+          
+            <div class="item">
+              <div class="icon">
+                <img src="{% static 'assets/images/service-icon-01.png' %}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Best Education</h4>
+                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="{% static 'assets/images/service-icon-02.png' %}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Best Teachers</h4>
+                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="{% static 'assets/images/service-icon-03.png' %}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Best Students</h4>
+                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="{% static 'assets/images/service-icon-02.png' %}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Online Meeting</h4>
+                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="{% static 'assets/images/service-icon-03.png' %}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Best Networking</h4>
+                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="upcoming-meetings" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h2>Upcoming Meetings</h2>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="categories">
+            <h4>Meeting Catgories</h4>
+            <ul>
+              <li><a href="#">Sed tempus enim leo</a></li>
+              <li><a href="#">Aenean molestie quis</a></li>
+              <li><a href="#">Cras et metus vestibulum</a></li>
+              <li><a href="#">Nam et condimentum</a></li>
+              <li><a href="#">Phasellus nec sapien</a></li>
+            </ul>
+            <div class="main-button-red">
+              <a href="meetings.html">All Upcoming Meetings</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="meeting-item">
+                <div class="thumb">
+                  <div class="price">
+                    <span>$22.00</span>
+                  </div>
+                  <a href="meeting-details.html"><img src="{% static 'assets/images/meeting-01.jpg' %}" alt="New Lecturer Meeting"></a>
+                </div>
+                <div class="down-content">
+                  <div class="date">
+                    <h6>Nov <span>10</span></h6>
+                  </div>
+                  <a href="meeting-details.html"><h4>New Lecturers Meeting</h4></a>
+                  <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="meeting-item">
+                <div class="thumb">
+                  <div class="price">
+                    <span>$36.00</span>
+                  </div>
+                  <a href="meeting-details.html"><img src="{% static 'assets/images/meeting-02.jpg' %}" alt="Online Teaching"></a>
+                </div>
+                <div class="down-content">
+                  <div class="date">
+                    <h6>Nov <span>24</span></h6>
+                  </div>
+                  <a href="meeting-details.html"><h4>Online Teaching Techniques</h4></a>
+                  <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="meeting-item">
+                <div class="thumb">
+                  <div class="price">
+                    <span>$14.00</span>
+                  </div>
+                  <a href="meeting-details.html"><img src="{% static 'assets/images/meeting-03.jpg' %}" alt="Higher Education"></a>
+                </div>
+                <div class="down-content">
+                  <div class="date">
+                    <h6>Nov <span>26</span></h6>
+                  </div>
+                  <a href="meeting-details.html"><h4>Higher Education Conference</h4></a>
+                  <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="meeting-item">
+                <div class="thumb">
+                  <div class="price">
+                    <span>$48.00</span>
+                  </div>
+                  <a href="meeting-details.html"><img src="{% static 'assets/images/meeting-04.jpg' %}" alt="Student Training"></a>
+                </div>
+                <div class="down-content">
+                  <div class="date">
+                    <h6>Nov <span>30</span></h6>
+                  </div>
+                  <a href="meeting-details.html"><h4>Student Training Meetup</h4></a>
+                  <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="apply-now" id="apply">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="item">
+                <h3>APPLY FOR BACHELOR DEGREE</h3>
+                <p>You are allowed to use this edu meeting CSS template for your school or university or business. You can feel free to modify or edit this layout.</p>
+                <div class="main-button-red">
+                  <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
+              </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="item">
+                <h3>APPLY FOR BACHELOR DEGREE</h3>
+                <p>You are not allowed to redistribute the template ZIP file on any other template website. Please contact us for more information.</p>
+                <div class="main-button-yellow">
+                  <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="accordions is-first-expanded">
+            <article class="accordion">
+                <div class="accordion-head">
+                    <span>About Edu Meeting HTML Template</span>
+                    <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                </div>
+                <div class="accordion-body">
+                    <div class="content">
+                        <p>If you want to get the latest collection of HTML CSS templates for your websites, you may visit <a rel="nofollow" href="https://www.toocss.com/" target="_blank">Too CSS website</a>. If you need a working contact form script, please visit <a href="https://templatemo.com/contact" target="_parent">our contact page</a> for more info.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="accordion">
+                <div class="accordion-head">
+                    <span>HTML CSS Bootstrap Layout</span>
+                    <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                </div>
+                <div class="accordion-body">
+                    <div class="content">
+                        <p>Etiam posuere metus orci, vel consectetur elit imperdiet eu. Cras ipsum magna, maximus at semper sit amet, eleifend eget neque. Nunc facilisis quam purus, sed vulputate augue interdum vitae. Aliquam a elit massa.<br><br>
+                        Nulla malesuada elit lacus, ac ultricies massa varius sed. Etiam eu metus eget nibh consequat aliquet. Proin fringilla, quam at euismod porttitor, odio odio tempus ligula, ut feugiat ex erat nec mauris. Donec viverra velit eget lectus sollicitudin tincidunt.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="accordion">
+                <div class="accordion-head">
+                    <span>Please tell your friends</span>
+                    <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                </div>
+                <div class="accordion-body">
+                    <div class="content">
+                        <p>Ut vehicula mauris est, sed sodales justo rhoncus eu. Morbi porttitor quam velit, at ullamcorper justo suscipit sit amet. Quisque at suscipit mi, non efficitur velit.<br><br>
+                        Cras et tortor semper, placerat eros sit amet, porta est. Mauris porttitor sapien et quam volutpat luctus. Nullam sodales ipsum ac neque ultricies varius.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="accordion last-accordion">
+                <div class="accordion-head">
+                    <span>Share this to your colleagues</span>
+                    <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                </div>
+                <div class="accordion-body">
+                    <div class="content">
+                        <p>Maecenas suscipit enim libero, vel lobortis justo condimentum id. Interdum et malesuada fames ac ante ipsum primis in faucibus.<br><br>
+                        Sed eleifend metus sit amet magna tristique, posuere laoreet arcu semper. Nulla pellentesque ut tortor sit amet maximus. In eu libero ullamcorper, semper nisi quis, convallis nisi.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="our-courses" id="courses">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h2>Our Popular Courses</h2>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="owl-courses-item owl-carousel">
+            <div class="item">
+              <img src="{% static 'assets/images/course-01.jpg' %}" alt="Course One">
+              <div class="down-content">
+                <h4>Morbi tincidunt elit vitae justo rhoncus</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$160</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="{% static 'assets/images/course-02.jpg' %}" alt="Course Two">
+              <div class="down-content">
+                <h4>Curabitur molestie dignissim purus vel</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$180</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="{% static 'assets/images/course-03.jpg' %}" alt="">
+              <div class="down-content">
+                <h4>Nulla at ipsum a mauris egestas tempor</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$140</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="{% static 'assets/images/course-04.jpg' %}" alt="">
+              <div class="down-content">
+                <h4>Aenean molestie quis libero gravida</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$120</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="{% static 'assets/images/course-01.jpg' %}" alt="">
+              <div class="down-content">
+                <h4>Lorem ipsum dolor sit amet adipiscing elit</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$250</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="{% static 'assets/images/course-02.jpg' %}" alt="">
+              <div class="down-content">
+                <h4>TemplateMo is the best website for Free CSS</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$270</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="{% static 'assets/images/course-03.jpg' %}" alt="">
+              <div class="down-content">
+                <h4>Web Design Templates at your finger tips</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$340</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="{% static 'assets/images/course-04.jpg' %}" alt="">
+              <div class="down-content">
+                <h4>Please visit our website again</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$360</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="{% static 'assets/images/course-01.jpg' %}" alt="">
+              <div class="down-content">
+                <h4>Responsive HTML Templates for you</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$400</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="{% static 'assets/images/course-02.jpg' %}" alt="">
+              <div class="down-content">
+                <h4>Download Free CSS Layouts for your business</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$430</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="{% static 'assets/images/course-03.jpg' %}" alt="">
+              <div class="down-content">
+                <h4>Morbi in libero blandit lectus cursus</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$480</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="{% static 'assets/images/course-04.jpg' %}" alt="">
+              <div class="down-content">
+                <h4>Curabitur molestie dignissim purus</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$560</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="our-facts">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="col-lg-12">
+              <h2>A Few Facts About Our University</h2>
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-12">
+                  <div class="count-area-content percentage">
+                    <div class="count-digit">94</div>
+                    <div class="count-title">Succesed Students</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="count-area-content">
+                    <div class="count-digit">126</div>
+                    <div class="count-title">Current Teachers</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-12">
+                  <div class="count-area-content new-students">
+                    <div class="count-digit">2345</div>
+                    <div class="count-title">New Students</div>
+                  </div>
+                </div> 
+                <div class="col-12">
+                  <div class="count-area-content">
+                    <div class="count-digit">32</div>
+                    <div class="count-title">Awards</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="col-lg-6 align-self-center">
+          <div class="video">
+            <a href="https://www.youtube.com/watch?v=HndV87XpkWg" target="_blank"><img src="{% static 'assets/images/play-icon.png' %}" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-us" id="contact">
+    <div class="container" style="margin-bottom:40px;">
+      <div class="row">
+        <div class="col-lg-9 align-self-center">
+          <div class="row">
+            <div class="col-lg-12">
+              <form id="contact" action="" method="post">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h2>Let's get in touch</h2>
+                  </div>
+                  <div class="col-lg-4">
+                    <fieldset>
+                      <input name="name" type="text" id="name" placeholder="YOURNAME...*" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-4">
+                    <fieldset>
+                    <input name="email" type="text" id="email" pattern="[^ @]@[^ @]" placeholder="YOUR EMAIL..." required="">
+                  </fieldset>
+                  </div>
+                  <div class="col-lg-4">
+                    <fieldset>
+                      <input name="subject" type="text" id="subject" placeholder="SUBJECT...*" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <textarea name="message" type="text" class="form-control" id="message" placeholder="YOUR MESSAGE..." required=""></textarea>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <button type="submit" id="form-submit" class="button">SEND MESSAGE NOW</button>
+                    </fieldset>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="right-info">
+            <ul>
+              <li>
+                <h6>Phone Number</h6>
+                <span>010-020-0340</span>
+              </li>
+              <li>
+                <h6>Email Address</h6>
+                <span>info@meeting.edu</span>
+              </li>
+              <li>
+                <h6>Street Address</h6>
+                <span>Rio de Janeiro - RJ, 22795-008, Brazil</span>
+              </li>
+              <li>
+                <h6>Website URL</h6>
+                <span>www.meeting.edu</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- Start Footer -->
+    <footer class="bg-secondary pt-4">
+
+    <div class="container">
+      <div class="row py-3">
+
+        <div class="col-lg-3 col-12 align-left">
+          <a class="navbar-brand" href="index.html">
+            <i class="bx bx-buildings bx-sm text-light"></i>
+              
+          
+  <p class="text-light h1">Technology </p>
+  <p class="text-light h1 semi-bold-600">Student's</p>
+  <p class="text-light h1 semi-bold-600">Gymkhana</p> 
+  <p class="text-light my-lg-4 my-2">IIT Kharagpur, Kharagpur <br>West Bengal, India-721302 </p>
+  
+          </a>
+<ul class="list-inline footer-icons light-300">
+            <li class="list-inline-item m-0">
+              <a class="text-light" target="_blank" href="http://facebook.com/">
+                <i class="bx bxl-facebook-square bx-md"></i>
+              </a>
+            </li>
+            <li class="list-inline-item m-0">
+              <a class="text-light" target="_blank" href="https://www.linkedin.com/">
+                <i class="bx bxl-linkedin-square bx-md"></i>
+              </a>
+            </li>
+            <li class="list-inline-item m-0">
+              <a class="text-light" target="_blank" href="https://www.whatsapp.com/">
+                <i class="bx bxl-whatsapp-square bx-md"></i>
+              </a>
+            </li>
+            <li class="list-inline-item m-0">
+              <a class="text-light" target="_blank" href="https://www.flickr.com/">
+                <i class="bx bxl-flickr-square bx-md"></i>
+              </a>
+            </li>
+            <li class="list-inline-item m-0">
+              <a class="text-light" target="_blank" href="https://www.medium.com/">
+                <i class="bx bxl-medium-square bx-md"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4 my-sm-0 mt-4">
+          <h3 class="h4 pb-lg-3 text-light light-300">Main Menu</h3>
+          <ul class="list-unstyled text-light light-300">
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light" href="index.html">Home</a>
+            </li>
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="about.html">About Us</a>
+            </li>
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="http://127.0.0.1:8000/event/technology">Events</a>
+            </li>
+            
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4 my-sm-0 mt-4">
+          <h2 class="h4 pb-lg-3 text-light light-300">Quick Links</h2>
+          <ul class="list-unstyled text-light light-300">
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="http://www.iitkgp.ac.in/">IITKGP website</a>
+            </li>
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="https://erp.iitkgp.ernet.in/">ERP</a>
+            </li>
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="https://wiki.metakgp.org/w/Yellow_pages/">Your Dost</a>
+            </li>
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="http://www.hmc.iitkgp.ac.in/web/">Hall Management Centre</a>
+            </li>
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="http://www.counsellingcentre.iitkgp.ac.in/">Counselling Centre</a>
+            </li>
+            
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="https://wiki.metakgp.org/w/Yellow_pages">Yellow Pages</a>
+            </li><li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="https://docs.google.com/forms/d/e/1FAIpQLSft9FXZYvLiNt3oy0K3Iu4d6HoE830RhNWFHMXx1R4IjlhHKA/viewform">Grievance Form</a>
+            </li>
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="https://iitkgpmail.iitkgp.ac.in/">Zimbra Webmail</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4 my-sm-0 mt-4">
+          <h2 class="h4 pb-lg-3 text-light light-300">Follow Us</h2>
+
+          <ul class="list-unstyled text-light light-300">
+            <li class="pb-2">
+         <i class="bx-fw bx bxs-chevron-right bx-xs"></i>     
+<a href="https://www.facebook.com/TSG.IITKharagpur" target="_blank" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>                                
+                                                                                                       <a href="https://twitter.com/tsg_iitkgp" target="_blank" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>        
+
+<a href="https://www.youtube.com/channel/UCuTNELMlkNfJxAQ2vGJIe5Q" target="_blank" rel=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
+                                                                                                                                                          
+                                                                                           <a href="https://github.com/tsg-iitkgp/tsg-site" target="_blank" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-2 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+
+
+
+</li>
+            
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </footer>
+
+
+  
+ <!-- End Footer -->
+    <a href="{% url 'base' %}" id="refresher" style="display:none;"></a>
+ </section>
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'assets/js/isotope.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'assets/js/lightbox.js' %}"></script>
+    <script src="{% static 'assets/js/tabs.js' %}"></script>
+    <script src="{% static 'ssets/js/video.js' %}"></script>
+    <script src="{% static 'assets/js/slick-slider.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script>
+       
+       // $('.cd-user-modal').modal('show');
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+          e.preventDefault();
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+    </script>
+    <script>
+      jQuery(document).ready(function($){
+        var $form_modal = $('.cd-user-modal'),
+          $form_login = $form_modal.find('#cd-login'),
+          $form_signup = $form_modal.find('#cd-signup'),
+          $form_forgot_password = $form_modal.find('#cd-reset-password'),
+          $form_modal_tab = $('.cd-switcher'),
+          $tab_login = $form_modal_tab.children('li').eq(0).children('a'),
+          $tab_signup = $form_modal_tab.children('li').eq(1).children('a'),
+          $forgot_password_link = $form_login.find('.cd-form-bottom-message a'),
+          $back_to_login_link = $form_forgot_password.find('.cd-form-bottom-message a'),
+          $main_nav = $('.main-nav2');
+      
+        //open modal
+      //  $main_nav.on('click', function(event){
+      
+          if( $(event.target).is($main_nav) ) {
+            // on mobile open the submenu
+            $(this).children('ul').toggleClass('is-visible');
+          } else {
+            // on mobile close submenu
+            $main_nav.children('ul').removeClass('is-visible');
+            //show modal layer
+            $form_modal.addClass('is-visible');	
+            //show the selected form
+            ( $(event.target).is('.cd-signup') ) ? signup_selected() : login_selected();
+          }
+      
+      
+        //close modal
+        $('.cd-user-modal').on('click', function(event){
+          
+          if( $(event.target).is($form_modal) || $(event.target).is('.cd-close-form') ) {
+            $form_modal.removeClass('is-visible');
+            document.getElementById('refresher').click();
+          }	
+
+        });
+        //close modal when clicking the esc keyboard button
+        $(document).keyup(function(event){
+            if(event.which=='27'){
+              $form_modal.removeClass('is-visible');
+            }
+          });
+      
+        //switch from a tab to another
+        $form_modal_tab.on('click', function(event) {
+          event.preventDefault();
+          ( $(event.target).is( $tab_login ) ) ? login_selected() : signup_selected();
+        });
+      
+        //hide or show password
+        $('.hide-password').on('click', function(){
+          var $this= $(this),
+            $password_field = $this.prev('input');
+          
+          ( 'password' == $password_field.attr('type') ) ? $password_field.attr('type', 'text') : $password_field.attr('type', 'password');
+          ( 'Hide' == $this.text() ) ? $this.text('Show') : $this.text('Hide');
+          //focus and move cursor to the end of input field
+          $password_field.putCursorAtEnd();
+        });
+      
+        //show forgot-password form 
+        $forgot_password_link.on('click', function(event){
+          event.preventDefault();
+          forgot_password_selected();
+        });
+      
+        //back to login from the forgot-password form
+        $back_to_login_link.on('click', function(event){
+          event.preventDefault();
+          login_selected();
+        });
+      
+        function login_selected(){
+          $form_login.addClass('is-selected');
+          $form_signup.removeClass('is-selected');
+          $form_forgot_password.removeClass('is-selected');
+          $tab_login.addClass('selected');
+          $tab_signup.removeClass('selected');
+        }
+      
+        function signup_selected(){
+          $form_login.removeClass('is-selected');
+          $form_signup.addClass('is-selected');
+          $form_forgot_password.removeClass('is-selected');
+          $tab_login.removeClass('selected');
+          $tab_signup.addClass('selected');
+        }
+      
+        function forgot_password_selected(){
+          $form_login.removeClass('is-selected');
+          $form_signup.removeClass('is-selected');
+          $form_forgot_password.addClass('is-selected');
+        }
+      
+        //REMOVE THIS - it's just to show error messages 
+        //$form_login.find('input[type="submit"]').on('click', function(event){
+         // event.preventDefault();
+         // $form_login.find('input[type="email"]').toggleClass('has-error').next('span').toggleClass('is-visible');
+        //});
+        //$form_signup.find('input[type="submit"]').on('click', function(event){
+        //  event.preventDefault();
+         // $form_signup.find('input[type="email"]').toggleClass('has-error').next('span').toggleClass('is-visible');
+       // });
+      
+      
+        //IE9 placeholder fallback
+        //credits http://www.hagenburger.net/BLOG/HTML5-Input-Placeholder-Fix-With-jQuery.html
+        if(!Modernizr.input.placeholder){
+          $('[placeholder]').focus(function() {
+            var input = $(this);
+            if (input.val() == input.attr('placeholder')) {
+              input.val('');
+              }
+          }).blur(function() {
+             var input = $(this);
+              if (input.val() == '' || input.val() == input.attr('placeholder')) {
+              input.val(input.attr('placeholder'));
+              }
+          }).blur();
+          $('[placeholder]').parents('form').submit(function() {
+              $(this).find('[placeholder]').each(function() {
+              var input = $(this);
+              if (input.val() == input.attr('placeholder')) {
+                 input.val('');
+              }
+              })
+          });
+        }
+      
+      });
+      
+      
+      //credits https://css-tricks.com/snippets/jquery/move-cursor-to-end-of-textarea-or-input/
+      jQuery.fn.putCursorAtEnd = function() {
+        return this.each(function() {
+            // If this function exists...
+            if (this.setSelectionRange) {
+                // ... then use it (Doesn't work in IE)
+                // Double the length because Opera is inconsistent about whether a carriage return is one character or two. Sigh.
+                var len = $(this).val().length * 2;
+                this.setSelectionRange(len, len);
+            } else {
+              // ... otherwise replace the contents with itself
+              // (Doesn't work in Google Chrome)
+                $(this).val($(this).val());
+            }
+        });
+      };
+      document.getElementById("auto").click();
+      function otp(){
+        var otp = document.getElementById("otp");
+        var getotp = document.getElementById("getotp");
+        var log = document.getElementById("log");
+        otp.style.display = "block";
+        getotp.style.display = "none";
+        log.style.display = "block";
+        
+      }
+    </script>
+</body>
+
+</body>
+</html>

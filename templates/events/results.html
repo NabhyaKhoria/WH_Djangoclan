@@ -1,0 +1,776 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, shrink-to-fit=9">
+
+<title>ModernCamp</title>
+
+<link rel="icon" type="image/png" href="images/fav.png">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link rel="stylesheet" href="css/fontawesome-all.css">
+</head>
+<body>
+<div class="preloader-area">
+<div class="spinner">
+<img src="images/logo.svg" alt="">
+</div>
+</div>
+<header class="menu header_navbar header-menu-1">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-sm-12 col-xs-12 logo-outer">
+<div class="logo_box">
+<a href="index.html"><img src="images/logo.svg" alt=""></a>
+</div>
+</div>
+<div class="col-md-9 col-sm-12 col-xs-12 text-center nav-outer-responsive">
+<nav class="navbar navbar-inverse">
+<div class="navbar-collapse row collapse" id="myNavbar" style="height: 1px;">
+<div class="col-md-12 zero-padding">
+<ul class="nav navbar-nav">
+<li><a href="index.html" class="active">dashboard</a></li>
+<li><a href="engage.html">engage</a></li>
+<li><a href="services.html">service</a></li>
+<li><a href="help.html">help</a></li>
+<li class="dropdown_menu">
+<a href="#"><span class="header_span"><i class="fas fa-money-bill-alt"></i> $150 </span><span class="fa fa-angle-down"></span></a>
+<ul class="dropdown-menu pull-left search-panel">
+<li><a href="">Add Credit</a></li>
+<li><a href="">Wallet</a></li>
+</ul>
+</li>
+<li><a href="faq.html" class="faq_mail"><span class="circle"><i class="fas fa-envelope"></i></span></a></li>
+<li class="">
+<a href="#"><span class="header_span"><i class="fas fa-user-circle"></i> John </span><span class="fa fa-angle-down"></span></a>
+<ul class="dropdown-menu pull-left search-panel">
+<li><a href="login.html">Logout</a></li>
+</ul>
+</li>
+</ul>
+<div class="header_btn">
+<a href="campaign.html" class="comp_btn">Create new campaign</a>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+</header>
+
+<div class="col-md-3 col-sm-12 col-xs-12 responsive_logo">
+<div class="logo_box">
+<a href="index.html"><img src="images/logo.svg" alt=""></a>
+</div>
+</div>
+<div class="responsive_button">
+<p>Dashboard</p>
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="responsive_nav collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li><a href="index.html">dashboard</a></li>
+<li><a href="engage.html">engage</a></li>
+<li><a href="services.html">service</a></li>
+<li><a href="help.html">help</a></li>
+<li><a href="terms.html">Terms & Condition</a></li>
+<li><a href="faq.html">faq</a></li>
+<li><a href="login.html">logout</a></li>
+</ul>
+</div>
+
+<section class="main-section section-margin">
+<div class="container" id="tabs">
+<div class="row">
+<div class="col-md-12">
+
+<div class="col-md-3 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12">
+<div class="profile">
+<div class="profile_inner">
+<img src="images/user.jpg" alt="user">
+<h4 class="user_name">john doe</h4>
+<p class="user_credit">Credit : $150</p>
+</div>
+</div>
+<div class="options_grp">
+<ul class="list-group">
+<li class="list-group-item"><a href="#tabs-1">Overview</a></li>
+<li class="list-group-item"><a href="#tabs-2">Campaign</a></li>
+<li class="list-group-item"><a href="#tabs-3">Opportunities</a></li>
+<li class="list-group-item"><a href="#tabs-4">Reports</a></li>
+</ul>
+<a class="log1452" href="login.html">Logout</a>
+</div>
+</div>
+
+
+<div class="tabs_1" id="tabs-1">
+<div class="col-md-9 col-sm-12 col-xs-12 zero-padding filter-sec">
+<div class="col-md-6 col-sm-6 col-xs-12 search-filter">
+<span class="search_btn"><i class="fas fa-search"></i></span>
+<input type="text" class="form-control" placeholder="Search">
+</div>
+<div class="col-md-6 col-sm-6 col-xs-12 filter-id">
+<div class="text-right">
+<p> Mediacamp ID :<span class="defualt_clr">123456789</span></p>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="custom-selection">
+<div class="col-md-3 col-sm-6 col-xs-12 margin_btm">
+<div id='post' class="btn-group dropdown">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span>Account : <span id="selected-post" style='color:#e53632'>John Doe</span></span> <span class="fas fa-angle-down"></span>
+</button>
+<ul class="dropdown-menu dropdown-menu1">
+ <li><p><span style='color:#e53632'>John Doe 1</span></p></li>
+<li><p><span style='color:#e53632'>John Doe 2</span></p></li>
+<li><p><span style='color:#e53632'>John Doe 3</span></p></li>
+<li><p><span style='color:#e53632'>John Doe 4</span></p></li>
+</ul>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12 margin_btm">
+<div id='my-campaign' class="btn-group dropdown">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span id="selected-campaign">All Campaigns</span> <span class="fas fa-angle-down"></span>
+</button>
+<ul class="dropdown-menu dropdown-menu2">
+<li><p>Campaigns one</p></li>
+<li><p>Campaigns Two</p></li>
+<li><p>Campaigns Three</p></li>
+<li><p>Campaigns Four</p></li>
+</ul>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12 margin_btm">
+<div id='my-range' class="btn-group dropdown">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span>Range : <span id="selected-range" style='color:#e53632'>Mar 2018, Apr 2018</span></span> <span class="fas fa-angle-down"></span>
+</button>
+<ul class="dropdown-menu dropdown-menu3">
+<li><p><span style='color:#e53632'>Apr 2020, May 2020</span></p></li>
+<li><p><span style='color:#e53632'>May 2020, Jun 2020</span></p></li>
+<li><p><span style='color:#e53632'>Jun 2020, Jul 2020</span></p></li>
+<li><p><span style='color:#e53632'>Jul 2020, Aug 2020</span></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-9 col-sm-12 zero-padding">
+<div class="col-md-12 graph-section">
+<h4>Performance Graph</h4>
+<div class="graph_outer">
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12 graph_details">
+<h6 class="first">Geotargetted</h6>
+<p>$12 / Day - Active</p>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12 graph_details">
+<h6 class="second">National</h6>
+<p>$13 / Day - Active</p>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12 graph_details">
+<h6 class="third">International</h6>
+<p>$15 / Day - Active</p>
+ </div>
+<div class="col-md-3 col-sm-6 col-xs-12 graph_details">
+<h6 class="fourth">Mobile & Content</h6>
+<p>$10 / Day - Active</p>
+</div>
+<div class="col-md-12 table-section">
+<h4>Campaigns</h4>
+<div class="table-outer">
+<table class="table">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Title Campaign Name</th>
+<th scope="col">Cost<i class="fas fa-angle-down"></i></th>
+<th scope="col">Clicks <i class="fas fa-angle-down"></i></th>
+<th scope="col">Conversions <i class="fas fa-angle-down"></i></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Campaign Name</th>
+<td>-$6.50<i class="fas fa-angle-down"></i>
+<p>-0.30%</p>
+</td>
+<td>-$4.00<i class="fas fa-angle-down"></i>
+<p>-0.30%</p>
+</td>
+<td>+1<i class="fas fa-angle-up"></i>
+<p>12 Total</p>
+</td>
+</tr>
+<tr>
+<th scope="row">Campaign Name</th>
+<td>-$6.50<i class="fas fa-angle-down"></i>
+<p>-0.30%</p>
+</td>
+<td>-$4.00<i class="fas fa-angle-down"></i>
+<p>-0.30%</p>
+</td>
+<td>+1<i class="fas fa-angle-up"></i>
+<p>12 Total</p>
+</td>
+</tr>
+<tr>
+<th scope="row">Campaign Name</th>
+<td>-$6.50<i class="fas fa-angle-down"></i>
+<p>-0.30%</p>
+</td>
+<td>-$4.00<i class="fas fa-angle-down"></i>
+<p>-0.30%</p>
+</td>
+<td>+1<i class="fas fa-angle-up"></i>
+<p>12 Total</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+ </div>
+</div>
+
+
+<div class="tabs_2" id="tabs-2">
+<div class="col-md-9 col-sm-12 col-xs-12">
+<div id='my-campaign1' class="btn-group dropdown">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span id="campaign_post">All Enable campaign</span> <span class="fas fa-angle-down"></span>
+</button>
+<ul class="dropdown-menu dropdown-menu4">
+<li><p>All Enable campaign</p></li>
+<li><p>campaign 01</p></li>
+<li><p>campaign 02</p></li>
+<li><p>campaign 03</p></li>
+<li><p>campaign 04</p></li>
+</ul>
+</div>
+<div id='my-filters' class="btn-group dropdown">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span id="filters_post">Filters </span><span class="fas fa-angle-down"></span>
+</button>
+<ul class="dropdown-menu dropdown-menu5">
+<li><p>Filters 01</p></li>
+<li><p>Filters 02</p></li>
+<li><p>Filters 03</p></li>
+<li><p>Filters 04</p></li>
+</ul>
+</div>
+<div id='my-column' class="btn-group dropdown">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span id="column_post">Column </span><span class="fas fa-angle-down"></span>
+</button>
+<ul class="dropdown-menu dropdown-menu6">
+<li><p>Column 01</p></li>
+<li><p>Column 02</p></li>
+<li><p>Column 03</p></li>
+<li><p>Column 04</p></li>
+</ul>
+</div>
+<div class="service_icon">
+<div class="icon">
+<a href=""><img src="images/icons/services_1.png" alt=""></a>
+</div>
+</div>
+<div class="search-filter">
+<span class="search_btn"><i class="fas fa-search"></i></span>
+<input type="text" class="form-control" placeholder="Search">
+</div>
+<div id='my-clicks' class="btn-group dropdown">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span class="red"></span><span id="clicks_post">clicks </span><span class="fas fa-angle-down"></span>
+</button>
+<ul class="dropdown-menu dropdown-menu7">
+<li><p>500</p></li>
+<li><p>1000</p></li>
+<li><p>5000</p></li>
+<li><p>10000</p></li>
+</ul>
+</div>
+<div id='my-cost' class="btn-group dropdown">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span class="purple"></span><span id="cost_post">cost </span><span class="fas fa-angle-down"></span>
+</button>
+<ul class="dropdown-menu dropdown-menu8">
+<li><p>$50</p></li>
+<li><p>$100</p></li>
+<li><p>$500</p></li>
+<li><p>$100</p></li>
+</ul>
+</div>
+<div id='days' class="btn-group dropdown">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span id="days_post">Daily </span><span class="fas fa-angle-down"></span>
+</button>
+<ul class="dropdown-menu dropdown-menu9">
+<li><p>weekly</p></li>
+<li><p>monthly</p></li>
+<li><p>semi-annauly</p></li>
+<li><p>annualy</p></li>
+</ul>
+</div>
+<div class="col-md-12 zero-padding graph-section">
+<div class="graph_2">
+<div id="chartContainer2" style="height: 120px; width: 100%;"></div>
+</div>
+</div>
+<div class="col-md-12 zero-padding campaign_margin">
+<a href="campaign.html" class="comp_btn tab_btn">Create new campaign</a>
+<div id='my-Editer' class="btn-group">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span id="Edit_post">Edit<span class="fas fa-angle-down"></span></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="#">Enable</a></li>
+<li><a href="#">Pause</a></li>
+<li><a href="#">Remove</a></li>
+<li><a href="#">Download Spreadsheet</a></li>
+<li><a href="#">Recent Bulk Edits</a></li>
+</ul>
+</div>
+<div id='my-Bid' class="btn-group">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span id="Bid_post">Bid Strategy<span class="fas fa-angle-down"></span></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="#">High</a></li>
+<li><a href="#">Medium</a></li>
+ <li><a href="#">Low</a></li>
+</ul>
+</div>
+<div id='my-Labels' class="btn-group">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span id="labels_post">Labels<span class="fas fa-angle-down"></span></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="#">#1</a></li>
+<li><a href="#">#2</a></li>
+<li><a href="#">#3</a></li>
+<li><a href="#">#4</a></li>
+</ul>
+</div>
+</div>
+<div style="overflow-x:auto;" class="table_tab2 col-md-12 zero-padding">
+<table>
+<tr>
+<th>Campaign</th>
+<th>Budget</th>
+<th>Status</th>
+<th>Clicks</th>
+<th>Impr.</th>
+<th>CTR</th>
+<th class="avg">Avg. CPC</th>
+<th>Cost</th>
+<th>Avg. Post</th>
+<th>Points</th>
+<th>Points</th>
+<th>Points</th>
+</tr>
+<tr>
+<td>Campaign 01</td>
+<td>$100<p>Daily</p></td>
+<td class="elegible">Elegible</td>
+<td class="clr_99a">255</td>
+<td class="clr_99a">2158</td>
+<td class="clr_99a">11.11%</td>
+<td class="clr_99a">$6.27</td>
+<td class="clr_99a">$21597.00</td>
+<td class="clr_99a">1.3</td>
+<td class="clr_99a">50</td>
+<td class="clr_99a">50</td>
+<td class="clr_99a">50</td>
+</tr>
+<tr>
+<td>Campaign 02</td>
+<td>$100<p>Daily</p></td>
+<td class="elegible">Elegible</td>
+<td class="clr_99a">255</td>
+<td class="clr_99a">2158</td>
+<td class="clr_99a">11.11%</td>
+<td class="clr_99a">$6.27</td>
+<td class="clr_99a">$21597.00</td>
+<td class="clr_99a">1.3</td>
+<td class="clr_99a">50</td>
+<td class="clr_99a">50</td>
+<td class="clr_99a">50</td>
+</tr>
+<tr>
+<td>Total All Compaign</td>
+<td>$200<p>Daily</p></td>
+<td></td>
+<td>510</td>
+<td>4316</td>
+<td>22.22%</td>
+<td>$12.54</td>
+<td>$43194.00</td>
+<td>2.6</td>
+<td>67</td>
+<td>67</td>
+<td>67</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+
+
+<div class="tabs_3" id="tabs-3">
+<div class="col-md-9 col-sm-12 col-xs-12">
+<div class="opportunities">
+<div class="ads_img">
+<img src="images/customer.png" alt="">
+</div>
+<div class="ads_details">
+<h5>Add new keywords to get your ads in front of more Potential Customers.</h5>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque feugiat facilisis ex, eu vehicula ipsum. Aliquam odio sapien, molestie vel augue sed, lacinia facilisis est. Phasellus a rutrum sem. Morbi vehicula, magna eget finibus hendrerit, felis mi imperdiet velit, vitae imperdiet dolor nunc nec eros.</p>
+</div>
+</div>
+<div class="col-md-12 zero-padding key_editor">
+<p class="editor_title">Add 15 keywords related to <strong>Eiditing</strong></p>
+<div class="clicks">
+<h2>+2</h2>
+<p>Weekly Clicks</p>
+</div>
+<div class="impression">
+<h2>+159</h2>
+<p>Weekly Clicks</p>
+</div>
+<div class="cost">
+<h2>+$1.22</h2>
+<p>Weekly Cost</p>
+</div>
+<div class="view_apply">
+<a href="thanks.html" class="comp_btn view">view</a>
+<a href="thanks.html" class="comp_btn apply_btn">apply</a>
+</div>
+<p class="btm_para">Keywords include editing firms, editing companies.</p>
+</div>
+<div class="col-md-12 zero-padding key_editor">
+<p class="editor_title">Add 15 keywords related to <strong>Eiditing</strong></p>
+<div class="clicks">
+<h2>+2</h2>
+<p>Weekly Clicks</p>
+</div>
+<div class="impression">
+<h2>+159</h2>
+<p>Weekly Clicks</p>
+</div>
+<div class="cost">
+<h2>+$1.22</h2>
+<p>Weekly Cost</p>
+</div>
+<div class="view_apply">
+<a href="thanks.html" class="comp_btn view">view</a>
+<a href="thanks.html" class="comp_btn apply_btn">apply</a>
+</div>
+<p class="btm_para">Keywords include editing firms, editing companies.</p>
+</div>
+<div class="col-md-12 zero-padding key_editor last">
+<p class="editor_title">Add 15 keywords related to <strong>Eiditing</strong></p>
+<div class="clicks">
+<h2>+2</h2>
+<p>Weekly Clicks</p>
+</div>
+<div class="impression">
+<h2>+159</h2>
+<p>Weekly Clicks</p>
+</div>
+<div class="cost">
+<h2>+$1.22</h2>
+<p>Weekly Cost</p>
+</div>
+<div class="view_apply">
+<a href="thanks.html" class="comp_btn view">view</a>
+<a href="thanks.html" class="comp_btn apply_btn">apply</a>
+</div>
+<p class="btm_para">Keywords include editing firms, editing companies.</p>
+</div>
+</div>
+</div>
+
+
+<div class="tabs_4" id="tabs-4">
+<div class="col-md-9 col-sm-12 col-xs-12 zero-padding">
+<div class="col-md-5">
+<div class="report_option">
+<div class="filter-checkbox">
+<p>
+<input type="checkbox" id="c1" name="cb">
+<label for="c1">Device Trends</label>
+</p>
+<p>
+<input type="checkbox" id="c2" name="cb">
+<label for="c2">Compaign Performance</label>
+</p>
+<p>
+<input type="checkbox" id="c3" name="cb">
+<label for="c3">Spend by ad Group</label>
+</p>
+<p>
+<input type="checkbox" id="c4" name="cb">
+<label for="c4">Keywords Reports for 2018</label>
+</p>
+<p>
+<input type="checkbox" id="c5" name="cb">
+<label for="c5">Clicks by Devices</label>
+</p>
+</div>
+</div>
+<div class="doc_format">
+<div class="format format_inner">
+<p class="report_t">Format*</p>
+<div id='format' class="btn-group dropdown">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span id="post-format">.CSV</span><span class="fas fa-angle-down"></span>
+ </button>
+<ul class="dropdown-menu dropdown-menu10">
+<li><p>.CSV</p></li>
+<li><p>.PDF</p></li>
+<li><p>.XPS</p></li>
+</ul>
+</div>
+</div>
+<div class="sender format_inner">
+<p class="report_t">Send To*</p>
+<div class="report_option">
+<div class="filter-checkbox">
+<p>
+<input type="checkbox" id="c6" name="cb">
+<label for="c6">Only Me</label>
+</p>
+<p>
+<input type="checkbox" id="c7" name="cb">
+<label for="c7">All account users with access to view Reports</label>
+</p>
+<p>
+<input type="checkbox" id="c8" name="cb">
+<label for="c8">Specific acoount user and me?</label>
+</p>
+</div>
+</div>
+</div>
+<div class="sender format_inner">
+<p class="report_t">Frequency*</p>
+<div id='checking' class="btn-group dropdown">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span id="post-checking"><span class="purple"></span>Select Frequency<span class="fas fa-angle-down"></span></span>
+</button>
+<ul class="dropdown-menu dropdown-menu11">
+<li><p>Per Day</p></li>
+<li><p>weekly</p></li>
+<li><p>15 Days</p></li>
+<li><p>Month</p></li>
+</ul>
+</div>
+<div class="save_changes">
+<a href="#" class="comp_btn save">Save</a>
+<a href="#" class="comp_btn cancel">Cancel</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-7">
+<div class="table-outer report_table">
+<table class="table">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Date Range</th>
+<th scope="col">Creation Date</th>
+<th scope="col">Created by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <th scope="row" class="time">All Times</th>
+<th scope="row" class="date">August 15, 2018</th>
+<th scope="row" class="author">Jhone Dhoe</th>
+</tr>
+<tr>
+<th scope="row" class="time">Last Month</th>
+<th scope="row" class="date">August 15, 2018</th>
+<th scope="row" class="author">Rockey</th>
+</tr>
+<tr>
+<th scope="row" class="time">Custom</th>
+<th scope="row" class="date">August 15, 2018</th>
+<th scope="row" class="author">Jass Singh</th>
+</tr>
+<tr>
+<th scope="row" class="time">Yesterday</th>
+<th scope="row" class="date">August 15, 2018</th>
+<th scope="row" class="author">Rock</th>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<a href="" class="cd-top js-cd-top "> <i class="fas fa-angle-up"></i> </a>
+
+
+<!-- Start Footer-->
+<footer class="bg-secondary pt-4">
+
+    <div class="container">
+      <div class="row py-3">
+
+        <div class="col-lg-3 col-12 align-left">
+          <a class="navbar-brand" href="index.html">
+            <i class="bx bx-buildings bx-sm text-light"></i>
+              
+          
+  <p class="text-light h1">Technology </p>
+  <p class="text-light h1 semi-bold-600">Student's</p>
+  <p class="text-light h1 semi-bold-600">Gymkhana</p> 
+  <p class="text-light my-lg-4 my-2">IIT Kharagpur, Kharagpur <br>West Bengal, India-721302 </p>
+  
+          </a>
+<ul class="list-inline footer-icons light-300">
+            <li class="list-inline-item m-0">
+              <a class="text-light" target="_blank" href="http://facebook.com/">
+                <i class="bx bxl-facebook-square bx-md"></i>
+              </a>
+            </li>
+            <li class="list-inline-item m-0">
+              <a class="text-light" target="_blank" href="https://www.linkedin.com/">
+                <i class="bx bxl-linkedin-square bx-md"></i>
+              </a>
+            </li>
+            <li class="list-inline-item m-0">
+              <a class="text-light" target="_blank" href="https://www.whatsapp.com/">
+                <i class="bx bxl-whatsapp-square bx-md"></i>
+              </a>
+            </li>
+            <li class="list-inline-item m-0">
+              <a class="text-light" target="_blank" href="https://www.flickr.com/">
+                <i class="bx bxl-flickr-square bx-md"></i>
+              </a>
+            </li>
+            <li class="list-inline-item m-0">
+              <a class="text-light" target="_blank" href="https://www.medium.com/">
+                <i class="bx bxl-medium-square bx-md"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4 my-sm-0 mt-4">
+          <h3 class="h4 pb-lg-3 text-light light-300">Main Menu</h3>
+          <ul class="list-unstyled text-light light-300">
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light" href="index.html">Home</a>
+            </li>
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="about.html">About Us</a>
+            </li>
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="http://127.0.0.1:8000/event/technology">Events</a>
+            </li>
+            
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4 my-sm-0 mt-4">
+          <h2 class="h4 pb-lg-3 text-light light-300">Quick Links</h2>
+          <ul class="list-unstyled text-light light-300">
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="http://www.iitkgp.ac.in/">IITKGP website</a>
+            </li>
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="https://erp.iitkgp.ernet.in/">ERP</a>
+            </li>
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="https://wiki.metakgp.org/w/Yellow_pages/">Your Dost</a>
+            </li>
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="http://www.hmc.iitkgp.ac.in/web/">Hall Management Centre</a>
+            </li>
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="http://www.counsellingcentre.iitkgp.ac.in/">Counselling Centre</a>
+            </li>
+            
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="https://wiki.metakgp.org/w/Yellow_pages">Yellow Pages</a>
+            </li><li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="https://docs.google.com/forms/d/e/1FAIpQLSft9FXZYvLiNt3oy0K3Iu4d6HoE830RhNWFHMXx1R4IjlhHKA/viewform">Grievance Form</a>
+            </li>
+            <li class="pb-2">
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="https://iitkgpmail.iitkgp.ac.in/">Zimbra Webmail</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4 my-sm-0 mt-4">
+          <h2 class="h4 pb-lg-3 text-light light-300">Follow Us</h2>
+
+          <ul class="list-unstyled text-light light-300">
+            <li class="pb-2">
+         <i class="bx-fw bx bxs-chevron-right bx-xs"></i>     
+<a href="https://www.facebook.com/TSG.IITKharagpur" target="_blank" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>                                
+                                                                                                       <a href="https://twitter.com/tsg_iitkgp" target="_blank" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>        
+
+<a href="https://www.youtube.com/channel/UCuTNELMlkNfJxAQ2vGJIe5Q" target="_blank" rel=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
+                                                                                                                                                          
+                                                                                           <a href="https://github.com/tsg-iitkgp/tsg-site" target="_blank" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-2 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+
+
+
+</li>
+            
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </footer>
+
+<!-- End Footer-->
+  
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.canvasjs.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/jquery-ui.js"></script>
+
+<script src="js/canvasjs.min.js"></script>
+<script src="js/line-chart.js"></script>
+
+<script src="js/back-to-top.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
