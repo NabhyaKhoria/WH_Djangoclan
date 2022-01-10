@@ -1,8 +1,6 @@
 **/__pycache__
-**/db.sqlite3
 **/DB backup
 **/staticfiles
-**/media
 TSGhackathon/TSGhackathon/__pycache__*
 event/migrations/__pycache__*
 event/migrations*
