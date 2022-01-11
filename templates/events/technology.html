@@ -179,9 +179,9 @@ height: 323.24px;}
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav col-lg-6">
-              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li><a href="{% url 'base' %} ">Home</a></li>
 
-              <li class="scroll-to-section"><a href="#apply">Apply Now</a></li>
+              <li><a href="{% url 'base' %}">Apply Now</a></li>
               <li class="has-sub drop">
                 <a href="javascript:void(0)">Events</a>
                 <ul class="sub-menu">
@@ -193,8 +193,8 @@ height: 323.24px;}
                   <li><a href="{% url 'event:GCTechnology' %} ">General Championship</a></li>
                 </ul>
               </li>
-              <li class="scroll-to-section"><a href="#courses">Courses</a></li>
-              <li class="scroll-to-section"><a href="#contact">Contact Us</a></li>
+              <li ><a href="{% url 'base' %}">Courses</a></li>
+              <li ><a href="{% url 'base' %}">Contact Us</a></li>
 
               {% if user.is_authenticated %}
               <nav>
