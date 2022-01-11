@@ -16,7 +16,7 @@ from . import views
 app_name = 'event'
 
 urlpatterns = [
-    
+    path('official_dashboard', views.dashboard, name='dashboard'),
     path('technology', views.technology, name='technology'),
     path('SocialandCulture', views.social, name='social'),
     path('SportsandGames', views.sports, name='SportsAndGames'),

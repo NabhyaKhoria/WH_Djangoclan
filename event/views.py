@@ -21,6 +21,15 @@ from django.contrib.auth.models import auth
 from django.core.paginator import PageNotAnInteger, Paginator
 # Create your views here.
 
+def dashboard(request):
+    social = Social.objects.all()
+    context = {
+        'social':social,
+    }
+    return render(request, 'events/dashboard.html', context)
+
+
+
 def interIIT(request):
     context = {
     }
