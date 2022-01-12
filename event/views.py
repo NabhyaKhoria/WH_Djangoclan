@@ -28,6 +28,36 @@ def dashboard(request):
     }
     return render(request, 'events/dashboard.html', context)
 
+def dashboard_add_social(request):
+    if(request.method == 'POST'):
+        name = request.POST['name']
+        small_description = request.POST['small_description']
+        image = request.POST['image']
+        description = request.POST['description']
+        month_of_event = request.POST['month_of_event']
+        date = request.POST['date']
+        type_of_event = request.POST['type_of_event']
+        day_of_event = request.POST['day_of_event']
+        SuperviserName = request.POST['SuperviserName']
+        SuperviserEmail = request.POST['SuperviserEmail']
+        SuperviserContact = request.POST['SuperviserContact']
+        VenueName = request.POST['VenueName']
+        facebook = request.POST['facebook']
+        linkedin = request.POST['linkedin']
+        instagram = request.POST['instagram']
+        print(name)
+        social_add = Social(name=name,small_description=small_description,image=image,description=description,month_of_event=month_of_event,
+            date=date,type_of_event=type_of_event,day_of_event=day_of_event,SuperviserName=SuperviserName,SuperviserEmail=SuperviserEmail,SuperviserContact
+            =SuperviserContact,VenueName=VenueName,facebook=facebook,linkedin=linkedin,instagram=instagram)
+        social_add.save()
+        return HttpResponse("hello")
+    else:    
+        social = Social.objects.all()
+        context = {
+            'social':social,
+        }
+        return render(request, 'events/dashboard_add_social.html', context)
+
 
 
 def interIIT(request):

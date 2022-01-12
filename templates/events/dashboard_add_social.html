@@ -1,6 +1,8 @@
 {% load static %}
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
         <style>
             
 @import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
@@ -325,17 +327,17 @@
                     <div class="table-responsive">
                         <table class="table table-hover table-nowrap">
                             <thead class="thead-light">
-                                <tr>
+                                <!-- <tr>
                                     <th scope="col">Name</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">Type</th>
                                     <th scope="col">Venue</th>
                                     <th scope="col">Description</th>
                                     <th></th>
-                                </tr>
+                                </tr> -->
                             </thead>
                             <tbody>
-                                {% for soc in social %}
+                                <!-- {% for soc in social %}
                                 <tr>
 
                                     <td>
@@ -347,9 +349,9 @@
                                     <td>
                                         {{soc.date}}
                                     </td>
-                                    <td>
+                                    <td> -->
                                         <!-- <img alt="..." src="{{soc.image.url}}" class="avatar avatar-xs rounded-circle me-2"> -->
-                                        <a class="text-heading font-semibold" href="#">
+                                        <!-- <a class="text-heading font-semibold" href="#">
                                             {{soc.type_of_event}}
                                         </a>
                                     </td>
@@ -368,291 +370,290 @@
                                         </button>
                                     </td>
                                 </tr>
-                                {% endfor %}
-                                <!-- <tr>
-                                    <td>
-                                        <img alt="..." src="https://images.unsplash.com/photo-1610271340738-726e199f0258?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Darlene Robertson
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Apr 15, 2021
-                                    </td>
-                                    <td>
-                                        <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-2.png" class="avatar avatar-xs rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Netguru
-                                        </a>
-                                    </td>
-                                    <td>
-                                        $2.750
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            <i class="bg-warning"></i>Postponed
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img alt="..." src="https://images.unsplash.com/photo-1610878722345-79c5eaf6a48c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Theresa Webb
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Mar 20, 2021
-                                    </td>
-                                    <td>
-                                        <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-3.png" class="avatar avatar-xs rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Figma
-                                        </a>
-                                    </td>
-                                    <td>
-                                        $4.200
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            <i class="bg-success"></i>Scheduled
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img alt="..." src="https://images.unsplash.com/photo-1612422656768-d5e4ec31fac0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Kristin Watson
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Feb 15, 2021
-                                    </td>
-                                    <td>
-                                        <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-4.png" class="avatar avatar-xs rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Mailchimp
-                                        </a>
-                                    </td>
-                                    <td>
-                                        $3.500
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            <i class="bg-dark"></i>Not discussed
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img alt="..." src="https://images.unsplash.com/photo-1608976328267-e673d3ec06ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Cody Fisher
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Apr 10, 2021
-                                    </td>
-                                    <td>
-                                        <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-5.png" class="avatar avatar-xs rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Webpixels
-                                        </a>
-                                    </td>
-                                    <td>
-                                        $1.500
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            <i class="bg-danger"></i>Canceled
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img alt="..." src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Robert Fox
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Feb 15, 2021
-                                    </td>
-                                    <td>
-                                        <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-1.png" class="avatar avatar-xs rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Dribbble
-                                        </a>
-                                    </td>
-                                    <td>
-                                        $3.500
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            <i class="bg-success"></i>Scheduled
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img alt="..." src="https://images.unsplash.com/photo-1610271340738-726e199f0258?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Darlene Robertson
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Apr 15, 2021
-                                    </td>
-                                    <td>
-                                        <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-2.png" class="avatar avatar-xs rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Netguru
-                                        </a>
-                                    </td>
-                                    <td>
-                                        $2.750
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            <i class="bg-warning"></i>Postponed
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img alt="..." src="https://images.unsplash.com/photo-1610878722345-79c5eaf6a48c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Theresa Webb
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Mar 20, 2021
-                                    </td>
-                                    <td>
-                                        <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-3.png" class="avatar avatar-xs rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Figma
-                                        </a>
-                                    </td>
-                                    <td>
-                                        $4.200
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            <i class="bg-success"></i>Scheduled
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img alt="..." src="https://images.unsplash.com/photo-1612422656768-d5e4ec31fac0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Kristin Watson
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Feb 15, 2021
-                                    </td>
-                                    <td>
-                                        <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-4.png" class="avatar avatar-xs rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Mailchimp
-                                        </a>
-                                    </td>
-                                    <td>
-                                        $3.500
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            <i class="bg-dark"></i>Not discussed
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img alt="..." src="https://images.unsplash.com/photo-1608976328267-e673d3ec06ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Cody Fisher
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Apr 10, 2021
-                                    </td>
-                                    <td>
-                                        <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-5.png" class="avatar avatar-xs rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Webpixels
-                                        </a>
-                                    </td>
-                                    <td>
-                                        $1.500
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            <i class="bg-danger"></i>Canceled
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr> -->
+                                {% endfor %} -->
+                                <form action="{% url 'event:dashboard_add_social' %}" enctype="multipart/form-data" method="POST">
+                                    {% csrf_token %}
+                                    <div style="margin-left:20px;">  
+                                      <fieldset class="module aligned">
+                                            <div class="form-row field-name">
+                                                    <div>
+                                                            <label class="required" for="id_name">Name:</label>
+                                                            <input type="text" name="name" class="vTextField" maxlength="50" required="" id="id_name">
+                                                    </div>
+                                            </div>
+                                            <div class="form-row field-small_description">
+                                                    <div>
+                                                            <label class="required" for="id_small_description">Small description:</label>
+                                                                <input type="text" name="small_description" class="vTextField" maxlength="70" required="" id="id_small_description">
+                                                    </div>
+                                            </div>
+                                        
+                                            <div class="form-row field-image">
+                                                
+                                                
+                                                    <div>
+                                                            <label class="required" for="id_image">Image:</label>
+                                                            
+                                                                <input type="file" name="image" accept="image/*" required="" id="id_image">
+                                                    </div>
+                                            </div>
+                                            <div class="form-row field-description">
+                                                    <div>
+                                                        
+                                                        
+                                                            <label class="required" for="id_description">Description:</label>
+                                                            
+                                                                <textarea name="description" cols="40" rows="10" class="vLargeTextField" required="" id="id_description"></textarea>
+                                                            
+                                                        
+                                                        
+                                                    </div>
+                                                
+                                            </div>
+                                        
+                                            <div class="form-row field-month_of_event">
+                                                
+                                                
+                                                    <div>
+                                                        
+                                                        
+                                                            <label class="required" for="id_month_of_event">Month of event:</label>
+                                                            
+                                                                <select name="month_of_event" id="id_month_of_event">
+                                      <option value="Jan" selected="">Jan</option>
+                                      <option value="Feb">Feb</option>
+                                      <option value="Mar">Mar</option>
+                                      <option value="Apr">Apr</option>
+                                      <option value="May">May</option>
+                                      <option value="Jun">Jun</option>
+                                      <option value="Jul">Jul</option>
+                                      <option value="Aug">Aug</option>
+                                      <option value="Sep">Sep</option>
+                                      <option value="Oct">Oct</option>
+                                      <option value="Nov">Nov</option>
+                                      <option value="Dec">Dec</option>
+                                    </select>
+                                                    </div>
+                                            </div>
+                                        
+                                            <div class="form-row field-date">
+                                                    <div>
+                                                            <label class="required" for="id_date">Date:</label>
+                                                                <input type="text" name="date" class="vDateField" size="10" required="" id="id_date"><span class="datetimeshortcuts">&nbsp;<a href="#">Today</a>&nbsp;|&nbsp;<a href="#" id="calendarlink0"><span class="date-icon" title="Choose a Date"></span></a></span>
+                                                    <br><span class="timezonewarning">Note: You are 5.5 hours ahead of server time.</span></div>
+                                                
+                                            </div>
+                                        
+                                            <div class="form-row field-type_of_event">
+                                                
+                                                
+                                                    <div>
+                                                        
+                                                        
+                                                            <label class="required" for="id_type_of_event">Type of event:</label>
+                                                            
+                                                                <select name="type_of_event" id="id_type_of_event">
+                                      <option value="soon" selected="">soon</option>
+                                    
+                                      <option value="att">att</option>
+                                    
+                                      <option value="imp">imp</option>
+                                    
+                                    </select>
+                                                            
+                                                        
+                                                        
+                                                    </div>
+                                                
+                                            </div>
+                                        
+                                            <div class="form-row field-day_of_event">
+                                                
+                                                
+                                                    <div>
+                                                        
+                                                        
+                                                            <label class="required" for="id_day_of_event">Day of event:</label>
+                                                            
+                                                                <select name="day_of_event" id="id_day_of_event">
+                                      <option value="Monday" selected="">Monday</option>
+                                    
+                                      <option value="Tuesday">Tuesday</option>
+                                    
+                                      <option value="Wednesday">Wednesday</option>
+                                    
+                                      <option value="Thursday">Thursday</option>
+                                    
+                                      <option value="Friday">Friday</option>
+                                    
+                                      <option value="Saturday">Saturday</option>
+                                    
+                                      <option value="Sunday">Sunday</option>
+                                    
+                                    </select>
+                                                            
+                                                        
+                                                        
+                                                    </div>
+                                                
+                                            </div>
+                                        
+                                            <div class="form-row field-SuperviserName">
+                                                
+                                                
+                                                    <div>
+                                                        
+                                                        
+                                                            <label class="required" for="id_SuperviserName">SuperviserName:</label>
+                                                            
+                                                                <input type="text" name="SuperviserName" class="vTextField" maxlength="50" required="" id="id_SuperviserName">
+                                                            
+                                                        
+                                                        
+                                                    </div>
+                                                
+                                            </div>
+                                        
+                                            <div class="form-row field-SuperviserEmail">
+                                                
+                                                
+                                                    <div>
+                                                        
+                                                        
+                                                            <label class="required" for="id_SuperviserEmail">SuperviserEmail:</label>
+                                                            
+                                                                <input type="text" name="SuperviserEmail" class="vTextField" maxlength="60" required="" id="id_SuperviserEmail">
+                                                            
+                                                        
+                                                        
+                                                    </div>
+                                                
+                                            </div>
+                                        
+                                            <div class="form-row field-SuperviserContact">
+                                                
+                                                
+                                                    <div>
+                                                        
+                                                        
+                                                            <label class="required" for="id_SuperviserContact">SuperviserContact:</label>
+                                                            
+                                                                <input type="text" name="SuperviserContact" class="vTextField" maxlength="30" required="" id="id_SuperviserContact">
+                                                            
+                                                        
+                                                        
+                                                    </div>
+                                                
+                                            </div>
+                                        
+                                            <div class="form-row field-VenueName">
+                                                
+                                                
+                                                    <div>
+                                                        
+                                                        
+                                                            <label class="required" for="id_VenueName">VenueName:</label>
+                                                            
+                                                                <input type="text" name="VenueName" class="vTextField" maxlength="60" required="" id="id_VenueName">
+                                                            
+                                                        
+                                                        
+                                                    </div>
+                                                
+                                            </div>
+                                        
+                                            <div class="form-row field-facebook">
+                                                
+                                                
+                                                    <div>
+                                                        
+                                                        
+                                                            <label class="required" for="id_facebook">Facebook:</label>
+                                                            
+                                                                <input type="text" name="facebook" class="vTextField" maxlength="200" required="" id="id_facebook">
+                                                            
+                                                        
+                                                        
+                                                    </div>
+                                                
+                                            </div>
+                                        
+                                            <div class="form-row field-linkedin">
+                                                
+                                                
+                                                    <div>
+                                                        
+                                                        
+                                                            <label class="required" for="id_linkedin">Linkedin:</label>
+                                                            
+                                                                <input type="text" name="linkedin" class="vTextField" maxlength="200" required="" id="id_linkedin">
+                                                            
+                                                        
+                                                        
+                                                    </div>
+                                                
+                                            </div>
+                                        
+                                            <div class="form-row field-instagram">
+                                                
+                                                
+                                                    <div>
+                                                        
+                                                        
+                                                            <label class="required" for="id_instagram">Instagram:</label>
+                                                            
+                                                                <input type="text" name="instagram" class="vTextField" maxlength="200" required="" id="id_instagram">
+                                                            
+                                                        
+                                                        
+                                                    </div>
+                                                
+                                            </div>
+                                        
+                                    </fieldset>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <div class="submit-row">
+                                    
+                                    <input type="submit" value="Save" class="default" name="_save">
+                                    
+                                    
+                                    <!-- <input type="submit" value="Save and add another" name="_addanother"> -->
+                                    <!-- <input type="submit" value="Save and continue editing" name="_continue"> -->
+                                    
+                                    
+                                    </div>
+                                    
+                                    
+                                    
+                                        <script type="text/javascript" id="django-admin-form-add-constants" src="/static/admin/js/change_form.js" data-model-name="social">
+                                        </script>
+                                    
+                                    
+                                    
+                                    
+                                    <script type="text/javascript" id="django-admin-prepopulated-fields-constants" src="/static/admin/js/prepopulate_init.js" data-prepopulated-fields="[]">
+                                    </script>
+                                    
+                                    
+                                    </div>
+                                    </form>
                             </tbody>
                         </table>
                     </div>
                     <div class="card-footer border-0 py-5">
-                        <span class="text-muted text-sm">Showing all items</span>
+                        <!-- <span class="text-muted text-sm">Save</span> -->
                     </div>
                 </div>
             </div>

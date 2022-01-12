@@ -17,6 +17,7 @@ app_name = 'event'
 
 urlpatterns = [
     path('official_dashboard', views.dashboard, name='dashboard'),
+    path('official_dashboard/add_social', views.dashboard_add_social, name='dashboard_add_social'),
     path('technology', views.technology, name='technology'),
     path('SocialandCulture', views.social, name='social'),
     path('SportsandGames', views.sports, name='SportsAndGames'),
