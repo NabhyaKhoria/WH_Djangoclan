@@ -682,9 +682,22 @@ xsigin/signup popup
             {% for eve in event2 %}
             <div class="meeting-item">
               <div class="thumb">
-                
-                <a href="meeting-details.html"><img class="owl-img" src="{{eve.image.url}}"
+                {% if eve in technologys %}
+                <a href="{% url 'event:technology' eve.name %}"><img class="owl-img" src="{{eve.image.url}}"
                     alt="New Lecturer Meeting"></a>
+                {% elif eve in socials %}
+                <a href="{% url 'event:social' eve.name %}"><img class="owl-img" src="{{eve.image.url}}"
+                  alt="New Lecturer Meeting"></a>
+
+                {% elif eve in sports %}
+                <a href="{% url 'event:sports' eve.name %}"><img class="owl-img" src="{{eve.image.url}}"
+                  alt="New Lecturer Meeting"></a>
+
+                {% else %}
+                <a href="{% url 'event:studentWelfare' eve.name %}"><img class="owl-img" src="{{eve.image.url}}"
+                  alt="New Lecturer Meeting"></a>
+                {% endif %}
+                
               </div>
               <div class="down-content">
                 <div class="date">
@@ -865,37 +878,39 @@ xsigin/signup popup
       <div class="col-lg-9 align-self-center">
         <div class="row">
           <div class="col-lg-12">
-            <form id="contact" action="" method="post">
+            <form id="contact">
               <div class="row">
                 <div class="col-lg-12">
                   <h2>Let's get in touch</h2>
                 </div>
                 <div class="col-lg-4">
-                  <fieldset>
-                    <input name="name" type="text" id="name" placeholder="YOURNAME...*" required="">
-                  </fieldset>
+                  <form autocomplete="off" name="submit-to-google-sheet">
+                
+                    <input name="Name" type="text" id="name" placeholder="YOURNAME...*" required="">
+                 
                 </div>
                 <div class="col-lg-4">
-                  <fieldset>
-                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="YOUR EMAIL..."
+                  
+                    <input name="Email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="YOUR EMAIL..."
                       required="">
-                  </fieldset>
+                  
                 </div>
                 <div class="col-lg-4">
-                  <fieldset>
-                    <input name="subject" type="text" id="subject" placeholder="SUBJECT...*" required="">
-                  </fieldset>
+                  
+                    <input name="Subject" type="text" id="subject" placeholder="SUBJECT...*" required="">
+                  
                 </div>
                 <div class="col-lg-12">
-                  <fieldset>
-                    <textarea name="message" type="text" class="form-control" id="message"
+                  
+                    <textarea name="Message" type="text" class="form-control" id="message"
                       placeholder="YOUR MESSAGE..." required=""></textarea>
-                  </fieldset>
+                  
                 </div>
                 <div class="col-lg-12">
-                  <fieldset>
+                  
                     <button type="submit" id="form-submit" class="button">SEND MESSAGE NOW</button>
-                  </fieldset>
+                  
+                </form>
                 </div>
               </div>
             </form>
@@ -1344,6 +1359,19 @@ xsigin/signup popup
     }
   </script>
   <script src="{% static 'assets/js/script_calander.js'%}"></script>
+  <script>
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxwhXLIlxAYNxi17Bh5GT-lFR93iBmiCq3uYrEibcR180GYEBYC2uuVmi8D_B4Qaoip/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+
+  </script>
 
 </body>
 
