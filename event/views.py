@@ -28,11 +28,17 @@ def dashboard(request):
     }
     return render(request, 'events/dashboard.html', context)
 
+def handle_uploaded_file(f):  
+    with open('TSG-Hackathon/media/technology/'+f.name, 'wb+') as destination:  
+        for chunk in f.chunks():  
+            destination.write(chunk)  
+
 def dashboard_add_social(request):
     if(request.method == 'POST'):
         name = request.POST['name']
         small_description = request.POST['small_description']
-        image = request.POST['image']
+        image = request.FILES['image']
+        # handle_uploaded_file(request.FILES['image'])  
         description = request.POST['description']
         month_of_event = request.POST['month_of_event']
         date = request.POST['date']
