@@ -683,8 +683,22 @@ xsigin/signup popup
             <div class="meeting-item">
               <div class="thumb">
                 
-                <a href="meeting-details.html"><img class="owl-img" src="{{eve.image.url}}"
+                {% if eve in technologys %}
+                <a href="{% url 'event:technology' eve.name %}"><img class="owl-img" src="{{eve.image.url}}"
                     alt="New Lecturer Meeting"></a>
+                {% elif eve in socials %}
+                <a href="{% url 'event:social' eve.name %}"><img class="owl-img" src="{{eve.image.url}}"
+                  alt="New Lecturer Meeting"></a>
+
+                {% elif eve in sports %}
+                <a href="{% url 'event:sports' eve.name %}"><img class="owl-img" src="{{eve.image.url}}"
+                  alt="New Lecturer Meeting"></a>
+
+                {% else %}
+                <a href="{% url 'event:studentWelfare' eve.name %}"><img class="owl-img" src="{{eve.image.url}}"
+                  alt="New Lecturer Meeting"></a>
+                {% endif %}
+                
               </div>
               <div class="down-content">
                 <div class="date">
