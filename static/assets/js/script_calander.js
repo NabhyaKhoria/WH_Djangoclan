@@ -52,14 +52,23 @@ const renderCalendar = () => {
     days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
   }
 
+  const formatDate = (date) => {
+    if (date.toString().length === 1) {
+      return `0${date}`;
+    } else {
+      return date;
+    }
+  };
+
   for (let i = 1; i <= lastDay; i++) {
     if (
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
-      days += `<div class="today ${i}-${date.getMonth()+1}-${date.getFullYear()} datum">${i}</div>`;
+      
+      days += `<div class="${formatDate(i)}-${formatDate(date.getMonth()+1)}-${date.getFullYear()} datum today ">${i}</div>`;
     } else {
-      days += `<div class="${i}-${date.getMonth()+1}-${date.getFullYear()} datum">${i}</div>`;
+      days += `<div class="${formatDate(i)}-${formatDate(date.getMonth()+1)}-${date.getFullYear()} datum">${i}</div>`;
     }
   }
 
@@ -72,34 +81,44 @@ const renderCalendar = () => {
 document.querySelector(".prev").addEventListener("click", () => {
   date.setMonth(date.getMonth() - 1);
   renderCalendar();
+  refresh();
 });
 
 document.querySelector(".next").addEventListener("click", () => {
   date.setMonth(date.getMonth() + 1);
   renderCalendar();
+  refresh();
 });
 
+
 renderCalendar();
+refresh();
 
 
-// for(j=0;j<page.childElementCount;j++){
-  //   var d = page.children[j].options[0].value
-//   var cd = document.getElementsByClassName(d)
-//   var a =page.children[j].options[1].value
 
-//   cd[0].addEventListener('mouseover', () => {
-  //     console.log(cd[0]);
-  //     document.querySelector("#entry").innerText = a;
-  //   })
-  //   cd[0].addEventListener('mouseout', () => {
-    //     document.querySelector("#entry").innerHTML = "";
-    //   })
-    // }
-    
-  const dates = document.querySelectorAll(".datum");
-  var d = Array.from(document.getElementById("data-calendar").children);
+
+  function refresh(){
+    console.log("Refreshing");
+    var dates = document.querySelectorAll(".datum");
+    var d = Array.from(document.getElementById("data-calendar").children);
+  // console.log(d);
+  // console.log(dates[0].classList[0]);
+  // console.log(d.options[0].value);
+    dates.forEach(date => {
+      
+      
+      console.log(date.classList[0]);
+      
+    })
+//("0" + (this.getMonth() + 1)).slice(-2)
+    d.forEach(date => {
+      console.log(date.options[0].value);
+      
+    })
+
   dates.forEach(date => {
-    const i = d.findIndex(d => d.options[0].value===date.classList[0]);
+    const i = d.findIndex(d => d.options[0].value==date.classList[0]);
+    // console.log(i);
     if(i !== -1){
       const eventCard = document.createElement("div");
       eventCard.classList.add("eventCard");
@@ -119,6 +138,8 @@ renderCalendar();
       })
     }
   })
+  }
+  
   // dates.forEach(el => {
   //   el.addEventListener('mouseover', () => {
   //     if(el.classList.contains(page.children[j].options[0].value)) {
