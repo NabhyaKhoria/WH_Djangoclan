@@ -63,7 +63,7 @@ def base(request):
             var_new += 1
         if var_new == 3:
             break
-    if request.user.is_authenticated:
+    if request.user.is_authenticated and not request.user.is_admin:
         print(request.user)
         P=Profile.objects.get(username=request.user)
         print("USer Successfullyy logged in ")
@@ -124,7 +124,8 @@ def login1(request):
                         )
             email2.send(fail_silently=True)
             print(OTP)
-        return render(request,'baselogin.html', {'email':email,'OTP':OTP,'val':val})
+        request.session['OTP'] = OTP
+        return render(request,'baselogin.html', {'email':email,'val':val})
     else:
         return render(request,'base.html')
 
@@ -134,8 +135,11 @@ def loginuser(request):
         email = request.POST['signin-email']
         fname=""
         rollno=""
-        OTP=request.POST['rotp']
+        # OTP=request.POST['rotp']
         gotp=request.POST['otp']
+        if 'OTP' in request.session:
+            OTP = request.session['OTP']
+        print(OTP)
         if OTP==gotp:
             wb_obj = openpyxl.load_workbook("media\student\Student Data.xlsx")
             sheet_obj = wb_obj.active

@@ -175,7 +175,7 @@ https://templatemo.com/tm-569-edu-meeting
               <li ><a href="{% url 'base' %}">Courses</a></li>
               <li ><a href="{% url 'base' %}">Contact Us</a></li>
 
-              {% if user.is_authenticated %}
+              {% if user.is_authenticated and not user.is_admin %}
               <nav>
                 <ul>
                   <div>
