@@ -680,23 +680,26 @@ xsigin/signup popup
         <div class="col-lg-12">
           <div class="owl-service-item owl-carousel">
             {% for eve in event2 %}
-            <div class="meeting-item">
+            <div class="meeting-item" style="margin: 1rem;">
               <div class="thumb">
                 
                 <a href="meeting-details.html"><img class="owl-img" src="{{eve.image.url}}"
                     alt="New Lecturer Meeting"></a>
               </div>
-              <div class="down-content">
-                <div class="date">
+              <div class="down-content row" style="width: inherit;">
+                <div class="date col-3">
                   <h6>{{eve.date}}</h6>
                   <a class="owl-icon" href="{{eve.facebook}}">
                     <img src="{% static 'assets/images/facebook.png' %}" alt="">
                   </a>
                 </div>
-                <a href="meeting-details.html">
-                  <h4>{{eve.name}}</h4>
-                </a>
-                {% comment %} <p>{{eve.small_description}}</p> {% endcomment %}
+                <div class="col-8">
+                  <a href="meeting-details.html">
+                    <h4>{{eve.name}}</h4>
+                  </a>
+                  {% comment %} <p>{{eve.small_description}}</p> {% endcomment %}
+                </div>
+                
               </div>
             </div>
             {% endfor%}
@@ -1056,7 +1059,7 @@ xsigin/signup popup
               <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="http://www.iitkgp.ac.in/">IITKGP website</a>
             </li>
             <li class="pb-2">
-              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="https://erp.iitkgp.ernet.in/">ERP</a>
+              <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="https://erp.iitkgp.ac.in/">ERP</a>
             </li>
             <li class="pb-2">
               <i class="bx-fw bx bxs-chevron-right bx-xs"></i><a class="text-decoration-none text-light py-1" href="https://wiki.metakgp.org/w/Yellow_pages/">Your Dost</a>
