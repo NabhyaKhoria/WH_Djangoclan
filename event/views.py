@@ -56,7 +56,7 @@ def dashboard_add_social(request):
             date=date,type_of_event=type_of_event,day_of_event=day_of_event,SuperviserName=SuperviserName,SuperviserEmail=SuperviserEmail,SuperviserContact
             =SuperviserContact,VenueName=VenueName,facebook=facebook,linkedin=linkedin,instagram=instagram)
         social_add.save()
-        return redirect('event:dashboard')
+        return HttpResponse("hello")
     else:    
         social = Social.objects.all()
         context = {
@@ -64,27 +64,19 @@ def dashboard_add_social(request):
         }
         return render(request, 'events/dashboard_add_social.html', context)
 
-def dashboard_view_social (request, pk):
-    context = Social.objects.get(pk=pk)
-    # print(social)
-    social = {
-        'social':context,
-    }
-    return render(request, 'events/dashboard_view_social.html', social)
-
-def dashboard_del_social (request, pk):
-    context = Social.objects.get(pk=pk)
-    # print(social)
-    Social.objects.filter(id=pk).delete()
-    return redirect('event:dashboard')
-
-
 
 
 def interIIT(request):
-    context = {
-    }
-    return render(request, 'results/tables-data.html', context)
+    results = resultss.objects.all()
+    # i=0
+    # for result in results:
+    #     print(i)
+    #     print(result.gold)
+    #     i=i+1
+    # context = {
+    #     results: results,
+    # }
+    return render(request, 'results/tables-data.html', {'results': results})
 
 
 def interIITsocult(request):
@@ -276,24 +268,3 @@ def result(request):
 
     }
     return render(request, 'results/index.html', context)
-
-
-
-# def listing(request):
-#     studentWelfare = StudentWelfare.objects.all()
-#     technologys = Technology.objects.all()
-#     socials = Social.objects.all()
-#     sports = Sports.objects.all()
-
-#     context = {
-#         'studentWelfare': studentWelfare,
-#         'technologys':technologys,
-#         'socials':socials,
-#         'sports':sports,
-#     }
-#     paginator = Paginator(context, 6) # Show 6 contacts per page.
-
-#     page_number = request.GET.get('page')
-#     page_obj = paginator.get_page(page_number)
-#     return render(request, 'technology.html', {'page_obj': page_obj})
-
