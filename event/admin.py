@@ -7,4 +7,4 @@ admin.site.register(Technology)
 admin.site.register(StudentWelfare)
 admin.site.register(Sports)
 admin.site.register(Social)
-
+admin.site.register(resultss)
