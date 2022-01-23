@@ -55,11 +55,15 @@
             </div>
             <!-- Collapse -->
             <div class="collapse navbar-collapse" id="sidebarCollapse">
-               
+                <!-- Navigation -->
+        
+                <hr class="navbar-divider my-5 opacity-20">
+                <!-- Navigation -->
+                
                 <!-- Push content down -->
                 <div class="mt-auto"></div>
                 <!-- User (md) -->
-
+     
             </div>
         </div>
     </nav>
@@ -72,32 +76,32 @@
                     <div class="row align-items-center">
                         <div class="col-sm-6 col-12 mb-4 mb-sm-0">
                             <!-- Title -->  
-                            <h1 class="h2 mb-0 ls-tight">Add Social Event</h1>
+                            <h1 class="h2 mb-0 ls-tight">Sports Event View Section</h1>
                         </div>
                         <!-- Actions -->
-                        <!-- <div class="col-sm-6 col-12 text-sm-end">
+                        <div class="col-sm-6 col-12 text-sm-end">
                             <div class="mx-n1">
-                                <a href="#" class="btn d-inline-flex btn-sm btn-neutral border-base mx-1">
+                                <!-- <a href="#" class="btn d-inline-flex btn-sm btn-neutral border-base mx-1">
                                     <span class=" pe-2">
                                         <i class="bi bi-pencil"></i>
                                     </span>
                                     <span>Edit</span>
                                 </a>
-                                <a href="{% url 'event:dashboard_add_social' %}" class="btn d-inline-flex btn-sm btn-primary mx-1">
+                                <a href="{% url 'event:dashboard_add_sports' %}" class="btn d-inline-flex btn-sm btn-primary mx-1">
                                     <span class=" pe-2">
                                         <i class="bi bi-plus"></i>
                                     </span>
                                     <span>Create</span>
-                                </a>
+                                </a> -->
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                     <!-- Nav -->
                     <ul class="nav nav-tabs mt-4 overflow-x border-0">
                         <li class="nav-item ">
                             <a href="#" class="nav-link active">All files</a>
                         </li>
-       
+                       
                     </ul>
                 </div>
             </div>
@@ -202,7 +206,7 @@
                 </div> -->
                 <div class="card shadow border-0 mb-7">
                     <div class="card-header">
-                        <h5 class="mb-0">Socials</h5>
+                        <h5 class="mb-0">sportss</h5>
               
                
                     </div>
@@ -219,7 +223,7 @@
                                 </tr> -->
                             </thead>
                             <tbody>
-                                <!-- {% for soc in social %}
+                                <!-- 
                                 <tr>
 
                                     <td>
@@ -252,21 +256,21 @@
                                         </button>
                                     </td>
                                 </tr>
-                                {% endfor %} -->
-                                <form action="{% url 'event:dashboard_add_social' %}" enctype="multipart/form-data" method="POST">
-                                    {% csrf_token %}
+                           -->
+                                <!-- <form action="{% url 'event:dashboard_add_sports' %}" enctype="multipart/form-data" method="POST">
+                                    {% csrf_token %} -->
                                     <div style="margin-left:20px;">  
                                       <fieldset class="module aligned">
                                             <div class="form-row field-name">
                                                     <div>
                                                             <label class="required" for="id_name">Name:</label>
-                                                            <input type="text" name="name" class="vTextField" maxlength="50" required="" id="id_name">
+                                                            <input type="text" name="name" class="vTextField" maxlength="50" required="" id="id_name" value="{{sports.name}}" readonly>
                                                     </div>
                                             </div>
                                             <div class="form-row field-small_description">
                                                     <div>
                                                             <label class="required" for="id_small_description">Small description:</label>
-                                                                <input type="text" name="small_description" class="vTextField" maxlength="70" required="" id="id_small_description">
+                                                                <input name="small_description" value="{{sports.small_description}}"  required="" id="id_small_description" readonly>
                                                     </div>
                                             </div>
                                         
@@ -275,8 +279,8 @@
                                                 
                                                     <div>
                                                             <label class="required" for="id_image">Image:</label>
-                                                            
-                                                                <input type="file" name="image" accept="image/*" required="" id="id_image">
+                                                                <img src="{{sports.image.url}}" style="width: 100; ">
+                                                                <!-- <input type="file" name="image" accept="image/*"  value="{{sports.image.url}}" required="" id="id_image" readonly> -->
                                                     </div>
                                             </div>
                                             <div class="form-row field-description">
@@ -285,7 +289,7 @@
                                                         
                                                             <label class="required" for="id_description">Description:</label>
                                                             
-                                                                <textarea name="description" cols="40" rows="10" class="vLargeTextField" required="" id="id_description"></textarea>
+                                                                <input  readonly name="description" cols="40" rows="10" value="{{sports.description}}"  class="vLargeTextField" required="" id="id_description"></textarea>
                                                             
                                                         
                                                         
@@ -301,8 +305,8 @@
                                                         
                                                             <label class="required" for="id_month_of_event">Month of event:</label>
                                                             
-                                                                <select name="month_of_event" id="id_month_of_event">
-                                      <option value="Jan" selected="">Jan</option>
+                                                                <input  readonly  value="{{sports.month_of_event}}" name="month_of_event" id="id_month_of_event">
+                                      <!-- <option value="Jan" selected="">Jan</option>
                                       <option value="Feb">Feb</option>
                                       <option value="Mar">Mar</option>
                                       <option value="Apr">Apr</option>
@@ -313,15 +317,15 @@
                                       <option value="Sep">Sep</option>
                                       <option value="Oct">Oct</option>
                                       <option value="Nov">Nov</option>
-                                      <option value="Dec">Dec</option>
-                                    </select>
+                                      <option value="Dec">Dec</option> -->
+                                 
                                                     </div>
                                             </div>
                                         
                                             <div class="form-row field-date">
                                                     <div>
                                                             <label class="required" for="id_date">Date:</label>
-                                                                <input type="text" name="date" class="vDateField" size="10" required="" id="id_date"><span class="datetimeshortcuts">&nbsp;<a href="#">Today</a>&nbsp;|&nbsp;<a href="#" id="calendarlink0"><span class="date-icon" title="Choose a Date"></span></a></span>
+                                                                <input  readonly  value="{{sports.date}}" type="text" name="date" class="vDateField" size="10" required="" id="id_date">
                                                     <br><span class="timezonewarning">Note: You are 5.5 hours ahead of server time.</span></div>
                                                 
                                             </div>
@@ -334,14 +338,14 @@
                                                         
                                                             <label class="required" for="id_type_of_event">Type of event:</label>
                                                             
-                                                                <select name="type_of_event" id="id_type_of_event">
-                                      <option value="soon" selected="">soon</option>
+                                                                <input value="{{sports.type_of_event}}" readonly name="type_of_event" id="id_type_of_event">
+                                      <!-- <option value="soon" selected="">soon</option>
                                     
                                       <option value="att">att</option>
                                     
-                                      <option value="imp">imp</option>
+                                      <option value="imp">imp</option> -->
                                     
-                                    </select>
+              
                                                             
                                                         
                                                         
@@ -357,8 +361,8 @@
                                                         
                                                             <label class="required" for="id_day_of_event">Day of event:</label>
                                                             
-                                                                <select name="day_of_event" id="id_day_of_event">
-                                      <option value="Monday" selected="">Monday</option>
+                                                                <input readonly   value="{{sports.day_of_event}}" name="day_of_event" id="id_day_of_event">
+                                      <!-- <option value="Monday" inputed="">Monday</option>
                                     
                                       <option value="Tuesday">Tuesday</option>
                                     
@@ -370,9 +374,9 @@
                                     
                                       <option value="Saturday">Saturday</option>
                                     
-                                      <option value="Sunday">Sunday</option>
+                                      <option value="Sunday">Sunday</option> -->
                                     
-                                    </select>
+                        
                                                             
                                                         
                                                         
@@ -388,7 +392,7 @@
                                                         
                                                             <label class="required" for="id_SuperviserName">SuperviserName:</label>
                                                             
-                                                                <input type="text" name="SuperviserName" class="vTextField" maxlength="50" required="" id="id_SuperviserName">
+                                                                <input  value="{{sports.SuperviserName}}" readonly  type="text" name="SuperviserName" class="vTextField" maxlength="50" required="" id="id_SuperviserName">
                                                             
                                                         
                                                         
@@ -404,7 +408,7 @@
                                                         
                                                             <label class="required" for="id_SuperviserEmail">SuperviserEmail:</label>
                                                             
-                                                                <input type="text" name="SuperviserEmail" class="vTextField" maxlength="60" required="" id="id_SuperviserEmail">
+                                                                <input   value="{{sports.SuperviserEmail}}" readonly type="text" name="SuperviserEmail" class="vTextField" maxlength="60" required="" id="id_SuperviserEmail">
                                                             
                                                         
                                                         
@@ -420,7 +424,7 @@
                                                         
                                                             <label class="required" for="id_SuperviserContact">SuperviserContact:</label>
                                                             
-                                                                <input type="text" name="SuperviserContact" class="vTextField" maxlength="30" required="" id="id_SuperviserContact">
+                                                                <input   value="{{sports.SuperviserContact}}" readonly type="text" name="SuperviserContact" class="vTextField" maxlength="30" required="" id="id_SuperviserContact">
                                                             
                                                         
                                                         
@@ -436,7 +440,7 @@
                                                         
                                                             <label class="required" for="id_VenueName">VenueName:</label>
                                                             
-                                                                <input type="text" name="VenueName" class="vTextField" maxlength="60" required="" id="id_VenueName">
+                                                                <input   value="{{sports.VenueName}}" readonly type="text" name="VenueName" class="vTextField" maxlength="60" required="" id="id_VenueName">
                                                             
                                                         
                                                         
@@ -452,7 +456,7 @@
                                                         
                                                             <label class="required" for="id_facebook">Facebook:</label>
                                                             
-                                                                <input type="text" name="facebook" class="vTextField" maxlength="200" required="" id="id_facebook">
+                                                                <input   value="{{sports.facebook}}" readonly type="text" name="facebook" class="vTextField" maxlength="200" required="" id="id_facebook">
                                                             
                                                         
                                                         
@@ -468,7 +472,7 @@
                                                         
                                                             <label class="required" for="id_linkedin">Linkedin:</label>
                                                             
-                                                                <input type="text" name="linkedin" class="vTextField" maxlength="200" required="" id="id_linkedin">
+                                                                <input   value="{{sports.linkedin}}" readonly type="text" name="linkedin" class="vTextField" maxlength="200" required="" id="id_linkedin">
                                                             
                                                         
                                                         
@@ -484,7 +488,7 @@
                                                         
                                                             <label class="required" for="id_instagram">Instagram:</label>
                                                             
-                                                                <input type="text" name="instagram" class="vTextField" maxlength="200" required="" id="id_instagram">
+                                                                <input   value="{{sports.instagram}}" readonly type="text" name="instagram" class="vTextField" maxlength="200" required="" id="id_instagram">
                                                             
                                                         
                                                         
@@ -494,21 +498,12 @@
                                         
                                     </fieldset>
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
+            
                                     
                                     
                                     <div class="submit-row">
                                     
-                                    <input type="submit" value="Save" class="default" name="_save">
+                                    <!-- <input type="submit" value="Save" class="default" name="_save"> -->
                                     
                                     
                                     <!-- <input type="submit" value="Save and add another" name="_addanother"> -->
@@ -530,7 +525,7 @@
                                     
                                     
                                     </div>
-                                    </form>
+                                    <!-- </form> -->
                             </tbody>
                         </table>
                     </div>
