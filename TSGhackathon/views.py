@@ -173,8 +173,6 @@ def loginuser(request):
                 print('SUCCESS AGAIN')
                 return redirect('base')  
                 
-            
-            
         else:
             print("fail")
     else:

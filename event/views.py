@@ -23,8 +23,14 @@ from django.core.paginator import PageNotAnInteger, Paginator
 
 def dashboard(request):
     social = Social.objects.all()
+    sports = Sports.objects.all()
+    technology = Technology.objects.all()
+    studentwelfare = StudentWelfare.objects.all()
     context = {
         'social':social,
+        'sports':sports,
+        'studentwelfare':studentwelfare,
+        'technology':technology,
     }
     return render(request, 'events/dashboard.html', context)
 
@@ -56,7 +62,7 @@ def dashboard_add_social(request):
             date=date,type_of_event=type_of_event,day_of_event=day_of_event,SuperviserName=SuperviserName,SuperviserEmail=SuperviserEmail,SuperviserContact
             =SuperviserContact,VenueName=VenueName,facebook=facebook,linkedin=linkedin,instagram=instagram)
         social_add.save()
-        return HttpResponse("hello")
+        return redirect('event:dashboard')
     else:    
         social = Social.objects.all()
         context = {
@@ -64,7 +70,154 @@ def dashboard_add_social(request):
         }
         return render(request, 'events/dashboard_add_social.html', context)
 
+def dashboard_add_sports(request):
+    if(request.method == 'POST'):
+        name = request.POST['name']
+        small_description = request.POST['small_description']
+        image = request.FILES['image']
+        # handle_uploaded_file(request.FILES['image'])  
+        description = request.POST['description']
+        month_of_event = request.POST['month_of_event']
+        date = request.POST['date']
+        type_of_event = request.POST['type_of_event']
+        day_of_event = request.POST['day_of_event']
+        SuperviserName = request.POST['SuperviserName']
+        SuperviserEmail = request.POST['SuperviserEmail']
+        SuperviserContact = request.POST['SuperviserContact']
+        VenueName = request.POST['VenueName']
+        facebook = request.POST['facebook']
+        linkedin = request.POST['linkedin']
+        instagram = request.POST['instagram']
+        print(name)
+        sports_add = Sports(name=name,small_description=small_description,image=image,description=description,month_of_event=month_of_event,
+            date=date,type_of_event=type_of_event,day_of_event=day_of_event,SuperviserName=SuperviserName,SuperviserEmail=SuperviserEmail,SuperviserContact
+            =SuperviserContact,VenueName=VenueName,facebook=facebook,linkedin=linkedin,instagram=instagram)
+        sports_add.save()
+        return redirect('event:dashboard')
+    else:    
+        sports = Sports.objects.all()
+        context = {
+            'sports':sports,
+        }
+        return render(request, 'events/dashboard_add_sports.html', context)
 
+def dashboard_add_studentwelfare(request):
+    if(request.method == 'POST'):
+        name = request.POST['name']
+        small_description = request.POST['small_description']
+        image = request.FILES['image']
+        # handle_uploaded_file(request.FILES['image'])  
+        description = request.POST['description']
+        month_of_event = request.POST['month_of_event']
+        date = request.POST['date']
+        type_of_event = request.POST['type_of_event']
+        day_of_event = request.POST['day_of_event']
+        SuperviserName = request.POST['SuperviserName']
+        SuperviserEmail = request.POST['SuperviserEmail']
+        SuperviserContact = request.POST['SuperviserContact']
+        VenueName = request.POST['VenueName']
+        facebook = request.POST['facebook']
+        linkedin = request.POST['linkedin']
+        instagram = request.POST['instagram']
+        print(name)
+        studentwelfare_add = StudentWelfare(name=name,small_description=small_description,image=image,description=description,month_of_event=month_of_event,
+            date=date,type_of_event=type_of_event,day_of_event=day_of_event,SuperviserName=SuperviserName,SuperviserEmail=SuperviserEmail,SuperviserContact
+            =SuperviserContact,VenueName=VenueName,facebook=facebook,linkedin=linkedin,instagram=instagram)
+        studentwelfare_add.save()
+        return redirect('event:dashboard')
+    else:    
+        studentwelfare = StudentWelfare.objects.all()
+        context = {
+            'studentwelfare':studentwelfare,
+        }
+        return render(request, 'events/dashboard_add_studentwelfare.html', context)
+
+def dashboard_add_technology(request):
+    if(request.method == 'POST'):
+        name = request.POST['name']
+        small_description = request.POST['small_description']
+        image = request.FILES['image']
+        # handle_uploaded_file(request.FILES['image'])  
+        description = request.POST['description']
+        month_of_event = request.POST['month_of_event']
+        date = request.POST['date']
+        type_of_event = request.POST['type_of_event']
+        day_of_event = request.POST['day_of_event']
+        SuperviserName = request.POST['SuperviserName']
+        SuperviserEmail = request.POST['SuperviserEmail']
+        SuperviserContact = request.POST['SuperviserContact']
+        VenueName = request.POST['VenueName']
+        facebook = request.POST['facebook']
+        linkedin = request.POST['linkedin']
+        instagram = request.POST['instagram']
+        print(name)
+        technology_add = Technology(name=name,small_description=small_description,image=image,description=description,month_of_event=month_of_event,
+            date=date,type_of_event=type_of_event,day_of_event=day_of_event,SuperviserName=SuperviserName,SuperviserEmail=SuperviserEmail,SuperviserContact
+            =SuperviserContact,VenueName=VenueName,facebook=facebook,linkedin=linkedin,instagram=instagram)
+        technology_add.save()
+        return redirect('event:dashboard')
+    else:    
+        technology = Technology.objects.all()
+        context = {
+            'technology':technology,
+        }
+        return render(request, 'events/dashboard_add_technology.html', context)
+
+def dashboard_view_social (request, pk):
+    context = Social.objects.get(pk=pk)
+    # print(social)
+    social = {
+        'social':context,
+    }
+    return render(request, 'events/dashboard_view_social.html', social)
+
+def dashboard_view_sports (request, pk):
+    context = Sports.objects.get(pk=pk)
+    # print(sports)
+    sports = {
+        'sports':context,
+    }
+    return render(request, 'events/dashboard_view_sports.html', sports)
+
+def dashboard_view_studentwelfare (request, pk):
+    context = StudentWelfare.objects.get(pk=pk)
+    # print(studentwelfare)
+    studentwelfare = {
+        'studentwelfare':context,
+    }
+    return render(request, 'events/dashboard_view_studentwelfare.html', studentwelfare)
+
+def dashboard_view_technology (request, pk):
+    context = Technology.objects.get(pk=pk)
+    # print(social)
+    technology = {
+        'technology':context,
+    }
+    return render(request, 'events/dashboard_view_technology.html', technology)
+
+def dashboard_del_social (request, pk):
+    context = Social.objects.get(pk=pk)
+    # print(social)
+    Social.objects.filter(id=pk).delete()
+    return redirect('event:dashboard')
+
+def dashboard_del_technology (request, pk):
+    context = Technology.objects.get(pk=pk)
+    # print(social)
+    Technology.objects.filter(id=pk).delete()
+    return redirect('event:dashboard')
+
+def dashboard_del_sports (request, pk):
+    context = Sports.objects.get(pk=pk)
+    # print(social)
+    Sports.objects.filter(id=pk).delete()
+    return redirect('event:dashboard')
+
+def dashboard_del_studentwelfare (request, pk):
+    context = StudentWelfare.objects.get(pk=pk)
+    # print(social)
+    StudentWelfare.objects.filter(id=pk).delete()
+    return redirect('event:dashboard')
 
 def interIIT(request):
     results = resultss.objects.all()
