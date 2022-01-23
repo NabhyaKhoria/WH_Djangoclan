@@ -21,10 +21,62 @@ from django.contrib.auth.models import auth
 from django.core.paginator import PageNotAnInteger, Paginator
 # Create your views here.
 
-def interIIT(request):
+def dashboard(request):
+    social = Social.objects.all()
     context = {
+        'social':social,
     }
-    return render(request, 'results/tables-data.html', context)
+    return render(request, 'events/dashboard.html', context)
+
+def handle_uploaded_file(f):  
+    with open('TSG-Hackathon/media/technology/'+f.name, 'wb+') as destination:  
+        for chunk in f.chunks():  
+            destination.write(chunk)  
+
+def dashboard_add_social(request):
+    if(request.method == 'POST'):
+        name = request.POST['name']
+        small_description = request.POST['small_description']
+        image = request.FILES['image']
+        # handle_uploaded_file(request.FILES['image'])  
+        description = request.POST['description']
+        month_of_event = request.POST['month_of_event']
+        date = request.POST['date']
+        type_of_event = request.POST['type_of_event']
+        day_of_event = request.POST['day_of_event']
+        SuperviserName = request.POST['SuperviserName']
+        SuperviserEmail = request.POST['SuperviserEmail']
+        SuperviserContact = request.POST['SuperviserContact']
+        VenueName = request.POST['VenueName']
+        facebook = request.POST['facebook']
+        linkedin = request.POST['linkedin']
+        instagram = request.POST['instagram']
+        print(name)
+        social_add = Social(name=name,small_description=small_description,image=image,description=description,month_of_event=month_of_event,
+            date=date,type_of_event=type_of_event,day_of_event=day_of_event,SuperviserName=SuperviserName,SuperviserEmail=SuperviserEmail,SuperviserContact
+            =SuperviserContact,VenueName=VenueName,facebook=facebook,linkedin=linkedin,instagram=instagram)
+        social_add.save()
+        return HttpResponse("hello")
+    else:    
+        social = Social.objects.all()
+        context = {
+            'social':social,
+        }
+        return render(request, 'events/dashboard_add_social.html', context)
+
+
+
+def interIIT(request):
+    results = resultss.objects.all()
+    # i=0
+    # for result in results:
+    #     print(i)
+    #     print(result.gold)
+    #     i=i+1
+    # context = {
+    #     results: results,
+    # }
+    return render(request, 'results/tables-data.html', {'results': results})
 
 
 def interIITsocult(request):
@@ -71,16 +123,21 @@ def technology(request):
     except EmptyPage:
         # if page is empty then return last page
         page_obj = p.page(p.num_pages)
-    P=Profile.objects.get(username=request.user)
-    print("USer Successfullyy logged in ")
-    print("USername= "+ str(request.user)+"has fullname ="+str(P.fullname) )
-    print(P.fullname)
-    context={
+    try:
+        P=Profile.objects.get(username=request.user)
+        context={
         'technology': technology,
         'page_obj': page_obj,
         'profile':P,
-    }
+        }
+        
+    except:
+        context={
+        'technology': technology,
+        'page_obj': page_obj,
+        }
     return render(request, 'events/technology.html', context)
+
 
 def technology_details(request, name):
     technology = Technology.objects.get(name=name)
@@ -106,16 +163,19 @@ def social(request):
     except EmptyPage:
         # if page is empty then return last page
         page_obj = p.page(p.num_pages)
-    P=Profile.objects.get(username=request.user)
-    print("USer Successfullyy logged in ")
-    print("USername= "+ str(request.user)+"has fullname ="+str(P.fullname) )
-    print(P.fullname)
-    context={
-    'social': social,
-    'page_obj': page_obj,
-    'profile':P,
-    
-    }
+    try:
+        P=Profile.objects.get(username=request.user)
+        context={
+        'social': social,
+        'page_obj': page_obj,
+        'profile':P,
+        
+        }
+    except:
+        context={
+        'social': social,
+        'page_obj': page_obj,
+        }
     return render(request, 'events/SocialCulture.html', context)
 
 
@@ -136,15 +196,19 @@ def studentWelfare(request):
     except EmptyPage:
         # if page is empty then return last page
         page_obj = p.page(p.num_pages)
-    P=Profile.objects.get(username=request.user)
-    print("USer Successfullyy logged in ")
-    print("USername= "+ str(request.user)+"has fullname ="+str(P.fullname) )
-    print(P.fullname)
-    context={
-    'studentWelfare': studentWelfare,
-    'page_obj': page_obj,
-    'profile':P,
-    }
+    try:
+        P=Profile.objects.get(username=request.user)
+        context={
+        'studentWelfare': studentWelfare,
+        'page_obj': page_obj,
+        'profile':P,
+        }
+    except:
+        context={
+        'studentWelfare': studentWelfare,
+        'page_obj': page_obj,
+        }
+
     return render(request, 'events/studentWelfare.html', context)
 
 
@@ -178,15 +242,18 @@ def sports(request):
     except EmptyPage:
         # if page is empty then return last page
         page_obj = p.page(p.num_pages)
-    P=Profile.objects.get(username=request.user)
-    print("USer Successfullyy logged in ")
-    print("USername= "+ str(request.user)+"has fullname ="+str(P.fullname) )
-    print(P.fullname)
-    context={
-    'sports': sports,
-    'page_obj': page_obj,
-    'profile':P,
-    }
+    try:
+        P=Profile.objects.get(username=request.user)
+        context={
+        'sports': sports,
+        'page_obj': page_obj,
+        'profile':P,
+        }
+    except:
+        context={
+        'sports': sports,
+        'page_obj': page_obj,
+        }
     return render(request, 'events/SportsAndGames.html', context)
 
 def sports_details(request, name):
@@ -201,24 +268,4 @@ def result(request):
 
     }
     return render(request, 'results/index.html', context)
-
-
-
-# def listing(request):
-#     studentWelfare = StudentWelfare.objects.all()
-#     technologys = Technology.objects.all()
-#     socials = Social.objects.all()
-#     sports = Sports.objects.all()
-
-#     context = {
-#         'studentWelfare': studentWelfare,
-#         'technologys':technologys,
-#         'socials':socials,
-#         'sports':sports,
-#     }
-#     paginator = Paginator(context, 6) # Show 6 contacts per page.
-
-#     page_number = request.GET.get('page')
-#     page_obj = paginator.get_page(page_number)
-#     return render(request, 'technology.html', {'page_obj': page_obj})
 
