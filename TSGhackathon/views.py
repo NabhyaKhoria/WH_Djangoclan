@@ -230,6 +230,12 @@ def official_login(request):
         val=0
         print(semail)
         if semail.count(username):
+            k = semail.index(username)
+            password_excel = sheet_obj.cell(row = k+2, column=5)
+            print(password)
+            if not password == password_excel.value:
+                return redirect('base')
+            
             print("success")
             # print(User.objects.get(email=request.POST.get("signin-email")))
             # print(User.objects.get(email=email))
