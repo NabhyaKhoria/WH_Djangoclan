@@ -20,6 +20,9 @@ Table of Contents
 
 ## Git commands
 
+How to clone repo:
+
+git clone -b dev https://github.com/NabhyaKhoria/WH_Djangoclan.git
 
 Then just install requirements, migrate, and runserver to get started:
 
@@ -29,4 +32,13 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
+## How to use Site
+
+The whole proccess of how to use website is mentioned in this [Doc](https://docs.google.com/document/d/1xe0if9j8zmkjkdqKhy8YQcL1In4tI312KXrlc-ti0Kc/edit?usp=sharing)
+
+
+
+
+
+
 
