@@ -1,6 +1,18 @@
 {% load static %}
 <html>
     <head>
+
+        <script type="text/javascript" src="/admin/jsi18n/"></script>
+        <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+        <script type="text/javascript" src="/static/admin/js/calendar.js"></script>
+        <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+        <script type="text/javascript" src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
+        <script type="text/javascript" src="/static/admin/js/core.js"></script>
+        <script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+        <script type="text/javascript" src="/static/admin/js/actions.js"></script>
+        <script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+        <script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
+        <script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
         <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
 <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
         <style>
@@ -321,7 +333,11 @@
                                             <div class="form-row field-date">
                                                     <div>
                                                             <label class="required" for="id_date">Date:</label>
-                                                                <input type="text" name="date" class="vDateField" size="10" required="" id="id_date"><span class="datetimeshortcuts">&nbsp;<a href="#">Today</a>&nbsp;|&nbsp;<a href="#" id="calendarlink0"><span class="date-icon" title="Choose a Date"></span></a></span>
+                                                                <input type="text" name="date" class="vDateField" size="10" required="" id="id_date">
+                                                                <!-- <span class="datetimeshortcuts">&nbsp;<a href="#">Today</a>&nbsp;|&nbsp;<a href="#" id="calendarlink0">
+                                                                    <span class="date-icon" title="Choose a Date">
+                                                                    </span></a>
+                                                                </span> -->
                                                     <br><span class="timezonewarning">Note: You are 5.5 hours ahead of server time.</span></div>
                                                 
                                             </div>
@@ -528,7 +544,7 @@
                                     <script type="text/javascript" id="django-admin-prepopulated-fields-constants" src="/static/admin/js/prepopulate_init.js" data-prepopulated-fields="[]">
                                     </script>
                                     
-                                    
+                     
                                     </div>
                                     </form>
                             </tbody>

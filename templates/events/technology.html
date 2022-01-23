@@ -235,31 +235,7 @@ height: 323.24px;}
                   <li><a href="{% url 'event:GCTechnology' %} ">General Championship</a></li>
                 </ul>
               </li>
-              <li ><a href="{% url 'base' %}">Courses</a></li>
-              <li ><a href="{% url 'base' %}">Contact Us</a></li>
-
-              {% if user.is_authenticated and not user.is_admin %}
-              <nav>
-                <ul>
-                  <div>
-                    <li class="has-sub">
-                      <a href="{% url 'student' %}"><img id="userimg" data-hex={{profile.fullname}} style="border-radius: 35px; width: 50px; height :auto;"> </a>
-                      <ul class="sub-menu">
-                        <li><a href="{% url 'student' %}">Achivements</a></li>
-                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSft9FXZYvLiNt3oy0K3Iu4d6HoE830RhNWFHMXx1R4IjlhHKA/viewform">Grivience</a></li>
-                        <li><a href="{% url 'logout' %}">Logout</a></li>
-                      </ul>
-                    </li>
-                  </div>
-                </ul>
-              </nav>
-              {% else %}
-              <nav class="main-nav2">
-                <ul>
-                  <li class="scroll-to-section"><a class="cd-signin" href="#0">Login</a></li>
-                </ul>
-              </nav>
-              {%endif %}
+        
 
 
 
