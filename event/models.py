@@ -126,8 +126,14 @@ class Sports(models.Model):
     linkedin = models.CharField(max_length=200, null=True)
     instagram = models.CharField(max_length=200, null=True)
     
-    
-    
+    def __str__(self):
+        return self.name
+
+ class resultss(models.Model):
+    name = models.CharField(max_length=50)
+    gold = models.CharField(max_length=100)
+    silver = models.CharField(max_length=100)
+    bronze = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
