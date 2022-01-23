@@ -56,13 +56,28 @@ def dashboard_add_social(request):
             date=date,type_of_event=type_of_event,day_of_event=day_of_event,SuperviserName=SuperviserName,SuperviserEmail=SuperviserEmail,SuperviserContact
             =SuperviserContact,VenueName=VenueName,facebook=facebook,linkedin=linkedin,instagram=instagram)
         social_add.save()
-        return HttpResponse("hello")
+        return redirect('event:dashboard')
     else:    
         social = Social.objects.all()
         context = {
             'social':social,
         }
         return render(request, 'events/dashboard_add_social.html', context)
+
+def dashboard_view_social (request, pk):
+    context = Social.objects.get(pk=pk)
+    # print(social)
+    social = {
+        'social':context,
+    }
+    return render(request, 'events/dashboard_view_social.html', social)
+
+def dashboard_del_social (request, pk):
+    context = Social.objects.get(pk=pk)
+    # print(social)
+    Social.objects.filter(id=pk).delete()
+    return redirect('event:dashboard')
+
 
 
 
