@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Tables / Data - NiceAdmin Bootstrap Template</title>
+  <title>Inter-IIT Meet</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -111,21 +111,7 @@
               <i class="bi bi-circle"></i><span>2018-2019</span>
             </a>
           </li>
-          {% comment %} <li>
-            <a href="forms-layouts.html">
-              <i class="bi bi-circle"></i><span>Form Layouts</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-editors.html">
-              <i class="bi bi-circle"></i><span>Form Editors</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-validation.html">
-              <i class="bi bi-circle"></i><span>Form Validation</span>
-            </a>
-          </li> {% endcomment %}
+          
         </ul>
       </li>
       <!-- End Tables Nav -->
@@ -145,16 +131,7 @@
               <i class="bi bi-circle"></i><span>2018-2019</span>
             </a>
           </li>
-          {% comment %} <li>
-            <a href="charts-apexcharts.html">
-              <i class="bi bi-circle"></i><span>ApexCharts</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-echarts.html">
-              <i class="bi bi-circle"></i><span>ECharts</span>
-            </a>
-          </li> {% endcomment %}
+        
         </ul>
       </li><!-- End Charts Nav -->
 
@@ -184,49 +161,34 @@
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Position</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Start Date</th>
+                    <!-- <th scope="col">#</th> -->
+                    <th scope="col">Sport</th>
+                    <th scope="col">Gold</th>
+                    <th scope="col">Silver</th>
+                    <th scope="col">Bronze</th>
                   </tr>
                 </thead>
                 <tbody>
+                  {% for result in results %}
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Brandon Jacob</td>
-                    <td>Designer</td>
-                    <td>28</td>
-                    <td>2016-05-25</td>
+                    <td>{{result.name}}</td>
+                    <td>{{result.gold}}</td>
+                    <td>{{result.silver}}</td>
+                    <td>{{result.bronze}}</td>
+                  </tr>
+                  {% endfor %}
+                  <!-- <tr>
+                    <td>name1</td>
+                    <td>gold1</td>
+                    <td>silver1</td>
+                    <td>bronze1</td>
                   </tr>
                   <tr>
-                    <th scope="row">2</th>
-                    <td>Bridie Kessler</td>
-                    <td>Developer</td>
-                    <td>35</td>
-                    <td>2014-12-05</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Ashleigh Langosh</td>
-                    <td>Finance</td>
-                    <td>45</td>
-                    <td>2011-08-12</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Angus Grady</td>
-                    <td>HR</td>
-                    <td>34</td>
-                    <td>2012-06-11</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">5</th>
-                    <td>Raheem Lehner</td>
-                    <td>Dynamic Division Officer</td>
-                    <td>47</td>
-                    <td>2011-04-19</td>
-                  </tr>
+                    <td>name2</td>
+                    <td>gold2</td>
+                    <td>silver2</td>
+                    <td>bronze2</td>
+                  </tr> -->
                 </tbody>
               </table>
               <!-- End Table with stripped rows -->
