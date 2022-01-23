@@ -238,7 +238,7 @@ def official_login(request):
             # try :
                 # a=User.objects.get(email=email)
                 # a = defaultuser.objects.get(username=username,password=password)
-            a = auth.authenticate(userename=username, password=password)
+            a = auth.authenticate(username=username, password=password)
             print(a)
             print("success101")
             print('success103')

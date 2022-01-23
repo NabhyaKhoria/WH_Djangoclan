@@ -550,14 +550,14 @@ xsigin/signup popup
               <li class="scroll-to-section"><a href="#courses">Courses</a></li>
               <li class="scroll-to-section"><a href="#contact">Contact Us</a></li>
 
-              {% if user.is_authenticated and not user.is_admin %}
+              {% if user.is_authenticated and not user.is_admin and not user.is_staff %}
               <nav>
                 <ul>
                   <div>
                     <li class="has-sub">
                       <a href="{% url 'student' %}"><img id="userimg" data-hex={{profile.fullname}} style="border-radius: 35px; width: 50px;"> </a>
                       <ul class="sub-menu">
-                        <li><a href="{% url 'student' %}">Achivements</a></li>
+                        <li><a href="{% url 'student' %}">Achievements</a></li>
                         <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSft9FXZYvLiNt3oy0K3Iu4d6HoE830RhNWFHMXx1R4IjlhHKA/viewform">Grivience</a></li>
                         <li><a href="{% url 'logout' %}">Logout</a></li>
                       </ul>
@@ -565,6 +565,22 @@ xsigin/signup popup
                   </div>
                 </ul>
               </nav>
+
+              {% elif user.is_authenticated and not user.is_admin and user.is_staff %}
+              <nav>
+                <ul>
+                  <div>
+                    <li class="has-sub">
+                      <a href=""><img id="userimg" data-hex={{profile.fullname}} style="border-radius: 35px; width: 50px;"> </a>
+                      <ul class="sub-menu">
+                        <li><a href="{% url 'event:dashboard' %}">Dashboard</a></li>
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                      </ul>
+                    </li>
+                  </div>
+                </ul>
+              </nav>
+
               {% else %}
               <nav class="main-nav2">
                 <ul>
