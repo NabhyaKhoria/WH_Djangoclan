@@ -14,7 +14,7 @@ from django.contrib.auth.models import User as defaultuser
 from django.contrib.auth.models import auth
 
 from django.core.paginator import PageNotAnInteger, Paginator
-
+import requests
 def home(request):
     return render(request, 'nav.html')
 
@@ -267,3 +267,23 @@ def official_login(request):
     else:
         # return render(request,'base.html')  
         pass
+
+def form(request):
+    if request.method=="POST":
+        name=request.POST.get('full_name')
+        email=request.POST.get('email')
+        msg=request.POST.get('message')
+        sub=request.POST.get('age')
+
+
+        r = requests.post("https://api.apispreadsheets.com/data/hcceAQQ4oFdZP5G9/", headers={}, json={"data": {"name":name,"email":email,"subject":sub,"message":msg,}})
+        return redirect('base')
+
+# if r.status_code == 201:
+# 	# SUCCESS 
+# 	pass
+# else:
+# 	# ERROR
+# 	pass
+    else:
+        return redirect('base')
