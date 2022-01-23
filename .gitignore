@@ -1,0 +1,9 @@
+**/__pycache__
+**/DB backup
+**/staticfiles
+TSGhackathon/TSGhackathon/__pycache__*
+event/migrations/__pycache__*
+event/migrations*
+users/migrations*
+event/__pycache__*
+users/__pycache__*
