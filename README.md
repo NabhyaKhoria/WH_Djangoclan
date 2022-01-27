@@ -8,7 +8,7 @@ For example:
 * Python 3.3 and up [Install](https://link-for-setup-guide)
 * Setup project environment with virtualenv before Development.
 
-## Software Used
+## Technology Used
  *  Front-end : HTML, CSS ,JavaScript,Bootstrap.
  *  Back-end  : Python in django Frame-Work.
  *  Api's Used: https://ui-avatars.com/
