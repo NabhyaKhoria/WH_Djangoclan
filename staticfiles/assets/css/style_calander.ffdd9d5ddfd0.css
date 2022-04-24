@@ -1,0 +1,204 @@
+.calendar {
+  width: 36rem;
+  max-height: 45rem;
+  background-color: #222227;
+  box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+}
+
+.month {
+  width: 100%;
+  height: 5rem;
+  background-color: #167e56;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  text-align: center;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.month i {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.month h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.month p {
+  font-size: 1rem;
+}
+
+.weekdays {
+  width: 100%;
+  height: 5rem;
+  padding: 0 0.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.weekdays div {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  width: calc(44.2rem / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.2rem;
+}
+
+.days div {
+  font-size: 1rem;
+  margin: 0.3rem;
+  width: 71px;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s;
+}
+
+.days div:hover:not(.today) {
+  background-color: #262626;
+  border: 0.2rem solid #777;
+  cursor: pointer;
+}
+
+.prev-date,
+.next-date {
+  opacity: 1;
+}
+
+.today {
+  background-color: #167e56;
+}
+
+.datum{
+  position: relative;
+}
+
+.eventCard{
+  display: none !important;
+}
+
+.eventCard__showEvent{
+  display: flex !important;
+  background-color: #A02C2F !important;
+  font-size: 1.5rem;
+  width: 300px !important;
+  height: fit-content !important;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  bottom: 5rem;
+  left: calc(-100px + 15.1rem/7);
+  padding: 1rem;
+  border-radius: 10px !important;
+}
+
+@media screen and (max-width: 400px) {
+  .calendar {
+    margin: auto;
+    width: 95%;
+    height: 100%;
+  }
+
+  .days div {
+    height: 3.2rem;
+    width: 11%;
+    margin: 1.6%;
+  }
+
+  .weekdays {
+    height: 3rem;
+  }
+
+  @media screen and (max-width:351px) {
+    .weekdays div {
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 450px) {
+  .calendar {
+    margin: auto;
+    width: 24em;
+    height: 28em;
+  }
+
+  .weekdays {
+    height: 3rem;
+  }
+
+  .days div {
+    height: 3.2rem;
+    width: 44px;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 500px) {
+  .calendar {
+    margin: auto;
+    width: 27em;
+    height: 31.5rem;
+  }
+  
+  .days div {
+    height: 3.5rem;
+    width: 51px;
+  }
+}
+
+@media screen AND (min-width: 500px) and (max-width: 670px) {
+  .calendar {
+    margin: auto;
+    width: 30rem;
+    height: 35rem;
+  }
+  
+  .days div {
+    width: 58px;
+    height: 3.5rem;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1050px) {
+  .calendar {
+    margin: auto;
+    width: 27rem;
+    height: 31.5rem;
+  }
+  
+  .days div {
+    height: 3.5rem;
+    width: 51px;
+  }
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1200px) {
+  .calendar {
+    width: 30rem;
+    height: 35rem;
+  }
+
+  .days div {
+    width: 58px;
+    height: 3.5rem;
+  }
+}
